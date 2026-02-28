@@ -1,48 +1,28 @@
 .section {
   width: 100%;
+  position: relative;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 24px;
-}
-
-/* Mobile: 320px - 767px */
-@media (max-width: 767px) {
-  .container {
-    padding: 48px 16px;
-  }
-}
-
-/* Tablet: 768px - 1023px */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .container {
-    padding: 64px 24px;
-  }
-}
-
-/* Desktop and up: 1024px+ */
-@media (min-width: 1024px) {
-  .container {
-    padding: 80px 24px;
-  }
+  padding: clamp(48px, 8vw, 100px) clamp(16px, 4vw, 32px);
 }
 
 /* Animation styles */
 .hidden {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(24px);
 }
 
 .fadeIn {
-  animation: fadeIn 0.4s ease forwards;
+  animation: fadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;

@@ -43,3 +43,5 @@ export type { ContactFormProps } from './ContactForm';
 export { ContactInfo } from './ContactInfo';
 export type { ContactInfoProps, ContactInfoItem } from './ContactInfo';
 export { ScrollToTop } from './ScrollToTop';
+
+export { CustomCursor } from './CustomCursor';

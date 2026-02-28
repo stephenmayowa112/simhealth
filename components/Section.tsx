@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { colors } from '@/lib/design-tokens';
 import { useScrollAnimation } from '@/lib/useScrollAnimation';
 import styles from './Section.module.css';
 
@@ -17,7 +16,7 @@ export interface SectionProps {
 export const Section: React.FC<SectionProps> = ({
   children,
   backgroundColor = 'white',
-  maxWidth = '1200px',
+  maxWidth = '1280px',
   className = '',
   id,
   animate = true,
@@ -25,9 +24,9 @@ export const Section: React.FC<SectionProps> = ({
   const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   const backgroundColors: Record<string, string> = {
-    white: colors.neutral.white,
-    gray: colors.neutral.gray100,
-    green: colors.brand.paleGreen,
+    white: 'var(--color-cream, #faf7ef)',
+    gray: '#f0ede5',
+    green: 'rgba(74, 158, 34, 0.06)',
   };
 
   const sectionStyles: React.CSSProperties = {
@@ -41,10 +40,10 @@ export const Section: React.FC<SectionProps> = ({
   const animationClass = animate ? (isVisible ? styles.fadeIn : styles.hidden) : '';
 
   return (
-    <section 
+    <section
       ref={elementRef as React.RefObject<HTMLElement>}
-      style={sectionStyles} 
-      className={`${styles.section} ${animationClass} ${className}`} 
+      style={sectionStyles}
+      className={`${styles.section} ${animationClass} ${className}`}
       id={id}
     >
       <div style={containerStyles} className={styles.container}>

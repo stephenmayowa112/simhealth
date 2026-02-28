@@ -142,7 +142,7 @@ export default function RootLayout({
             <div className="footer-section footer-newsletter">
               <h4>Newsletter</h4>
               <p>Stay updated with our latest news</p>
-              <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+              <form className="newsletter-form" action="#">
                 <div className="newsletter-input-wrapper">
                   <input type="email" placeholder="Your email address" aria-label="Email address for newsletter" className="newsletter-input" />
                   <button type="submit" aria-label="Subscribe to newsletter" className="newsletter-submit">

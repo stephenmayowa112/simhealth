@@ -2,24 +2,25 @@
   position: fixed;
   bottom: 32px;
   right: 32px;
-  width: 56px;
-  height: 56px;
-  background-color: var(--color-dark-green);
-  color: var(--color-white);
+  width: 52px;
+  height: 52px;
+  background-color: var(--color-dark-green, #1a3d0c);
+  color: var(--color-cream, #faf7ef);
   border: none;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 20px rgba(14, 28, 6, 0.2);
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
-  transition: opacity var(--transition-fast), 
-              visibility var(--transition-fast), 
-              transform var(--transition-fast),
-              background-color var(--transition-fast);
+  transition: opacity 0.3s ease,
+              visibility 0.3s ease,
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s ease,
+              box-shadow 0.3s ease;
   z-index: 999;
 }
 
@@ -30,17 +31,18 @@
 }
 
 .scrollToTop:hover {
-  background-color: var(--color-primary-green);
-  box-shadow: var(--shadow-lg);
+  background-color: var(--color-primary-green, #4a9e22);
+  box-shadow: 0 6px 28px rgba(74, 158, 34, 0.35);
+  transform: translateY(-2px);
 }
 
-.scrollToTop:focus {
-  outline: 2px solid var(--color-dark-green);
-  outline-offset: 2px;
+.scrollToTop:focus-visible {
+  outline: 2px solid var(--color-primary-green, #4a9e22);
+  outline-offset: 3px;
 }
 
 .scrollToTop:active {
-  transform: scale(0.95);
+  transform: scale(0.92);
 }
 
 /* Mobile adjustments */
@@ -48,8 +50,8 @@
   .scrollToTop {
     bottom: 24px;
     right: 24px;
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
   }
 }
 
@@ -60,6 +62,10 @@
   }
 
   .scrollToTop.visible {
+    transform: none;
+  }
+
+  .scrollToTop:hover {
     transform: none;
   }
 
