@@ -21,6 +21,7 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://simhealthafrica.org'),
   title: {
     default: 'SimHealth Africa - Africa Society for Improved Health Delivery',
     template: '%s | SimHealth Africa',
@@ -62,6 +63,12 @@ export const metadata: Metadata = {
     description: 'Africa Society for Improved Health Delivery',
     images: ['/logo.svg'],
   },
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#75c037',
 }
 
 export default function RootLayout({
