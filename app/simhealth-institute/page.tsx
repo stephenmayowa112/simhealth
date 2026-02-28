@@ -45,7 +45,7 @@ export default function SimHealthInstitutePage() {
   ];
 
   return (
-    <main>
+    <>
       <ProgramHero
         title="SimHealth Institute"
         imageUrl="/images/simhealth-institute-hero.jpg"
@@ -119,6 +119,6 @@ export default function SimHealthInstitutePage() {
       <Section backgroundColor="white">
         <RelatedProjects projects={relatedProjects} title="Related Projects" />
       </Section>
-    </main>
+    </>
   );
 }

@@ -87,8 +87,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="no-js" suppressHydrationWarning>
       <body className={`${cormorantGaramond.variable} ${dmSans.variable} ${spaceMono.variable}`}>
+        {/* Progressive enhancement: switch to 'js' class before first paint */}
+        <script dangerouslySetInnerHTML={{ __html: `document.documentElement.classList.replace('no-js','js')` }} />
         <a href="#main-content" className="skip-to-main">
           Skip to main content
         </a>

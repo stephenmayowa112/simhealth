@@ -125,10 +125,13 @@
   letter-spacing: 0.2em;
   color: var(--color-warm-gold, #f5c842);
   margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(12px);
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:global(html.js) .eyebrow {
+  opacity: 0;
+  transform: translateY(12px);
 }
 
 .visible .eyebrow {
@@ -152,6 +155,9 @@
 
 .titleWord {
   display: inline-block;
+}
+
+:global(html.js) .titleWord {
   opacity: 0;
   transform: translateY(40px);
   animation: wordReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -175,10 +181,13 @@
   color: rgba(250, 247, 239, 0.8);
   max-width: 700px;
   margin: 0 auto clamp(24px, 4vw, 40px);
-  opacity: 0;
-  transform: translateY(16px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.8s,
               transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.8s;
+}
+
+:global(html.js) .subtitle {
+  opacity: 0;
+  transform: translateY(16px);
 }
 
 .visible .subtitle {
@@ -188,10 +197,13 @@
 
 /* CTA wrapper */
 .ctaWrapper {
-  opacity: 0;
-  transform: translateY(16px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1s,
               transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1s;
+}
+
+:global(html.js) .ctaWrapper {
+  opacity: 0;
+  transform: translateY(16px);
 }
 
 .visible .ctaWrapper {
@@ -210,6 +222,9 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
+}
+
+:global(html.js) .scrollIndicator {
   opacity: 0;
   animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;
 }

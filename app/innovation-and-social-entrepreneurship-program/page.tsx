@@ -45,7 +45,7 @@ export default function InnovationProgramPage() {
   ];
 
   return (
-    <main>
+    <>
       <ProgramHero
         title="Innovation and Social Entrepreneurship Program"
         imageUrl="/images/innovation-program-hero.jpg"
@@ -105,6 +105,6 @@ export default function InnovationProgramPage() {
       <Section backgroundColor="white">
         <RelatedProjects projects={relatedProjects} title="Related Projects" />
       </Section>
-    </main>
+    </>
   );
 }

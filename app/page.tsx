@@ -46,7 +46,7 @@ const programs: Program[] = [
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Hero
         title="Transforming Healthcare Delivery in Africa"
         subtitle="The Africa Society for Improved Health Delivery"
@@ -83,6 +83,6 @@ export default function Home() {
         articles={newsArticles}
         backgroundColor="gray"
       />
-    </main>
+    </>
   );
 }

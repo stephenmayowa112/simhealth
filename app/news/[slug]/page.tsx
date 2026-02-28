@@ -26,7 +26,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   }
 
   return (
-    <main>
+    <>
       <article className={styles.article}>
         <Section backgroundColor="white">
           <div className={styles.articleHeader}>
@@ -71,6 +71,6 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           </div>
         </Section>
       </article>
-    </main>
+    </>
   );
 }

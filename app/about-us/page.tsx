@@ -21,7 +21,7 @@ export const metadata = {
 
 export default function AboutUsPage() {
   return (
-    <main>
+    <>
       {/* Organization Overview Section */}
       <Section backgroundColor="white">
         <div className={styles.overviewSection}>
@@ -107,6 +107,6 @@ export default function AboutUsPage() {
 
       {/* Values Section */}
       <ValuesSection />
-    </main>
+    </>
   );
 }

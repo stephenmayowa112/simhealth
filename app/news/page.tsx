@@ -18,7 +18,7 @@ export default function NewsPage() {
   };
 
   return (
-    <main>
+    <>
       <Section backgroundColor="white">
         <div className={styles.newsHeader}>
           <h1 className={styles.pageTitle}>News</h1>
@@ -58,6 +58,6 @@ export default function NewsPage() {
           </div>
         )}
       </Section>
-    </main>
+    </>
   );
 }

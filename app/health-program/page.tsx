@@ -45,7 +45,7 @@ export default function HealthProgramPage() {
   ];
 
   return (
-    <main>
+    <>
       <ProgramHero
         title="Health Program"
         imageUrl="/images/health-program-hero.jpg"
@@ -105,6 +105,6 @@ export default function HealthProgramPage() {
       <Section backgroundColor="white">
         <RelatedProjects projects={relatedProjects} title="Related Projects" />
       </Section>
-    </main>
+    </>
   );
 }

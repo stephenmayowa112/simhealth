@@ -4,7 +4,7 @@ import { Button, Card, Section } from '@/components';
 
 export default function ComponentsDemo() {
   return (
-    <main>
+    <>
       <Section backgroundColor="white">
         <h1 style={{ marginBottom: '32px', fontSize: '40px' }}>UI Components Demo</h1>
         
@@ -56,6 +56,6 @@ export default function ComponentsDemo() {
           max-width constraints (1200px) and responsive padding.
         </p>
       </Section>
-    </main>
+    </>
   );
 }

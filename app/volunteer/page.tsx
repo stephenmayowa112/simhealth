@@ -58,7 +58,7 @@ export default function VolunteerPage() {
   ];
 
   return (
-    <main>
+    <>
       {/* Hero Section */}
       <Section backgroundColor="green" className={styles.hero}>
         <div className={styles.heroContent}>
@@ -191,6 +191,6 @@ export default function VolunteerPage() {
           </div>
         </div>
       </Section>
-    </main>
+    </>
   );
 }

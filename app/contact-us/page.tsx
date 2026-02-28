@@ -54,7 +54,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <main>
+    <>
       {/* Hero Section */}
       <Section backgroundColor="green" className={styles.hero}>
         <div className={styles.heroContent}>
@@ -103,6 +103,6 @@ export default function ContactPage() {
           </p>
         </div>
       </Section>
-    </main>
+    </>
   );
 }
