@@ -1,0 +1,88 @@
+.newsPreview {
+  width: 100%;
+}
+
+.title {
+  font-size: var(--font-size-h2-desktop);
+  line-height: var(--line-height-h2-desktop);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.subtitle {
+  font-size: var(--font-size-body-large);
+  line-height: var(--line-height-body-large);
+  color: var(--color-gray-700);
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.articleContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.articleTitle {
+  font-size: var(--font-size-h4-desktop);
+  line-height: var(--line-height-h4-desktop);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+  margin: 0;
+}
+
+.articleDate {
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-body-small);
+  color: var(--color-gray-500);
+  margin: 0;
+}
+
+.articleExcerpt {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-gray-700);
+  margin: 0;
+}
+
+.readMore {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-green);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  margin-top: var(--spacing-sm);
+  display: inline-block;
+  padding: var(--spacing-sm) 0;
+  min-height: 44px; /* Ensure adequate touch target */
+  display: inline-flex;
+  align-items: center;
+}
+
+.readMore:hover {
+  color: var(--color-dark-green);
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+  .title {
+    font-size: var(--font-size-h2-mobile);
+    line-height: var(--line-height-h2-mobile);
+  }
+
+  .subtitle {
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .articleTitle {
+    font-size: var(--font-size-h4-mobile);
+    line-height: var(--line-height-h4-mobile);
+  }
+}

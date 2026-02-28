@@ -1,0 +1,280 @@
+.mobileNav {
+  background-color: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logoImage {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px; /* Increase touch target area */
+  margin: -10px; /* Negative margin to maintain visual size */
+  min-width: 44px; /* Minimum touch target */
+  min-height: 44px; /* Minimum touch target */
+  z-index: 1002;
+  align-items: center;
+}
+
+.hamburger:focus {
+  outline: 2px solid var(--color-dark-green);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.hamburgerLine {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-gray-900);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburgerLine.open:nth-child(1) {
+  transform: translateY(10.5px) rotate(45deg);
+}
+
+.hamburgerLine.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerLine.open:nth-child(3) {
+  transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-in Drawer */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 400px;
+  height: 100vh;
+  background-color: var(--color-white);
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.2);
+  z-index: 1002;
+  overflow-y: auto;
+  transition: right 0.3s ease;
+  padding: 24px;
+}
+
+.drawer.drawerOpen {
+  right: 0;
+}
+
+/* Close Button */
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--color-gray-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px; /* Minimum touch target */
+  min-height: 44px; /* Minimum touch target */
+}
+
+.closeButton:hover {
+  color: var(--color-dark-green);
+}
+
+.closeButton:focus {
+  outline: 2px solid var(--color-dark-green);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Navigation List */
+.navList {
+  list-style: none;
+  margin: 60px 0 0 0;
+  padding: 0;
+}
+
+.navItem {
+  margin-bottom: 8px;
+}
+
+.navItemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLink {
+  display: block;
+  padding: 12px 16px;
+  color: var(--color-gray-900);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  flex: 1;
+  min-height: 50px; /* Ensure adequate touch target */
+  display: flex;
+  align-items: center;
+}
+
+.navLink:hover {
+  background-color: var(--color-pale-green);
+  color: var(--color-dark-green);
+}
+
+.navLink:focus {
+  outline: 2px solid var(--color-dark-green);
+  outline-offset: 2px;
+}
+
+.navLink.active {
+  color: var(--color-dark-green);
+  background-color: var(--color-pale-green);
+  font-weight: 600;
+}
+
+/* Accordion Toggle Button */
+.accordionToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  color: var(--color-gray-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px; /* Minimum touch target */
+  min-height: 44px; /* Minimum touch target */
+}
+
+.accordionToggle:hover {
+  color: var(--color-dark-green);
+}
+
+.accordionToggle:focus {
+  outline: 2px solid var(--color-dark-green);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.accordionIcon {
+  transition: transform 0.3s ease;
+}
+
+.accordionIcon.expanded {
+  transform: rotate(180deg);
+}
+
+/* Sub-menu */
+.subMenu {
+  list-style: none;
+  margin: 4px 0 8px 0;
+  padding: 0 0 0 16px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subMenuItem {
+  margin: 0;
+}
+
+.subMenuLink {
+  display: block;
+  padding: 10px 16px;
+  color: var(--color-gray-700);
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  min-height: 44px; /* Minimum touch target */
+  display: flex;
+  align-items: center;
+}
+
+.subMenuLink:hover {
+  background-color: var(--color-pale-green);
+  color: var(--color-dark-green);
+}
+
+.subMenuLink:focus {
+  outline: 2px solid var(--color-dark-green);
+  outline-offset: 2px;
+}
+
+.subMenuLink.subMenuActive {
+  color: var(--color-dark-green);
+  font-weight: 600;
+}
+
+/* Hide on desktop */
+@media (min-width: 768px) {
+  .mobileNav {
+    display: none;
+  }
+}

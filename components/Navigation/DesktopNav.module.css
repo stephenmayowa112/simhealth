@@ -1,0 +1,133 @@
+.desktopNav {
+  background-color: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logoImage {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 32px;
+  align-items: center;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  display: inline-block;
+  padding: 8px 0;
+  color: var(--color-gray-900);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--color-dark-green);
+}
+
+.navLink:focus {
+  outline: 2px solid var(--color-dark-green);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Active page indicator with underline */
+.navLink.active {
+  color: var(--color-dark-green);
+}
+
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--color-dark-green);
+  border-radius: 2px;
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  list-style: none;
+  margin: 8px 0 0 0;
+  padding: 8px 0;
+  min-width: 250px;
+  z-index: 1001;
+}
+
+.dropdownItem {
+  margin: 0;
+  padding: 0;
+}
+
+.dropdownLink {
+  display: block;
+  padding: 12px 24px;
+  color: var(--color-gray-900);
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 22px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdownLink:hover {
+  background-color: var(--color-pale-green);
+  color: var(--color-dark-green);
+}
+
+.dropdownLink:focus {
+  outline: 2px solid var(--color-dark-green);
+  outline-offset: -2px;
+}
+
+.dropdownLink.dropdownActive {
+  color: var(--color-dark-green);
+  font-weight: 600;
+}
+
+/* Hide on mobile */
+@media (max-width: 767px) {
+  .desktopNav {
+    display: none;
+  }
+}

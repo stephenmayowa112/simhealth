@@ -1,0 +1,17 @@
+.contentWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.leadText {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  color: var(--gray-700);
+}
+
+@media (min-width: 768px) {
+  .leadText {
+    font-size: 1.25rem;
+  }
+}

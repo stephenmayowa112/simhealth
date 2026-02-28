@@ -1,0 +1,13 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- SimHealth Africa Logo -->
+  <g id="logo">
+    <!-- Icon/Symbol -->
+    <circle cx="30" cy="30" r="25" fill="#75c037"/>
+    <path d="M30 15 L30 45 M15 30 L45 30" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="30" cy="30" r="8" fill="#ffc42e"/>
+    
+    <!-- Text -->
+    <text x="60" y="28" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#48811a">SimHealth</text>
+    <text x="60" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">Africa</text>
+  </g>
+</svg>
