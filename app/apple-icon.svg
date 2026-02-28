@@ -1,0 +1,7 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- SimHealth Africa Apple Touch Icon -->
+  <rect width="180" height="180" fill="#75c037" rx="40"/>
+  <circle cx="90" cy="90" r="60" fill="#75c037"/>
+  <path d="M90 45 L90 135 M45 90 L135 90" stroke="white" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="90" cy="90" r="20" fill="#ffc42e"/>
+</svg>

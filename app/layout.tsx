@@ -21,11 +21,47 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: 'SimHealth Africa',
-  description: 'Africa Society for Improved Health Delivery',
-  viewport: 'width=device-width, initial-scale=1',
-  themeColor: '#75c037',
+  title: {
+    default: 'SimHealth Africa - Africa Society for Improved Health Delivery',
+    template: '%s | SimHealth Africa',
+  },
+  description: 'SimHealth Africa is dedicated to improving health delivery across Africa through innovative programs, training, and partnerships.',
+  keywords: ['SimHealth Africa', 'health delivery', 'Africa health', 'medical training', 'health programs', 'healthcare innovation'],
+  authors: [{ name: 'SimHealth Africa' }],
+  creator: 'SimHealth Africa',
+  publisher: 'SimHealth Africa',
   manifest: '/manifest.json',
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: [
+      { url: '/apple-icon.svg', type: 'image/svg+xml' },
+    ],
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://simhealthafrica.org',
+    siteName: 'SimHealth Africa',
+    title: 'SimHealth Africa - Africa Society for Improved Health Delivery',
+    description: 'Improving health delivery across Africa through innovative programs, training, and partnerships.',
+    images: [
+      {
+        url: '/logo.svg',
+        width: 200,
+        height: 60,
+        alt: 'SimHealth Africa Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SimHealth Africa',
+    description: 'Africa Society for Improved Health Delivery',
+    images: ['/logo.svg'],
+  },
 }
 
 export default function RootLayout({
