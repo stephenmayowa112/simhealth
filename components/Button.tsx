@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { colors, transitions, borderRadius, spacing } from '@/lib/design-tokens';
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -29,57 +28,54 @@ export const Button: React.FC<ButtonProps> = ({
     alignItems: 'center',
     justifyContent: 'center',
     fontWeight: 600,
-    borderRadius: borderRadius.sm,
+    fontFamily: 'var(--font-secondary)',
+    borderRadius: '999px',
     border: 'none',
     cursor: disabled ? 'not-allowed' : 'pointer',
     textDecoration: 'none',
-    transition: `background-color ${transitions.fast}, color ${transitions.fast}, border-color ${transitions.fast}`,
-    fontFamily: 'inherit',
+    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
     opacity: disabled ? 0.6 : 1,
+    position: 'relative',
+    overflow: 'hidden',
   };
 
   const sizeStyles: Record<string, React.CSSProperties> = {
     small: {
-      padding: `${spacing.sm} ${spacing.lg}`,
-      fontSize: '14px',
-      lineHeight: '20px',
-      minHeight: '44px', // Minimum touch target for mobile
+      padding: '10px 24px',
+      fontSize: '0.85rem',
+      lineHeight: '1.4',
+      minHeight: '44px',
     },
     medium: {
-      padding: `12px ${spacing.xl}`,
-      fontSize: '16px',
-      lineHeight: '24px',
-      minHeight: '48px', // Comfortable touch target
+      padding: '12px 32px',
+      fontSize: '0.95rem',
+      lineHeight: '1.5',
+      minHeight: '48px',
     },
     large: {
-      padding: `${spacing.md} 40px`,
-      fontSize: '18px',
-      lineHeight: '28px',
-      minHeight: '56px', // Large touch target
+      padding: '16px 40px',
+      fontSize: '1.05rem',
+      lineHeight: '1.5',
+      minHeight: '56px',
     },
   };
 
   const variantStyles: Record<string, React.CSSProperties> = {
     primary: {
-      backgroundColor: colors.brand.darkGreen, // Using dark green for better contrast (4.6:1)
-      color: colors.neutral.white,
+      backgroundColor: '#4a9e22',
+      color: '#ffffff',
+      boxShadow: '0 2px 12px rgba(74, 158, 34, 0.35)',
     },
     secondary: {
       backgroundColor: 'transparent',
-      color: colors.brand.darkGreen, // Using dark green for consistency
-      border: `2px solid ${colors.brand.darkGreen}`,
+      color: '#1a3d0c',
+      border: '2px solid #1a3d0c',
     },
     text: {
       backgroundColor: 'transparent',
-      color: colors.brand.darkGreen, // Using dark green for better contrast
+      color: '#4a9e22',
       padding: sizeStyles[size].padding,
     },
-  };
-
-  const hoverStyles: Record<string, string> = {
-    primary: colors.brand.primaryGreen, // Hover to primary green
-    secondary: colors.brand.darkGreen, // Hover to dark green
-    text: '#3a6614', // Darker green for text hover (even better contrast)
   };
 
   const combinedStyles = {
@@ -92,27 +88,30 @@ export const Button: React.FC<ButtonProps> = ({
     if (disabled) return;
     const target = e.currentTarget as HTMLElement;
     if (variant === 'primary') {
-      target.style.backgroundColor = hoverStyles.primary;
+      target.style.backgroundColor = '#3d8a1b';
+      target.style.boxShadow = '0 4px 20px rgba(74, 158, 34, 0.5)';
+      target.style.transform = 'translateY(-2px)';
     } else if (variant === 'secondary') {
-      target.style.backgroundColor = hoverStyles.secondary;
-      target.style.color = colors.neutral.white;
-      target.style.borderColor = hoverStyles.secondary;
+      target.style.backgroundColor = '#1a3d0c';
+      target.style.color = '#ffffff';
+      target.style.transform = 'translateY(-2px)';
     } else if (variant === 'text') {
-      target.style.color = hoverStyles.text;
+      target.style.color = '#1a3d0c';
     }
   };
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
     if (disabled) return;
     const target = e.currentTarget as HTMLElement;
+    target.style.transform = 'translateY(0)';
     if (variant === 'primary') {
-      target.style.backgroundColor = colors.brand.darkGreen;
+      target.style.backgroundColor = '#4a9e22';
+      target.style.boxShadow = '0 2px 12px rgba(74, 158, 34, 0.35)';
     } else if (variant === 'secondary') {
       target.style.backgroundColor = 'transparent';
-      target.style.color = colors.brand.darkGreen;
-      target.style.borderColor = colors.brand.darkGreen;
+      target.style.color = '#1a3d0c';
     } else if (variant === 'text') {
-      target.style.color = colors.brand.darkGreen;
+      target.style.color = '#4a9e22';
     }
   };
 
