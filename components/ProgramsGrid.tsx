@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Section } from './Section';
 import { Grid } from './Grid';
@@ -26,22 +28,46 @@ export const ProgramsGrid: React.FC<ProgramsGridProps> = ({
   programs,
   backgroundColor = 'white',
 }) => {
+  const sectionRef = React.useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Section backgroundColor={backgroundColor}>
-      <div className={styles.programsGrid}>
+      <div ref={sectionRef} className={`${styles.programsGrid} ${isVisible ? styles.visible : ''}`}>
         {title && <h2 className={styles.title}>{title}</h2>}
         {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         <Grid columns={{ desktop: 3, tablet: 2, mobile: 1 }} gap="lg">
-          {programs.map((program) => (
-            <Card
+          {programs.map((program, index) => (
+            <div
               key={program.id}
-              title={program.title}
-              description={program.description}
-              imageUrl={program.imageUrl}
-              imageAlt={program.imageAlt}
-              link={program.link}
-              variant="default"
-            />
+              className={styles.cardWrapper}
+              style={{ animationDelay: `${0.1 + index * 0.12}s` }}
+            >
+              <Card
+                title={program.title}
+                description={program.description}
+                imageUrl={program.imageUrl}
+                imageAlt={program.imageAlt}
+                link={program.link}
+                variant="default"
+              />
+            </div>
           ))}
         </Grid>
       </div>
