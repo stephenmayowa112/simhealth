@@ -13,7 +13,7 @@
   transform: translateY(24px);
 }
 
-.missionStatement.visible {
+:global(html.js) .missionStatement.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -33,7 +33,7 @@
   transform: scale(0.8);
 }
 
-.visible .quoteIcon {
+:global(html.js) .visible .quoteIcon {
   opacity: 1;
   transform: scale(1);
 }
@@ -77,7 +77,7 @@
   transform: translateY(16px);
 }
 
-.visible .title {
+:global(html.js) .visible .title {
   opacity: 1;
   transform: translateY(0);
 }
@@ -97,7 +97,7 @@
   transform: translateY(16px);
 }
 
-.visible .content {
+:global(html.js) .visible .content {
   opacity: 1;
   transform: translateY(0);
 }

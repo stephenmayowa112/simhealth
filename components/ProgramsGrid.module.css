@@ -19,7 +19,7 @@
   transform: translateY(20px);
 }
 
-.visible .title {
+:global(html.js) .visible .title {
   opacity: 1;
   transform: translateY(0);
 }
@@ -43,7 +43,7 @@
   transform: translateY(16px);
 }
 
-.visible .subtitle {
+:global(html.js) .visible .subtitle {
   opacity: 1;
   transform: translateY(0);
 }
@@ -59,7 +59,7 @@
   transform: translateY(32px);
 }
 
-.visible .cardWrapper {
+:global(html.js) .visible .cardWrapper {
   animation-play-state: running;
 }
 

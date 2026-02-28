@@ -134,7 +134,7 @@
   transform: translateY(12px);
 }
 
-.visible .eyebrow {
+:global(html.js) .visible .eyebrow {
   opacity: 1;
   transform: translateY(0);
 }
@@ -164,7 +164,7 @@
   animation-play-state: paused;
 }
 
-.visible .titleWord {
+:global(html.js) .visible .titleWord {
   animation-play-state: running;
 }
 
@@ -190,7 +190,7 @@
   transform: translateY(16px);
 }
 
-.visible .subtitle {
+:global(html.js) .visible .subtitle {
   opacity: 1;
   transform: translateY(0);
 }
@@ -206,7 +206,7 @@
   transform: translateY(16px);
 }
 
-.visible .ctaWrapper {
+:global(html.js) .visible .ctaWrapper {
   opacity: 1;
   transform: translateY(0);
 }

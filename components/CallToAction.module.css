@@ -62,7 +62,7 @@
   transform: translateY(20px);
 }
 
-.visible .title {
+:global(html.js) .visible .title {
   opacity: 1;
   transform: translateY(0);
 }
@@ -85,7 +85,7 @@
   transform: translateY(16px);
 }
 
-.visible .description {
+:global(html.js) .visible .description {
   opacity: 1;
   transform: translateY(0);
 }
@@ -100,7 +100,7 @@
   transform: translateY(16px);
 }
 
-.visible .buttonWrapper {
+:global(html.js) .visible .buttonWrapper {
   opacity: 1;
   transform: translateY(0);
 }
