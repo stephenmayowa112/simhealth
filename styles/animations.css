@@ -1,22 +1,56 @@
 /* ============================================
-   Animation Utilities
+   SimHealth Africa - Cinematic Animations
    ============================================ */
 
-/* Fade-in animation for sections */
-@keyframes fadeIn {
-  from {
+/*  Expo easing references  */
+/* Entry: cubic-bezier(0.16, 1, 0.3, 1)  */
+/* Exit:  cubic-bezier(0.65, 0, 0.35, 1)  */
+
+/*  Hero floating shapes  */
+@keyframes floatShape1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(180deg); }
+}
+
+@keyframes floatShape2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(-180deg); }
+}
+
+@keyframes floatShape3 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-40px) rotate(90deg); }
+}
+
+/*  Particle drift upward  */
+@keyframes particleDrift {
+  0% {
+    transform: translateY(0) translateX(0);
     opacity: 0;
   }
-  to {
-    opacity: 1;
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(20px);
+    opacity: 0;
   }
 }
 
-/* Slide-up animation for cards and content */
-@keyframes slideUp {
+/*  Word reveal (clip mask)  */
+@keyframes wordReveal {
+  from { transform: translateY(110%); }
+  to { transform: translateY(0); }
+}
+
+/*  Fade up  */
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -24,11 +58,29 @@
   }
 }
 
-/* Slide-in from left */
+/*  Fade in  */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/*  Slide up  */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*  Slide in from left  */
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-30px);
   }
   to {
     opacity: 1;
@@ -36,11 +88,11 @@
   }
 }
 
-/* Slide-in from right */
+/*  Slide in from right  */
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateX(30px);
   }
   to {
     opacity: 1;
@@ -48,11 +100,11 @@
   }
 }
 
-/* Scale-in animation */
+/*  Scale in  */
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.92);
   }
   to {
     opacity: 1;
@@ -60,59 +112,104 @@
   }
 }
 
-/* Animation utility classes */
+/*  Underline draw  */
+@keyframes drawUnderline {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/*  Scroll indicator bounce  */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(12px); opacity: 0.5; }
+}
+
+/*  Shimmer sweep (for buttons)  */
+@keyframes shimmerSweep {
+  from { transform: skewX(-20deg) translateX(-200%); }
+  to { transform: skewX(-20deg) translateX(400%); }
+}
+
+/*  Heartbeat pulse (CTA)  */
+@keyframes heartbeatPulse {
+  0% { box-shadow: 0 0 0 0 rgba(245, 200, 66, 0.5); }
+  70% { box-shadow: 0 0 0 14px rgba(245, 200, 66, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 200, 66, 0); }
+}
+
+/*  Blob morph (CTA background)  */
+@keyframes blobMorph {
+  0%, 100% {
+    border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+    transform: rotate(0deg) scale(1);
+  }
+  33% {
+    border-radius: 60% 40% 40% 60% / 60% 60% 40% 40%;
+    transform: rotate(120deg) scale(1.05);
+  }
+  66% {
+    border-radius: 50% 50% 40% 60% / 40% 60% 50% 50%;
+    transform: rotate(240deg) scale(0.95);
+  }
+}
+
+/*  Count up (placeholder, actual done in JS)  */
+@keyframes countPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/*  Nav fade in  */
+@keyframes navFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*  Image zoom on hover  */
+@keyframes subtleZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
+
+/*  Animation utility classes  */
 .animate-fade-in {
-  animation: fadeIn 0.4s ease forwards;
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-slide-up {
-  animation: slideUp 0.5s ease forwards;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-slide-in-left {
-  animation: slideInLeft 0.5s ease forwards;
+  animation: slideInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-slide-in-right {
-  animation: slideInRight 0.5s ease forwards;
+  animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-scale-in {
-  animation: scaleIn 0.4s ease forwards;
+  animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Staggered animation delays for multiple items */
-.animate-delay-100 {
-  animation-delay: 0.1s;
-}
+/* Staggered delays */
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
 
-.animate-delay-200 {
-  animation-delay: 0.2s;
-}
+/* Scroll-triggered */
+.animate-on-scroll { opacity: 0; }
+.animate-on-scroll.is-visible { opacity: 1; }
 
-.animate-delay-300 {
-  animation-delay: 0.3s;
-}
-
-.animate-delay-400 {
-  animation-delay: 0.4s;
-}
-
-.animate-delay-500 {
-  animation-delay: 0.5s;
-}
-
-/* Initial state for animated elements */
-.animate-on-scroll {
-  opacity: 0;
-}
-
-/* Visible state when element enters viewport */
-.animate-on-scroll.is-visible {
-  opacity: 1;
-}
-
-/* Reduced motion support - disable animations when user prefers reduced motion */
+/*  Reduced motion  */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
