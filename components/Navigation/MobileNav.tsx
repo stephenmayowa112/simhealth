@@ -2,9 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { colors, transitions } from '@/lib/design-tokens';
 import styles from './MobileNav.module.css';
 
 export interface NavItem {
@@ -26,6 +24,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = React.useState(false);
   const [expandedItems, setExpandedItems] = React.useState<Set<string>>(new Set());
+  const [scrolled, setScrolled] = React.useState(false);
 
   const isActive = (href: string) => {
     if (href === '/') {
@@ -37,7 +36,6 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     if (!isOpen) {
-      // Prevent body scroll when menu is open
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -59,24 +57,32 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
     setExpandedItems(newExpanded);
   };
 
-  // Close menu on route change
   React.useEffect(() => {
     closeMenu();
   }, [pathname]);
 
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Separate volunteer CTA from regular items
+  const regularItems = items.filter(item => item.href !== '/volunteer');
+  const volunteerItem = items.find(item => item.href === '/volunteer');
+
   return (
     <>
-      {/* Mobile Header */}
-      <nav className={styles.mobileNav} aria-label="Mobile navigation">
+      <nav
+        className={`${styles.mobileNav} ${scrolled ? styles.scrolled : ''}`}
+        aria-label="Mobile navigation"
+      >
         <div className={styles.header}>
-          {/* Logo */}
-          {logo && (
-            <Link href={logo.href || '/'} className={styles.logo}>
-              <Image src={logo.src} alt={logo.alt} width={150} height={50} className={styles.logoImage} priority />
-            </Link>
-          )}
+          <Link href={logo?.href || '/'} className={styles.logo}>
+            <span className={styles.logoText}>SimHealth Africa</span>
+          </Link>
 
-          {/* Hamburger Menu Button */}
           <button
             className={styles.hamburger}
             onClick={toggleMenu}
@@ -90,7 +96,6 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
         </div>
       </nav>
 
-      {/* Overlay */}
       {isOpen && (
         <div
           className={styles.overlay}
@@ -99,9 +104,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
         />
       )}
 
-      {/* Slide-in Drawer */}
       <div className={`${styles.drawer} ${isOpen ? styles.drawerOpen : ''}`}>
-        {/* Close Button */}
         <button
           className={styles.closeButton}
           onClick={closeMenu}
@@ -112,9 +115,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
           </svg>
         </button>
 
-        {/* Navigation Items */}
         <ul className={styles.navList}>
-          {items.map((item) => {
+          {regularItems.map((item) => {
             const hasChildren = item.children && item.children.length > 0;
             const active = isActive(item.href);
             const isExpanded = expandedItems.has(item.href);
@@ -129,7 +131,6 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
                     {item.label}
                   </Link>
 
-                  {/* Accordion Toggle Button */}
                   {hasChildren && (
                     <button
                       className={styles.accordionToggle}
@@ -157,7 +158,6 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
                   )}
                 </div>
 
-                {/* Sub-menu (Accordion) */}
                 {hasChildren && isExpanded && (
                   <ul className={styles.subMenu}>
                     {item.children!.map((child) => (
@@ -178,6 +178,14 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
             );
           })}
         </ul>
+
+        {volunteerItem && (
+          <div className={styles.drawerCta}>
+            <Link href={volunteerItem.href} className={styles.drawerCtaButton}>
+              {volunteerItem.label}
+            </Link>
+          </div>
+        )}
       </div>
     </>
   );
