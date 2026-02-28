@@ -1,40 +1,73 @@
 .desktopNav {
-  background-color: var(--color-white);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  position: sticky;
+  background-color: transparent;
+  position: fixed;
   top: 0;
   z-index: 1000;
   width: 100%;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              backdrop-filter 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: navFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.desktopNav.scrolled {
+  background-color: rgba(250, 247, 239, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 24px rgba(14, 28, 6, 0.08);
 }
 
 .container {
-  max-width: 1200px;
+  max-width: var(--max-content-width, 1280px);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(16px, 3vw, 32px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 80px;
 }
 
+/* Logo */
 .logo {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   text-decoration: none;
+  gap: 2px;
 }
 
-.logoImage {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
+.logoText {
+  font-family: var(--font-primary);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--color-cream, #faf7ef);
+  line-height: 1.2;
+  transition: color 0.3s;
 }
 
+.scrolled .logoText {
+  color: var(--color-dark-green, #1a3d0c);
+}
+
+.logoTagline {
+  font-family: var(--font-accent);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(250, 247, 239, 0.6);
+  transition: color 0.3s;
+}
+
+.scrolled .logoTagline {
+  color: var(--color-gray-500, #808080);
+}
+
+/* Nav List */
 .navList {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 32px;
+  gap: clamp(16px, 2vw, 28px);
   align-items: center;
 }
 
@@ -42,57 +75,104 @@
   position: relative;
 }
 
+/* Nav Link */
 .navLink {
   display: inline-block;
   padding: 8px 0;
-  color: var(--color-gray-900);
+  color: rgba(250, 247, 239, 0.85);
   text-decoration: none;
+  font-family: var(--font-secondary);
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  transition: color 0.2s ease;
+  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+  line-height: 1.4;
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
 }
 
-.navLink:hover {
-  color: var(--color-dark-green);
+.scrolled .navLink {
+  color: var(--color-gray-900, #1a1a1a);
 }
 
-.navLink:focus {
-  outline: 2px solid var(--color-dark-green);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-/* Active page indicator with underline */
-.navLink.active {
-  color: var(--color-dark-green);
-}
-
-.navLink.active::after {
+/* Animated underline on hover */
+.navLink::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
-  height: 3px;
-  background-color: var(--color-dark-green);
-  border-radius: 2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary-green, #4a9e22);
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Dropdown menu */
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink:hover {
+  color: var(--color-primary-green, #4a9e22);
+}
+
+.navLink:focus-visible {
+  outline: 2px solid var(--color-primary-green, #4a9e22);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Active link */
+.navLink.active {
+  color: var(--color-primary-green, #4a9e22);
+}
+
+.navLink.active::after {
+  width: 100%;
+  background-color: var(--color-primary-green, #4a9e22);
+}
+
+/* CTA Button */
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  background-color: var(--color-primary-green, #4a9e22);
+  color: #fff;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: var(--radius-pill, 999px);
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(74, 158, 34, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ctaButton:hover {
+  box-shadow: 0 4px 20px rgba(74, 158, 34, 0.5);
+  transform: translateY(-1px);
+  background-color: #3d8a1b;
+}
+
+.ctaButton:focus-visible {
+  outline: 2px solid var(--color-warm-gold, #f5c842);
+  outline-offset: 3px;
+}
+
+/* Dropdown */
 .dropdown {
   position: absolute;
   top: 100%;
-  left: 0;
-  background-color: var(--color-white);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  border-radius: 8px;
+  left: -12px;
+  background-color: rgba(250, 247, 239, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(14, 28, 6, 0.12);
+  border-radius: var(--radius-md, 12px);
   list-style: none;
   margin: 8px 0 0 0;
   padding: 8px 0;
-  min-width: 250px;
+  min-width: 260px;
   z-index: 1001;
+  animation: fadeUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .dropdownItem {
@@ -103,25 +183,25 @@
 .dropdownLink {
   display: block;
   padding: 12px 24px;
-  color: var(--color-gray-900);
+  color: var(--color-gray-900, #1a1a1a);
   text-decoration: none;
-  font-size: 15px;
-  line-height: 22px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .dropdownLink:hover {
-  background-color: var(--color-pale-green);
-  color: var(--color-dark-green);
+  background-color: var(--color-pale-green, #e2f0d5);
+  color: var(--color-dark-green, #1a3d0c);
 }
 
-.dropdownLink:focus {
-  outline: 2px solid var(--color-dark-green);
+.dropdownLink:focus-visible {
+  outline: 2px solid var(--color-primary-green, #4a9e22);
   outline-offset: -2px;
 }
 
 .dropdownLink.dropdownActive {
-  color: var(--color-dark-green);
+  color: var(--color-primary-green, #4a9e22);
   font-weight: 600;
 }
 
@@ -129,5 +209,28 @@
 @media (max-width: 767px) {
   .desktopNav {
     display: none;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desktopNav {
+    animation: none;
+  }
+  .navLink::after {
+    transition: none;
+  }
+  .dropdown {
+    animation: none;
   }
 }

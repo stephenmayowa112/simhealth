@@ -2,9 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { colors, transitions, spacing } from '@/lib/design-tokens';
 import styles from './DesktopNav.module.css';
 
 export interface NavItem {
@@ -25,27 +23,41 @@ export interface DesktopNavProps {
 export const DesktopNav: React.FC<DesktopNavProps> = ({ logo, items }) => {
   const pathname = usePathname();
   const [activeDropdown, setActiveDropdown] = React.useState<string | null>(null);
+  const [scrolled, setScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const isActive = (href: string) => {
-    if (href === '/') {
-      return pathname === '/';
-    }
+    if (href === '/') return pathname === '/';
     return pathname.startsWith(href);
   };
 
+  // Separate "Get Involved" / "Volunteer" as the CTA
+  const mainItems = items.filter(i => i.href !== '/volunteer');
+  const ctaItem = items.find(i => i.href === '/volunteer');
+
   return (
-    <nav className={styles.desktopNav} aria-label="Main navigation">
+    <nav
+      className={`${styles.desktopNav} ${scrolled ? styles.scrolled : ''}`}
+      aria-label="Main navigation"
+    >
       <div className={styles.container}>
-        {/* Logo */}
-        {logo && (
-          <Link href={logo.href || '/'} className={styles.logo}>
-            <Image src={logo.src} alt={logo.alt} width={150} height={50} className={styles.logoImage} priority />
-          </Link>
-        )}
+        {/* Logo as text */}
+        <Link href={logo?.href || '/'} className={styles.logo}>
+          <span className={styles.logoText}>SimHealth Africa</span>
+          <span className={styles.logoTagline}>Africa Society for Improved Health Delivery</span>
+        </Link>
 
         {/* Navigation Links */}
         <ul className={styles.navList}>
-          {items.map((item) => {
+          {mainItems.map((item) => {
             const hasChildren = item.children && item.children.length > 0;
             const active = isActive(item.href);
 
@@ -63,7 +75,6 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({ logo, items }) => {
                   {item.label}
                 </Link>
 
-                {/* Dropdown for sub-menu */}
                 {hasChildren && activeDropdown === item.href && (
                   <ul className={styles.dropdown}>
                     {item.children!.map((child) => (
@@ -83,6 +94,14 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({ logo, items }) => {
               </li>
             );
           })}
+          {/* CTA Button */}
+          {ctaItem && (
+            <li className={styles.navItem}>
+              <Link href={ctaItem.href} className={styles.ctaButton}>
+                {ctaItem.label}
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </nav>
