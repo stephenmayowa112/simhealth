@@ -7,7 +7,7 @@
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   line-height: 1.2;
   font-weight: 700;
-  color: var(--color-dark-green, #1a3d0c);
+  color: var(--color-white);
   text-align: center;
   margin-bottom: clamp(12px, 1.5vw, 16px);
   transition:
@@ -29,7 +29,7 @@
   font-family: var(--font-secondary);
   font-size: clamp(1rem, 1.4vw, 1.15rem);
   line-height: 1.7;
-  color: var(--color-gray-700, #555);
+  color: rgba(255, 255, 255, 0.7);
   text-align: center;
   margin-bottom: clamp(32px, 4vw, 48px);
   max-width: 700px;
@@ -70,6 +70,7 @@
     opacity: 0;
     transform: translateY(32px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -77,6 +78,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .title,
   .subtitle,
   .cardWrapper {

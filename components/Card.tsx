@@ -40,7 +40,7 @@ export const Card: React.FC<CardProps> = ({
     fontSize: variant === 'compact' ? '18px' : 'clamp(1.15rem, 1.5vw, 1.3rem)',
     fontWeight: 700,
     fontFamily: 'var(--font-primary)',
-    color: 'var(--color-dark-green, #1a3d0c)',
+    color: 'var(--color-white)',
     marginBottom: '8px',
     lineHeight: 1.3,
   }
@@ -48,8 +48,7 @@ export const Card: React.FC<CardProps> = ({
   const descriptionStyles: React.CSSProperties = {
     fontSize: variant === 'compact' ? '14px' : '15px',
     fontFamily: 'var(--font-secondary)',
-    color: 'var(--color-ink, #0e1c06)',
-    opacity: 0.75,
+    color: 'rgba(255, 255, 255, 0.7)',
     lineHeight: 1.6,
   }
 

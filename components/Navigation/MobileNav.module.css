@@ -11,10 +11,11 @@
 }
 
 .mobileNav.scrolled {
-  background-color: rgba(250, 247, 239, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 1px 16px rgba(14, 28, 6, 0.08);
+  background-color: var(--glass-bg-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+  border-bottom: 1px solid var(--glass-border-green);
 }
 
 .header {
@@ -46,7 +47,7 @@
 }
 
 .scrolled .logoText {
-  color: var(--color-dark-green, #1a3d0c);
+  color: var(--color-white);
 }
 
 /* Hamburger */
@@ -86,7 +87,7 @@
 }
 
 .scrolled .hamburgerLine {
-  background-color: var(--color-gray-900, #1a1a1a);
+  background-color: var(--color-white);
 }
 
 .hamburgerLine.open:nth-child(1) {
@@ -117,6 +118,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -131,8 +133,8 @@
   max-width: 400px;
   height: 100vh;
   height: 100dvh;
-  background-color: var(--color-cream, #faf7ef);
-  box-shadow: -8px 0 32px rgba(14, 28, 6, 0.15);
+  background-color: var(--color-slate-black);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5);
   z-index: 1002;
   overflow-y: auto;
   transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -152,7 +154,7 @@
   border: none;
   cursor: pointer;
   padding: 8px;
-  color: var(--color-gray-900, #1a1a1a);
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,8 +165,8 @@
 }
 
 .closeButton:hover {
-  background-color: rgba(26, 61, 12, 0.08);
-  color: var(--color-dark-green, #1a3d0c);
+  background-color: rgba(106, 210, 32, 0.15);
+  color: var(--color-white);
 }
 
 .closeButton:focus-visible {
@@ -193,7 +195,7 @@
   display: flex;
   align-items: center;
   padding: 14px 16px;
-  color: var(--color-gray-900, #1a1a1a);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-family: var(--font-secondary);
   font-weight: 500;
@@ -208,8 +210,8 @@
 }
 
 .navLink:hover {
-  background-color: rgba(74, 158, 34, 0.08);
-  color: var(--color-primary-green, #4a9e22);
+  background-color: rgba(106, 210, 32, 0.15);
+  color: var(--color-white);
 }
 
 .navLink:focus-visible {
@@ -219,7 +221,7 @@
 
 .navLink.active {
   color: var(--color-primary-green, #4a9e22);
-  background-color: rgba(74, 158, 34, 0.08);
+  background-color: rgba(106, 210, 32, 0.1);
   font-weight: 600;
 }
 
@@ -229,7 +231,7 @@
   border: none;
   cursor: pointer;
   padding: 12px;
-  color: var(--color-gray-500, #808080);
+  color: rgba(255, 255, 255, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -242,8 +244,8 @@
 }
 
 .accordionToggle:hover {
-  color: var(--color-primary-green, #4a9e22);
-  background-color: rgba(74, 158, 34, 0.06);
+  color: var(--color-white);
+  background-color: rgba(106, 210, 32, 0.15);
 }
 
 .accordionToggle:focus-visible {
@@ -272,6 +274,7 @@
     opacity: 0;
     transform: translateY(-8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -286,7 +289,7 @@
   display: flex;
   align-items: center;
   padding: 10px 16px;
-  color: var(--color-gray-700, #555);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -298,8 +301,8 @@
 }
 
 .subMenuLink:hover {
-  background-color: rgba(74, 158, 34, 0.06);
-  color: var(--color-dark-green, #1a3d0c);
+  background-color: rgba(106, 210, 32, 0.1);
+  color: var(--color-white);
 }
 
 .subMenuLink:focus-visible {
@@ -351,9 +354,11 @@
   .mobileNav {
     display: none;
   }
+
   .drawer {
     display: none;
   }
+
   .overlay {
     display: none;
   }
@@ -363,15 +368,19 @@
   .mobileNav {
     transition: none;
   }
+
   .drawer {
     transition: none;
   }
+
   .overlay {
     animation: none;
   }
+
   .subMenu {
     animation: none;
   }
+
   .hamburgerLine {
     transition: none;
   }

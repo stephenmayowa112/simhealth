@@ -143,7 +143,7 @@ export default function Home() {
       </section>
 
       {/* 3. PROGRAMS OVERVIEW (Glassmorphism & Staggered Reveal) */}
-      <section style={{ padding: '8rem 2rem', backgroundColor: 'var(--color-white)', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '8rem 2rem', backgroundColor: 'var(--color-slate-black)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'radial-gradient(circle at top right, rgba(255,202,0,0.05), transparent 40%)' }} />
 
         <div style={{ maxWidth: 'var(--max-content-width)', margin: '0 auto', position: 'relative' }}>
@@ -155,8 +155,8 @@ export default function Home() {
             style={{ textAlign: 'center', marginBottom: '5rem', maxWidth: '800px', margin: '0 auto 5rem' }}
           >
             <h2 style={{ fontSize: '1rem', fontWeight: 800, letterSpacing: '2px', color: 'var(--color-primary-green)', textTransform: 'uppercase', marginBottom: '1rem' }}>Health | Capacity | Innovation</h2>
-            <h3 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: 'var(--color-slate-black)', marginBottom: '1.5rem', lineHeight: 1.2, fontFamily: 'var(--font-primary)' }}>Propelling Sustainable Healthcare Growth</h3>
-            <p style={{ color: 'var(--color-gray-700)', fontSize: '1.1rem', lineHeight: 1.7 }}>
+            <h3 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: 'var(--color-white)', marginBottom: '1.5rem', lineHeight: 1.2, fontFamily: 'var(--font-primary)' }}>Propelling Sustainable Healthcare Growth</h3>
+            <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '1.1rem', lineHeight: 1.7 }}>
               Managed by leading experts and professionals, SimHealth Africa drives capacity building, technical support, and rapid innovation deployment across the continent.
             </p>
           </motion.div>
@@ -178,10 +178,22 @@ export default function Home() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                whileHover={{ scale: 1.03, backgroundColor: 'var(--color-primary-green)', color: 'white' }}
-                style={{ padding: '3rem 2rem', backgroundColor: 'var(--color-surface-soft)', borderRadius: 'var(--radius-lg)', textAlign: 'center', transition: 'all 0.4s ease', cursor: 'pointer', border: '1px solid rgba(0,0,0,0.04)', color: 'var(--color-slate-black)' }}
+                whileHover={{ scale: 1.03, backgroundColor: 'rgba(106, 210, 32, 0.15)', color: 'var(--color-white)', borderColor: 'var(--glass-border-green)' }}
+                style={{
+                  padding: '3rem 2rem',
+                  backgroundColor: 'var(--glass-bg-dark)',
+                  backdropFilter: 'var(--glass-blur)',
+                  WebkitBackdropFilter: 'var(--glass-blur)',
+                  borderRadius: 'var(--radius-lg)',
+                  textAlign: 'center',
+                  transition: 'all 0.4s ease',
+                  cursor: 'pointer',
+                  border: '1px solid var(--glass-border-dark)',
+                  boxShadow: 'var(--glass-shadow)',
+                  color: 'var(--color-white)'
+                }}
               >
-                <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'center', opacity: 0.8 }}>
+                <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'center', opacity: 0.9, color: 'var(--color-primary-green)' }}>
                   {prog.icon}
                 </div>
                 <h4 style={{ fontSize: '1.1rem', fontWeight: 800, fontFamily: 'var(--font-primary)' }}>{prog.title}</h4>
@@ -191,7 +203,7 @@ export default function Home() {
 
           <div style={{ textAlign: 'center', marginTop: '4rem' }}>
             <Link href="/programs">
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} style={{ padding: '1rem 2.5rem', backgroundColor: 'var(--color-slate-black)', color: 'white', border: 'none', borderRadius: 'var(--radius-pill)', fontSize: '1rem', fontWeight: 700, cursor: 'pointer', boxShadow: 'var(--shadow-md)' }}>
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} style={{ padding: '1rem 2.5rem', backgroundColor: 'var(--color-primary-green)', color: 'white', border: 'none', borderRadius: 'var(--radius-pill)', fontSize: '1rem', fontWeight: 700, cursor: 'pointer', boxShadow: 'var(--shadow-glow-green)' }}>
                 View All Programs
               </motion.button>
             </Link>

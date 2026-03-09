@@ -108,6 +108,33 @@
 
   /* Layout */
   --max-content-width: 1280px;
+
+  /* Glassmorphism Utilities */
+  --glass-bg-dark: rgba(15, 23, 42, 0.7);
+  --glass-bg-light: rgba(255, 255, 255, 0.1);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+  --glass-border-green: rgba(106, 210, 32, 0.2);
+  --glass-blur: blur(16px);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   Glassmorphism Utility Classes
+   ============================================ */
+.glass-panel-dark {
+  background-color: var(--glass-bg-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border-green);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-panel-light {
+  background-color: var(--glass-bg-light);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border-dark);
+  box-shadow: var(--glass-shadow);
 }
 
 /* ============================================
