@@ -90,7 +90,7 @@ export default function Home() {
 
       {/* 2. VISION / MISSION / VALUES (Neuromorphic Cards) */}
       <section style={{ padding: '8rem 2rem', position: 'relative', zIndex: 20 }}>
-        <div style={{ maxWidth: 'var(--max-content-width)', margin: '-12rem auto 0' }}>
+        <div style={{ maxWidth: 'var(--max-content-width)', margin: '-4rem auto 0' }}>
           <motion.div
             initial="hidden"
             whileInView="visible"
