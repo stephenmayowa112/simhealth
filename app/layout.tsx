@@ -163,7 +163,16 @@ export default function RootLayout({
 
             {/* Column 3: Map */}
             <div className="footer-section" style={{ flex: '1 1 300px' }}>
-              <img src="https://placehold.co/300x400/eeeeee/999999?text=Map+Location" alt="Location Map" style={{ width: '100%', height: 'auto', maxWidth: '300px', borderRadius: '8px', border: '1px solid #ddd' }} />
+              <iframe
+                src="https://maps.google.com/maps?q=simHealth+Africa&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="300"
+                style={{ border: 0, borderRadius: '8px', maxWidth: '300px' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="SimHealth Africa Location"
+              ></iframe>
             </div>
           </div>
           <div className="footer-bottom" style={{ backgroundColor: '#2b5f16', padding: '1rem', textAlign: 'center', color: 'white', borderTop: 'none', marginTop: 0 }}>
