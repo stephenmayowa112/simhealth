@@ -129,7 +129,12 @@ export default function RootLayout({
           </div>
           <div className="footer-content">
             <div className="footer-section footer-brand">
-              <h3 className="footer-logo-text">SimHealth Africa</h3>
+              <img
+                src="/images/logo1.png"
+                alt="SimHealth Africa Logo"
+                className="footer-logo-image"
+                style={{ maxWidth: '200px', height: 'auto', marginBottom: '1rem' }}
+              />
               <p className="footer-tagline">
                 Africa Society for Improved Health Delivery
               </p>
