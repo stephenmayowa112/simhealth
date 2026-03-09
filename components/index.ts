@@ -45,3 +45,4 @@ export type { ContactInfoProps, ContactInfoItem } from './ContactInfo'
 export { ScrollToTop } from './ScrollToTop'
 
 export { CustomCursor } from './CustomCursor'
+export { SubpageHero } from './SubpageHero'
