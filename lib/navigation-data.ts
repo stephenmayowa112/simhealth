@@ -12,10 +12,6 @@ export const navigationItems: NavItem[] = [
   {
     label: 'About Us',
     href: '/about-us',
-    children: [
-      { label: 'Who We Are', href: '/about-us#who-we-are' },
-      { label: 'Our Team', href: '/team' },
-    ]
   },
   {
     label: 'Our Programs',
