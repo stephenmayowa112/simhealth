@@ -106,8 +106,21 @@ export default function Home() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                whileHover={{ y: -10, boxShadow: 'var(--shadow-lg)' }}
-                style={{ backgroundColor: 'var(--color-white)', padding: '3rem 2.5rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-md)', transition: 'box-shadow 0.3s ease', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', border: '1px solid rgba(0,0,0,0.03)' }}
+                whileHover={{ y: -10, boxShadow: '0 30px 60px -15px rgba(0,0,0,0.1), 0 20px 30px -10px rgba(0,0,0,0.08)' }}
+                style={{
+                  backgroundColor: 'var(--color-white)',
+                  padding: '3rem 2.5rem',
+                  borderRadius: 'var(--radius-xl)',
+                  boxShadow: '0 20px 40px -10px rgba(0,0,0,0.08), 0 10px 15px -5px rgba(0,0,0,0.04), inset 0 2px 5px rgba(255,255,255,0.8)',
+                  transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                  borderTop: '1px solid rgba(255,255,255,0.8)',
+                  borderLeft: '1px solid rgba(255,255,255,0.5)',
+                  borderRight: '1px solid rgba(0,0,0,0.05)',
+                  borderBottom: '1px solid rgba(0,0,0,0.1)'
+                }}
               >
                 <div style={{ width: '64px', height: '64px', borderRadius: '20px', backgroundColor: 'rgba(106,210,32,0.1)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
                   {item.icon}
