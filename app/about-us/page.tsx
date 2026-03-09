@@ -28,7 +28,7 @@ const SubpageHero = ({ title, subtitle }: { title: string, subtitle: string }) =
     <motion.div
       animate={{ scale: [1, 1.05, 1], opacity: [0.4, 0.5, 0.4] }}
       transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-      style={{ position: 'absolute', top: '-50%', left: '20%', width: '60vw', height: '60vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(117,192,55,0.3) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(80px)', pointerEvents: 'none' }}
+      style={{ position: 'absolute', top: '-50%', left: '20%', width: '60vw', height: '60vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(106,210,32,0.3) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(80px)', pointerEvents: 'none' }}
     />
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ position: 'relative', zIndex: 10, maxWidth: '800px', margin: '0 auto' }}>
       <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: 'var(--color-white)', fontFamily: 'var(--font-primary)', marginBottom: '1rem', letterSpacing: '-0.02em' }}>{title}</h1>
@@ -64,7 +64,7 @@ export default function AboutUsPage() {
                 whileHover={{ y: -8, boxShadow: 'var(--shadow-lg)' }}
                 style={{ backgroundColor: 'var(--color-white)', padding: '3.5rem 2.5rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-md)', transition: 'all 0.4s ease', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', border: '1px solid rgba(0,0,0,0.03)' }}
               >
-                <div style={{ width: '70px', height: '70px', borderRadius: '50%', backgroundColor: 'rgba(117,192,55,0.1)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', boxShadow: 'inset 0 0 20px rgba(117,192,55,0.05)' }}>
+                <div style={{ width: '70px', height: '70px', borderRadius: '50%', backgroundColor: 'rgba(106,210,32,0.1)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', boxShadow: 'inset 0 0 20px rgba(106,210,32,0.05)' }}>
                   {item.icon}
                 </div>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 800, marginBottom: '1rem', fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)' }}>{item.title}</h3>
@@ -150,7 +150,7 @@ export default function AboutUsPage() {
               "Supporting health systems/community system strengthening through institutional capacity building."
             ].map((item, i) => (
               <motion.div key={i} variants={fadeInUp} style={{ display: 'flex', alignItems: 'flex-start', gap: '1.2rem', backgroundColor: 'white', padding: '2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)', border: '1px solid rgba(0,0,0,0.03)' }}>
-                <div style={{ backgroundColor: 'rgba(117,192,55,0.1)', padding: '10px', borderRadius: '12px', color: 'var(--color-primary-green)' }}>
+                <div style={{ backgroundColor: 'rgba(106,210,32,0.1)', padding: '10px', borderRadius: '12px', color: 'var(--color-primary-green)' }}>
                   <CheckCircle2 size={24} />
                 </div>
                 <span style={{ fontSize: '1rem', lineHeight: 1.6, color: '#444' }}>{item}</span>

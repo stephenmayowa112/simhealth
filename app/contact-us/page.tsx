@@ -29,7 +29,7 @@ export default function ContactPage() {
         <motion.div
           animate={{ scale: [1, 1.05, 1], opacity: [0.3, 0.4, 0.3] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          style={{ position: 'absolute', top: '20%', left: '20%', width: '60vw', height: '60vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(117,192,55,0.4) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(80px)', pointerEvents: 'none' }}
+          style={{ position: 'absolute', top: '20%', left: '20%', width: '60vw', height: '60vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(106,210,32,0.4) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(80px)', pointerEvents: 'none' }}
         />
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ position: 'relative', zIndex: 10, maxWidth: '800px', margin: '0 auto' }}>
           <h1 style={{ fontSize: 'clamp(3rem, 5vw, 4.5rem)', fontWeight: 900, color: 'var(--color-white)', fontFamily: 'var(--font-primary)', marginBottom: '1.5rem', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
@@ -58,7 +58,7 @@ export default function ContactPage() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.2rem' }}>
-                <div style={{ color: 'var(--color-primary-green)', marginTop: '4px', padding: '10px', backgroundColor: 'rgba(117,192,55,0.1)', borderRadius: '12px' }}>
+                <div style={{ color: 'var(--color-primary-green)', marginTop: '4px', padding: '10px', backgroundColor: 'rgba(106,210,32,0.1)', borderRadius: '12px' }}>
                   <MapPin size={24} />
                 </div>
                 <p style={{ margin: 0, color: 'var(--color-gray-700)', fontSize: '1.05rem', lineHeight: 1.6, fontWeight: 500 }}>
@@ -69,7 +69,7 @@ export default function ContactPage() {
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
-                <div style={{ color: 'var(--color-primary-green)', padding: '10px', backgroundColor: 'rgba(117,192,55,0.1)', borderRadius: '12px' }}>
+                <div style={{ color: 'var(--color-primary-green)', padding: '10px', backgroundColor: 'rgba(106,210,32,0.1)', borderRadius: '12px' }}>
                   <Phone size={24} />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
@@ -79,7 +79,7 @@ export default function ContactPage() {
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
-                <div style={{ color: 'var(--color-primary-green)', padding: '10px', backgroundColor: 'rgba(117,192,55,0.1)', borderRadius: '12px' }}>
+                <div style={{ color: 'var(--color-primary-green)', padding: '10px', backgroundColor: 'rgba(106,210,32,0.1)', borderRadius: '12px' }}>
                   <Mail size={24} />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
@@ -119,7 +119,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div style={{ marginTop: '4rem', padding: '2rem', backgroundColor: 'rgba(242,201,76,0.1)', borderRadius: '16px', border: '1px dashed rgba(242,201,76,0.5)', textAlign: 'center' }}>
+            <div style={{ marginTop: '4rem', padding: '2rem', backgroundColor: 'rgba(255,202,0,0.1)', borderRadius: '16px', border: '1px dashed rgba(255,202,0,0.5)', textAlign: 'center' }}>
               <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--color-warning)', marginBottom: '0.5rem' }}>Partnership Inquiries</h3>
               <p style={{ color: 'var(--color-gray-700)', fontSize: '0.95rem' }}>For corporate programs, please contact our director directly.</p>
             </div>

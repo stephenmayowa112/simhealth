@@ -50,7 +50,7 @@ export default function OurProgramsPage() {
                                     whileHover={{ y: -10, boxShadow: 'var(--shadow-lg)' }}
                                     style={{ backgroundColor: 'white', padding: '4rem 2rem', textAlign: 'center', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-md)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', border: '1px solid rgba(0,0,0,0.03)', transition: 'box-shadow 0.3s ease' }}
                                 >
-                                    <div style={{ width: '80px', height: '80px', borderRadius: '24px', backgroundColor: 'rgba(117,192,55,0.1)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem', transition: 'transform 0.3s ease' }}>
+                                    <div style={{ width: '80px', height: '80px', borderRadius: '24px', backgroundColor: 'rgba(106,210,32,0.1)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem', transition: 'transform 0.3s ease' }}>
                                         {prog.icon}
                                     </div>
                                     <h3 style={{ fontSize: '1.2rem', fontWeight: 800, margin: 0, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', lineHeight: 1.4 }}>

@@ -5,15 +5,15 @@
 @import '../styles/animations.css';
 
 :root {
-  /* Brand Colors (evolved palette) */
-  --color-primary-green: #75c037;
-  --color-secondary-yellow: #f2c94c;
+  /* Brand Colors (evolved palette, extra vibrant) */
+  --color-primary-green: #6ad220;
+  --color-secondary-yellow: #ffca00;
 
-  /* Modern Sophisticated Dark Colors */
-  --color-deep-emerald: #0a2e15;
-  --color-slate-black: #0f172a;
-  --color-dark-green: #1a3d0c;
-  --color-ink: #050a0f;
+  /* Modern Sophisticated Dark Colors (higher contrast) */
+  --color-deep-emerald: #031f0a;
+  --color-slate-black: #050a12;
+  --color-dark-green: #0a260f;
+  --color-ink: #000000;
 
   /* Soft Tints & White for glass/cards */
   --color-pale-green: #eef7e8;
@@ -33,8 +33,8 @@
   /* Slate 50 */
 
   /* Semantic Colors */
-  --color-success: #75c037;
-  --color-warning: #f2c94c;
+  --color-success: #6ad220;
+  --color-warning: #ffca00;
   --color-error: #ef4444;
   /* Red 500 */
   --color-info: #3b82f6;

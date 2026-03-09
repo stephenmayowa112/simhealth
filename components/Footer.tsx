@@ -12,7 +12,7 @@ export const Footer = () => {
 
             {/* Glowing Orbs Background */}
             <div style={{ position: 'absolute', top: '-20%', left: '-10%', width: '40%', height: '60%', background: 'radial-gradient(circle, rgba(10,46,21,0.8) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(60px)', zIndex: 0 }} />
-            <div style={{ position: 'absolute', bottom: '-20%', right: '-10%', width: '50%', height: '80%', background: 'radial-gradient(circle, rgba(117,192,55,0.15) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(80px)', zIndex: 0 }} />
+            <div style={{ position: 'absolute', bottom: '-20%', right: '-10%', width: '50%', height: '80%', background: 'radial-gradient(circle, rgba(106,210,32,0.15) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(80px)', zIndex: 0 }} />
 
             {/* Geometric Angled Divider */}
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '40px', background: 'linear-gradient(to bottom right, var(--color-surface-soft) 49%, transparent 51%)', zIndex: 1 }}></div>

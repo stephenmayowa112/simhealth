@@ -41,12 +41,12 @@ export default function Home() {
         <motion.div
           animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.6, 0.5] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          style={{ position: 'absolute', top: '10%', right: '-10%', width: '50vw', height: '50vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(117,192,55,0.4) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(80px)' }}
+          style={{ position: 'absolute', top: '10%', right: '-10%', width: '50vw', height: '50vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(106,210,32,0.4) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(80px)' }}
         />
         <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.4, 0.3] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          style={{ position: 'absolute', bottom: '-20%', left: '-10%', width: '60vw', height: '60vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(242,201,76,0.2) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(100px)' }}
+          style={{ position: 'absolute', bottom: '-20%', left: '-10%', width: '60vw', height: '60vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,202,0,0.2) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(100px)' }}
         />
 
         {/* Subtle Grid Overlay */}
@@ -109,7 +109,7 @@ export default function Home() {
                 whileHover={{ y: -10, boxShadow: 'var(--shadow-lg)' }}
                 style={{ backgroundColor: 'var(--color-white)', padding: '3rem 2.5rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-md)', transition: 'box-shadow 0.3s ease', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', border: '1px solid rgba(0,0,0,0.03)' }}
               >
-                <div style={{ width: '64px', height: '64px', borderRadius: '20px', backgroundColor: 'rgba(117,192,55,0.1)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
+                <div style={{ width: '64px', height: '64px', borderRadius: '20px', backgroundColor: 'rgba(106,210,32,0.1)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
                   {item.icon}
                 </div>
                 <h3 style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: '1rem', fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)' }}>{item.title}</h3>
@@ -122,7 +122,7 @@ export default function Home() {
 
       {/* 3. PROGRAMS OVERVIEW (Glassmorphism & Staggered Reveal) */}
       <section style={{ padding: '8rem 2rem', backgroundColor: 'var(--color-white)', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'radial-gradient(circle at top right, rgba(242,201,76,0.05), transparent 40%)' }} />
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'radial-gradient(circle at top right, rgba(255,202,0,0.05), transparent 40%)' }} />
 
         <div style={{ maxWidth: 'var(--max-content-width)', margin: '0 auto', position: 'relative' }}>
           <motion.div
