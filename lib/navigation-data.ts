@@ -18,6 +18,10 @@ export const navigationItems: NavItem[] = [
     href: '/programs',
     children: [
       {
+        label: 'Consultancy Services',
+        href: '/consultancy-services',
+      },
+      {
         label: 'Health Program',
         href: '/health-program',
       },
