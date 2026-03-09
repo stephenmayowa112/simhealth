@@ -39,6 +39,12 @@
   transition: color 0.3s;
 }
 
+.logoImage {
+  object-fit: contain;
+  height: auto;
+  max-height: 45px;
+}
+
 .scrolled .logoText {
   color: var(--color-dark-green, #1a3d0c);
 }

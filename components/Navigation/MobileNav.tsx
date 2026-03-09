@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import styles from './MobileNav.module.css'
 
@@ -82,7 +83,18 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
       >
         <div className={styles.header}>
           <Link href={logo?.href || '/'} className={styles.logo}>
-            <span className={styles.logoText}>SimHealth Africa</span>
+            {logo?.src ? (
+              <Image
+                src={logo.src}
+                alt={logo.alt || 'SimHealth Africa'}
+                width={150}
+                height={45}
+                className={styles.logoImage}
+                priority
+              />
+            ) : (
+              <span className={styles.logoText}>SimHealth Africa</span>
+            )}
           </Link>
 
           <button
@@ -184,9 +196,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
                       <li key={child.href} className={styles.subMenuItem}>
                         <Link
                           href={child.href}
-                          className={`${styles.subMenuLink} ${
-                            isActive(child.href) ? styles.subMenuActive : ''
-                          }`}
+                          className={`${styles.subMenuLink} ${isActive(child.href) ? styles.subMenuActive : ''
+                            }`}
                         >
                           {child.label}
                         </Link>

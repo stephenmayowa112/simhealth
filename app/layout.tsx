@@ -52,10 +52,10 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   icons: {
     icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/images/logo1.png', type: 'image/png' },
+      { url: '/images/logo1.png', sizes: 'any' },
     ],
-    apple: [{ url: '/apple-icon.svg', type: 'image/svg+xml' }],
+    apple: [{ url: '/images/logo1.png', type: 'image/png' }],
   },
   openGraph: {
     type: 'website',
@@ -67,9 +67,9 @@ export const metadata: Metadata = {
       'Improving health delivery across Africa through innovative programs, training, and partnerships.',
     images: [
       {
-        url: '/logo.svg',
-        width: 200,
-        height: 60,
+        url: '/images/logo1.png',
+        width: 1200,
+        height: 630,
         alt: 'SimHealth Africa Logo',
       },
     ],
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SimHealth Africa',
     description: 'Africa Society for Improved Health Delivery',
-    images: ['/logo.svg'],
+    images: ['/images/logo1.png'],
   },
 }
 

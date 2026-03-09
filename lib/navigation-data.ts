@@ -61,7 +61,7 @@ export const navigationItems: NavItem[] = [
  * Logo configuration
  */
 export const logoConfig = {
-  src: '/logo.svg',
-  alt: 'SimHealth Africa - Africa Society for Improved Health Delivery',
+  src: '/images/logo1.png',
+  alt: 'SimHealth Africa Logo',
   href: '/',
 }

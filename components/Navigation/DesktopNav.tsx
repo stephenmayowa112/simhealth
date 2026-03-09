@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import styles from './DesktopNav.module.css'
 
@@ -51,12 +52,25 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({ logo, items }) => {
       aria-label="Main navigation"
     >
       <div className={styles.container}>
-        {/* Logo as text */}
+        {/* Logo */}
         <Link href={logo?.href || '/'} className={styles.logo}>
-          <span className={styles.logoText}>SimHealth Africa</span>
-          <span className={styles.logoTagline}>
-            Africa Society for Improved Health Delivery
-          </span>
+          {logo?.src ? (
+            <Image
+              src={logo.src}
+              alt={logo.alt || 'SimHealth Africa'}
+              width={200}
+              height={60}
+              className={styles.logoImage}
+              priority
+            />
+          ) : (
+            <>
+              <span className={styles.logoText}>SimHealth Africa</span>
+              <span className={styles.logoTagline}>
+                Africa Society for Improved Health Delivery
+              </span>
+            </>
+          )}
         </Link>
 
         {/* Navigation Links */}
@@ -85,9 +99,8 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({ logo, items }) => {
                       <li key={child.href} className={styles.dropdownItem}>
                         <Link
                           href={child.href}
-                          className={`${styles.dropdownLink} ${
-                            isActive(child.href) ? styles.dropdownActive : ''
-                          }`}
+                          className={`${styles.dropdownLink} ${isActive(child.href) ? styles.dropdownActive : ''
+                            }`}
                         >
                           {child.label}
                         </Link>
