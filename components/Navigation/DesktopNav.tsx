@@ -1,47 +1,49 @@
-'use client';
+'use client'
 
-import React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import styles from './DesktopNav.module.css';
+import React from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import styles from './DesktopNav.module.css'
 
 export interface NavItem {
-  label: string;
-  href: string;
-  children?: NavItem[];
+  label: string
+  href: string
+  children?: NavItem[]
 }
 
 export interface DesktopNavProps {
   logo?: {
-    src: string;
-    alt: string;
-    href?: string;
-  };
-  items: NavItem[];
+    src: string
+    alt: string
+    href?: string
+  }
+  items: NavItem[]
 }
 
 export const DesktopNav: React.FC<DesktopNavProps> = ({ logo, items }) => {
-  const pathname = usePathname();
-  const [activeDropdown, setActiveDropdown] = React.useState<string | null>(null);
-  const [scrolled, setScrolled] = React.useState(false);
+  const pathname = usePathname()
+  const [activeDropdown, setActiveDropdown] = React.useState<string | null>(
+    null
+  )
+  const [scrolled, setScrolled] = React.useState(false)
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+      setScrolled(window.scrollY > 80)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
-    return pathname.startsWith(href);
-  };
+    if (href === '/') return pathname === '/'
+    return pathname.startsWith(href)
+  }
 
   // Separate "Get Involved" / "Volunteer" as the CTA
-  const mainItems = items.filter(i => i.href !== '/volunteer');
-  const ctaItem = items.find(i => i.href === '/volunteer');
+  const mainItems = items.filter((i) => i.href !== '/volunteer')
+  const ctaItem = items.find((i) => i.href === '/volunteer')
 
   return (
     <nav
@@ -52,14 +54,16 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({ logo, items }) => {
         {/* Logo as text */}
         <Link href={logo?.href || '/'} className={styles.logo}>
           <span className={styles.logoText}>SimHealth Africa</span>
-          <span className={styles.logoTagline}>Africa Society for Improved Health Delivery</span>
+          <span className={styles.logoTagline}>
+            Africa Society for Improved Health Delivery
+          </span>
         </Link>
 
         {/* Navigation Links */}
         <ul className={styles.navList}>
           {mainItems.map((item) => {
-            const hasChildren = item.children && item.children.length > 0;
-            const active = isActive(item.href);
+            const hasChildren = item.children && item.children.length > 0
+            const active = isActive(item.href)
 
             return (
               <li
@@ -92,7 +96,7 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({ logo, items }) => {
                   </ul>
                 )}
               </li>
-            );
+            )
           })}
           {/* CTA Button */}
           {ctaItem && (
@@ -105,5 +109,5 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({ logo, items }) => {
         </ul>
       </div>
     </nav>
-  );
-};
+  )
+}

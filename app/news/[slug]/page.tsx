@@ -1,28 +1,28 @@
-import React from 'react';
-import { notFound } from 'next/navigation';
-import { Section } from '@/components';
-import { getArticleBySlug, getAllArticleSlugs } from '@/lib/news-articles-full';
-import styles from './article.module.css';
-import Image from 'next/image';
+import React from 'react'
+import { notFound } from 'next/navigation'
+import { Section } from '@/components'
+import { getArticleBySlug, getAllArticleSlugs } from '@/lib/news-articles-full'
+import styles from './article.module.css'
+import Image from 'next/image'
 
 interface ArticlePageProps {
   params: {
-    slug: string;
-  };
+    slug: string
+  }
 }
 
 export async function generateStaticParams() {
-  const slugs = getAllArticleSlugs();
+  const slugs = getAllArticleSlugs()
   return slugs.map((slug) => ({
     slug,
-  }));
+  }))
 }
 
 export default function ArticlePage({ params }: ArticlePageProps) {
-  const article = getArticleBySlug(params.slug);
+  const article = getArticleBySlug(params.slug)
 
   if (!article) {
-    notFound();
+    notFound()
   }
 
   return (
@@ -72,5 +72,5 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         </Section>
       </article>
     </>
-  );
+  )
 }

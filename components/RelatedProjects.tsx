@@ -1,21 +1,21 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { Card } from './Card';
-import { Grid } from './Grid';
-import styles from './RelatedProjects.module.css';
+import React from 'react'
+import { Card } from './Card'
+import { Grid } from './Grid'
+import styles from './RelatedProjects.module.css'
 
 export interface Project {
-  title: string;
-  description: string;
-  imageUrl?: string;
-  imageAlt?: string;
-  link: string;
+  title: string
+  description: string
+  imageUrl?: string
+  imageAlt?: string
+  link: string
 }
 
 export interface RelatedProjectsProps {
-  projects: Project[];
-  title?: string;
+  projects: Project[]
+  title?: string
 }
 
 export const RelatedProjects: React.FC<RelatedProjectsProps> = ({
@@ -39,5 +39,5 @@ export const RelatedProjects: React.FC<RelatedProjectsProps> = ({
         ))}
       </Grid>
     </div>
-  );
-};
+  )
+}

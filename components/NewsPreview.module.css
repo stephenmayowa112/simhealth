@@ -10,8 +10,9 @@
   color: var(--color-dark-green, #1a3d0c);
   text-align: center;
   margin-bottom: clamp(12px, 1.5vw, 16px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 :global(html.js) .title {
@@ -34,8 +35,9 @@
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s,
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
 }
 
 :global(html.js) .subtitle {
@@ -64,8 +66,14 @@
 }
 
 @keyframes cardReveal {
-  from { opacity: 0; transform: translateY(32px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Article content */
@@ -114,7 +122,9 @@
   font-weight: 600;
   color: var(--color-primary-green, #4a9e22);
   text-decoration: none;
-  transition: color 0.2s, gap 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    color 0.2s,
+    gap 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   margin-top: 4px;
   padding: 4px 0;
   min-height: 44px;

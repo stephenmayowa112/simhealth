@@ -1,13 +1,13 @@
-'use client';
+'use client'
 
-import React from 'react';
-import Image from 'next/image';
-import styles from './ProgramHero.module.css';
+import React from 'react'
+import Image from 'next/image'
+import styles from './ProgramHero.module.css'
 
 export interface ProgramHeroProps {
-  title: string;
-  imageUrl?: string;
-  imageAlt?: string;
+  title: string
+  imageUrl?: string
+  imageAlt?: string
 }
 
 export const ProgramHero: React.FC<ProgramHeroProps> = ({
@@ -34,5 +34,5 @@ export const ProgramHero: React.FC<ProgramHeroProps> = ({
         <h1 className={styles.title}>{title}</h1>
       </div>
     </div>
-  );
-};
+  )
+}

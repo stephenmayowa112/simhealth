@@ -5,17 +5,21 @@
 The website now has the following favicon files configured:
 
 ### Automatic Next.js Icons (in `app/` directory)
+
 - `app/icon.svg` - Main favicon (32x32) - automatically used by Next.js
 - `app/apple-icon.svg` - Apple touch icon (180x180) - for iOS devices
 
 ### Manual Icons (in `public/` directory)
+
 - `public/favicon.ico` - Legacy favicon for older browsers
 - `public/manifest.json` - PWA manifest file
 
 ## How to Update Icons
 
 ### Option 1: Use Current SVG Icons (Recommended)
+
 The current SVG icons are automatically generated and match your brand colors:
+
 - Primary Green: #75c037
 - Secondary Yellow: #ffc42e
 - Design: Medical cross with circle
@@ -64,6 +68,7 @@ If you want to use custom icon files:
 ## Current Configuration
 
 All favicons are configured in `app/layout.tsx` metadata:
+
 ```typescript
 icons: {
   icon: [

@@ -1,4 +1,4 @@
-import { NewsArticle } from '@/components';
+import { NewsArticle } from '@/components'
 
 /**
  * News articles data for SimHealth Africa
@@ -17,7 +17,8 @@ export const newsArticles: NewsArticle[] = [
   },
   {
     id: '2',
-    title: 'Training Program Achieves Milestone: 500+ Healthcare Workers Trained',
+    title:
+      'Training Program Achieves Milestone: 500+ Healthcare Workers Trained',
     excerpt:
       'Our comprehensive training program has successfully trained over 500 healthcare workers in innovative health delivery methods, significantly improving healthcare capacity across multiple regions.',
     date: 'March 10, 2024',
@@ -125,4 +126,4 @@ export const newsArticles: NewsArticle[] = [
     imageAlt: 'Youth leadership program graduates',
     link: '/news/youth-leadership-graduation',
   },
-];
+]

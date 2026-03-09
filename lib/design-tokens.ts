@@ -29,13 +29,13 @@ export const colors = {
     error: '#dc3545',
     info: '#17a2b8',
   },
-} as const;
+} as const
 
 export const typography = {
   fontFamily: {
-    primary: "var(--font-primary)",
-    secondary: "var(--font-secondary)",
-    accent: "var(--font-accent)",
+    primary: 'var(--font-primary)',
+    secondary: 'var(--font-secondary)',
+    accent: 'var(--font-accent)',
   },
   fontSize: {
     desktop: {
@@ -83,7 +83,7 @@ export const typography = {
     semibold: 600,
     bold: 700,
   },
-} as const;
+} as const
 
 export const spacing = {
   xs: '4px',
@@ -94,34 +94,34 @@ export const spacing = {
   '2xl': '48px',
   '3xl': '64px',
   '4xl': '96px',
-} as const;
+} as const
 
 export const shadows = {
   sm: '0 2px 8px rgba(14, 28, 6, 0.06)',
   md: '0 4px 24px rgba(14, 28, 6, 0.10)',
   lg: '0 8px 32px rgba(14, 28, 6, 0.14)',
   glowGreen: '0 2px 12px rgba(74, 158, 34, 0.35)',
-} as const;
+} as const
 
 export const borderRadius = {
   sm: '4px',
   md: '12px',
   lg: '20px',
   pill: '999px',
-} as const;
+} as const
 
 export const transitions = {
   fast: '0.2s cubic-bezier(0.16, 1, 0.3, 1)',
   normal: '0.4s cubic-bezier(0.16, 1, 0.3, 1)',
   slow: '0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-} as const;
+} as const
 
 export const breakpoints = {
   mobile: { min: 320, max: 767 },
   tablet: { min: 768, max: 1023 },
   desktop: { min: 1024, max: 1439 },
   large: { min: 1440 },
-} as const;
+} as const
 
 export const mediaQueries = {
   mobile: `@media (min-width: ${breakpoints.mobile.min}px) and (max-width: ${breakpoints.mobile.max}px)`,
@@ -131,13 +131,13 @@ export const mediaQueries = {
   tabletUp: `@media (min-width: ${breakpoints.tablet.min}px)`,
   desktopUp: `@media (min-width: ${breakpoints.desktop.min}px)`,
   mobileOnly: `@media (max-width: ${breakpoints.mobile.max}px)`,
-} as const;
+} as const
 
-export type ColorBrand = keyof typeof colors.brand;
-export type ColorNeutral = keyof typeof colors.neutral;
-export type ColorSemantic = keyof typeof colors.semantic;
-export type Spacing = keyof typeof spacing;
-export type Shadow = keyof typeof shadows;
-export type BorderRadius = keyof typeof borderRadius;
-export type Transition = keyof typeof transitions;
-export type Breakpoint = keyof typeof breakpoints;
+export type ColorBrand = keyof typeof colors.brand
+export type ColorNeutral = keyof typeof colors.neutral
+export type ColorSemantic = keyof typeof colors.semantic
+export type Spacing = keyof typeof spacing
+export type Shadow = keyof typeof shadows
+export type BorderRadius = keyof typeof borderRadius
+export type Transition = keyof typeof transitions
+export type Breakpoint = keyof typeof breakpoints

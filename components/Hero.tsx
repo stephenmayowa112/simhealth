@@ -1,17 +1,17 @@
-'use client';
+'use client'
 
-import React from 'react';
-import Image from 'next/image';
-import { Button } from './Button';
-import styles from './Hero.module.css';
+import React from 'react'
+import Image from 'next/image'
+import { Button } from './Button'
+import styles from './Hero.module.css'
 
 export interface HeroProps {
-  title: string;
-  subtitle?: string;
-  ctaText?: string;
-  ctaLink?: string;
-  backgroundImage: string;
-  backgroundAlt?: string;
+  title: string
+  subtitle?: string
+  ctaText?: string
+  ctaLink?: string
+  backgroundImage: string
+  backgroundAlt?: string
 }
 
 export const Hero: React.FC<HeroProps> = ({
@@ -22,16 +22,16 @@ export const Hero: React.FC<HeroProps> = ({
   backgroundImage,
   backgroundAlt = '',
 }) => {
-  const [isVisible, setIsVisible] = React.useState(false);
-  const heroRef = React.useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = React.useState(false)
+  const heroRef = React.useRef<HTMLElement>(null)
 
   React.useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 200);
-    return () => clearTimeout(timer);
-  }, []);
+    const timer = setTimeout(() => setIsVisible(true), 200)
+    return () => clearTimeout(timer)
+  }, [])
 
   // Split title into words for staggered reveal
-  const titleWords = title.split(' ');
+  const titleWords = title.split(' ')
 
   return (
     <section className={styles.hero} ref={heroRef}>
@@ -62,9 +62,9 @@ export const Hero: React.FC<HeroProps> = ({
       <div className={styles.particles} aria-hidden="true">
         {Array.from({ length: 12 }).map((_, i) => {
           // Use deterministic pseudo-random values based on index to avoid hydration mismatch
-          const pseudoRandomLeft = (Math.sin(i * 12.9898) * 43758.5453) % 1;
-          const pseudoRandomTop = (Math.sin(i * 78.233) * 43758.5453) % 1;
-          const pseudoRandomDuration = (Math.sin(i * 45.123) * 43758.5453) % 1;
+          const pseudoRandomLeft = (Math.sin(i * 12.9898) * 43758.5453) % 1
+          const pseudoRandomTop = (Math.sin(i * 78.233) * 43758.5453) % 1
+          const pseudoRandomDuration = (Math.sin(i * 45.123) * 43758.5453) % 1
 
           return (
             <span
@@ -77,7 +77,7 @@ export const Hero: React.FC<HeroProps> = ({
                 animationDuration: `${6 + Math.abs(pseudoRandomDuration) * 6}s`,
               }}
             />
-          );
+          )
         })}
       </div>
 
@@ -85,7 +85,9 @@ export const Hero: React.FC<HeroProps> = ({
       <div className={styles.overlay}>
         <div className={`${styles.content} ${isVisible ? styles.visible : ''}`}>
           {/* Eyebrow label */}
-          <span className={styles.eyebrow}>Transforming Health Across Africa</span>
+          <span className={styles.eyebrow}>
+            Transforming Health Across Africa
+          </span>
 
           {/* Title with word reveal */}
           <h1 className={styles.title}>
@@ -121,5 +123,5 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

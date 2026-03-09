@@ -33,7 +33,9 @@
 
   /* Typography - Font Families */
   --font-primary: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
-  --font-secondary: var(--font-dm-sans), 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-secondary:
+    var(--font-dm-sans), 'DM Sans', -apple-system, BlinkMacSystemFont,
+    sans-serif;
   --font-accent: var(--font-space-mono), 'Space Mono', 'Courier New', monospace;
 
   /* Typography - Fluid Font Sizes */
@@ -77,7 +79,7 @@
 
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(14, 28, 6, 0.06);
-  --shadow-md: 0 4px 24px rgba(14, 28, 6, 0.10);
+  --shadow-md: 0 4px 24px rgba(14, 28, 6, 0.1);
   --shadow-lg: 0 8px 32px rgba(14, 28, 6, 0.14);
   --shadow-glow-green: 0 2px 12px rgba(74, 158, 34, 0.35);
 
@@ -261,21 +263,35 @@ h4,
    Responsive Breakpoint Utilities
    ============================================ */
 
-.mobile-only { display: block; }
-.tablet-up { display: none; }
-.desktop-up { display: none; }
+.mobile-only {
+  display: block;
+}
+.tablet-up {
+  display: none;
+}
+.desktop-up {
+  display: none;
+}
 
 @media (min-width: 768px) {
-  .mobile-only { display: none; }
-  .tablet-up { display: block; }
+  .mobile-only {
+    display: none;
+  }
+  .tablet-up {
+    display: block;
+  }
 }
 
 @media (min-width: 1024px) {
-  .desktop-up { display: block; }
+  .desktop-up {
+    display: block;
+  }
 }
 
 @media (min-width: 1440px) {
-  .large-desktop-up { display: block; }
+  .large-desktop-up {
+    display: block;
+  }
 }
 
 /* ============================================
@@ -425,7 +441,9 @@ h4,
   border-radius: var(--radius-pill);
   overflow: hidden;
   border: 1px solid rgba(250, 247, 239, 0.15);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .newsletter-input-wrapper:focus-within {
@@ -497,7 +515,9 @@ h4,
 .scroll-reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+  transition:
+    opacity 0.7s var(--ease-out-expo),
+    transform 0.7s var(--ease-out-expo);
 }
 
 .scroll-reveal.is-visible {

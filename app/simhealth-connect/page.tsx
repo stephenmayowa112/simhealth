@@ -1,11 +1,11 @@
-import { Section, Hero, CallToAction } from '@/components';
-import styles from './simhealth-connect.module.css';
+import { Section, Hero, CallToAction } from '@/components'
+import styles from './simhealth-connect.module.css'
 
 export const metadata = {
   title: 'SimHealth Connect - SimHealth Africa',
   description:
     'Advocacy, Policy and Collaboration - Improving Health and Wellbeing through community engagement and partnerships.',
-};
+}
 
 export default function SimHealthConnectPage() {
   return (
@@ -44,5 +44,5 @@ export default function SimHealthConnectPage() {
         buttonLink="/contact-us"
       />
     </>
-  );
+  )
 }

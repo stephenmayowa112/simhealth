@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { Section } from './Section';
-import { Button } from './Button';
-import styles from './CallToAction.module.css';
+import React from 'react'
+import { Section } from './Section'
+import { Button } from './Button'
+import styles from './CallToAction.module.css'
 
 export interface CallToActionProps {
-  title: string;
-  description?: string;
-  buttonText: string;
-  buttonLink: string;
-  backgroundColor?: 'white' | 'gray' | 'green';
+  title: string
+  description?: string
+  buttonText: string
+  buttonLink: string
+  backgroundColor?: 'white' | 'gray' | 'green'
 }
 
 export const CallToAction: React.FC<CallToActionProps> = ({
@@ -20,28 +20,31 @@ export const CallToAction: React.FC<CallToActionProps> = ({
   buttonLink,
   backgroundColor = 'green',
 }) => {
-  const ctaRef = React.useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = React.useState(false);
+  const ctaRef = React.useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = React.useState(false)
 
   React.useEffect(() => {
-    const el = ctaRef.current;
-    if (!el) return;
+    const el = ctaRef.current
+    if (!el) return
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
+          setIsVisible(true)
+          observer.disconnect()
         }
       },
       { threshold: 0.2 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <Section backgroundColor={backgroundColor}>
-      <div ref={ctaRef} className={`${styles.cta} ${isVisible ? styles.visible : ''}`}>
+      <div
+        ref={ctaRef}
+        className={`${styles.cta} ${isVisible ? styles.visible : ''}`}
+      >
         {/* Decorative blob background */}
         <div className={styles.blobContainer} aria-hidden="true">
           <div className={styles.blob1} />
@@ -59,5 +62,5 @@ export const CallToAction: React.FC<CallToActionProps> = ({
         </div>
       </div>
     </Section>
-  );
-};
+  )
+}

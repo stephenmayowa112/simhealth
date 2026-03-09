@@ -1,21 +1,21 @@
-'use client';
+'use client'
 
-import React from 'react';
-import Image from 'next/image';
-import { useScrollAnimation } from '@/lib/useScrollAnimation';
-import styles from './Card.module.css';
+import React from 'react'
+import Image from 'next/image'
+import { useScrollAnimation } from '@/lib/useScrollAnimation'
+import styles from './Card.module.css'
 
 export interface CardProps {
-  title?: string;
-  description?: string;
-  imageUrl?: string;
-  imageAlt?: string;
-  link?: string;
-  variant?: 'default' | 'featured' | 'compact';
-  children?: React.ReactNode;
-  className?: string;
-  animate?: boolean;
-  animationDelay?: number;
+  title?: string
+  description?: string
+  imageUrl?: string
+  imageAlt?: string
+  link?: string
+  variant?: 'default' | 'featured' | 'compact'
+  children?: React.ReactNode
+  className?: string
+  animate?: boolean
+  animationDelay?: number
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -30,11 +30,11 @@ export const Card: React.FC<CardProps> = ({
   animate = true,
   animationDelay = 0,
 }) => {
-  const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.1 })
 
   const baseStyles: React.CSSProperties = {
     animationDelay: animate ? `${animationDelay}s` : undefined,
-  };
+  }
 
   const titleStyles: React.CSSProperties = {
     fontSize: variant === 'compact' ? '18px' : 'clamp(1.15rem, 1.5vw, 1.3rem)',
@@ -43,7 +43,7 @@ export const Card: React.FC<CardProps> = ({
     color: 'var(--color-dark-green, #1a3d0c)',
     marginBottom: '8px',
     lineHeight: 1.3,
-  };
+  }
 
   const descriptionStyles: React.CSSProperties = {
     fontSize: variant === 'compact' ? '14px' : '15px',
@@ -51,13 +51,20 @@ export const Card: React.FC<CardProps> = ({
     color: 'var(--color-ink, #0e1c06)',
     opacity: 0.75,
     lineHeight: 1.6,
-  };
+  }
 
-  const variantClass = variant === 'default' ? styles.cardDefault :
-                       variant === 'featured' ? styles.cardFeatured :
-                       styles.cardCompact;
+  const variantClass =
+    variant === 'default'
+      ? styles.cardDefault
+      : variant === 'featured'
+        ? styles.cardFeatured
+        : styles.cardCompact
 
-  const animationClass = animate ? (isVisible ? styles.slideUp : styles.hidden) : '';
+  const animationClass = animate
+    ? isVisible
+      ? styles.slideUp
+      : styles.hidden
+    : ''
 
   const cardContent = (
     <>
@@ -80,7 +87,7 @@ export const Card: React.FC<CardProps> = ({
         {children}
       </div>
     </>
-  );
+  )
 
   if (link) {
     return (
@@ -92,7 +99,7 @@ export const Card: React.FC<CardProps> = ({
       >
         {cardContent}
       </a>
-    );
+    )
   }
 
   return (
@@ -103,5 +110,5 @@ export const Card: React.FC<CardProps> = ({
     >
       {cardContent}
     </div>
-  );
-};
+  )
+}

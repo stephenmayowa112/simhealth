@@ -1,4 +1,4 @@
-import { NavItem } from '@/components/Navigation';
+import { NavItem } from '@/components/Navigation'
 
 /**
  * Navigation structure for SimHealth Africa website
@@ -55,7 +55,7 @@ export const navigationItems: NavItem[] = [
     label: 'Volunteer',
     href: '/volunteer',
   },
-];
+]
 
 /**
  * Logo configuration
@@ -64,4 +64,4 @@ export const logoConfig = {
   src: '/logo.svg',
   alt: 'SimHealth Africa - Africa Society for Improved Health Delivery',
   href: '/',
-};
+}

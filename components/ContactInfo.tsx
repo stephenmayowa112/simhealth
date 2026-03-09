@@ -1,22 +1,25 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { colors, spacing, shadows, borderRadius } from '@/lib/design-tokens';
-import styles from './ContactInfo.module.css';
+import React from 'react'
+import { colors, spacing, shadows, borderRadius } from '@/lib/design-tokens'
+import styles from './ContactInfo.module.css'
 
 export interface ContactInfoItem {
-  icon: React.ReactNode;
-  title: string;
-  details: string[];
-  links?: string[];
+  icon: React.ReactNode
+  title: string
+  details: string[]
+  links?: string[]
 }
 
 export interface ContactInfoProps {
-  items: ContactInfoItem[];
-  className?: string;
+  items: ContactInfoItem[]
+  className?: string
 }
 
-export const ContactInfo: React.FC<ContactInfoProps> = ({ items, className = '' }) => {
+export const ContactInfo: React.FC<ContactInfoProps> = ({
+  items,
+  className = '',
+}) => {
   return (
     <div className={`${styles.grid} ${className}`}>
       {items.map((item, index) => (
@@ -39,5 +42,5 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({ items, className = '' 
         </div>
       ))}
     </div>
-  );
-};
+  )
+}

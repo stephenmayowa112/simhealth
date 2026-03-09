@@ -1,33 +1,33 @@
-'use client';
+'use client'
 
-import React, { useState, useEffect } from 'react';
-import styles from './ScrollToTop.module.css';
+import React, { useState, useEffect } from 'react'
+import styles from './ScrollToTop.module.css'
 
 export const ScrollToTop: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.scrollY > 300) {
-        setIsVisible(true);
+        setIsVisible(true)
       } else {
-        setIsVisible(false);
+        setIsVisible(false)
       }
-    };
+    }
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility)
 
     return () => {
-      window.removeEventListener('scroll', toggleVisibility);
-    };
-  }, []);
+      window.removeEventListener('scroll', toggleVisibility)
+    }
+  }, [])
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
-    });
-  };
+    })
+  }
 
   return (
     <button
@@ -53,5 +53,5 @@ export const ScrollToTop: React.FC = () => {
         />
       </svg>
     </button>
-  );
-};
+  )
+}

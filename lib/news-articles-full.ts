@@ -4,16 +4,16 @@
  */
 
 export interface FullNewsArticle {
-  id: string;
-  title: string;
-  date: string;
-  author?: string;
+  id: string
+  title: string
+  date: string
+  author?: string
   featuredImage: {
-    url: string;
-    alt: string;
-  };
-  body: string; // HTML content
-  excerpt: string;
+    url: string
+    alt: string
+  }
+  body: string // HTML content
+  excerpt: string
 }
 
 export const fullNewsArticles: Record<string, FullNewsArticle> = {
@@ -51,7 +51,8 @@ export const fullNewsArticles: Record<string, FullNewsArticle> = {
   },
   'training-success': {
     id: '2',
-    title: 'Training Program Achieves Milestone: 500+ Healthcare Workers Trained',
+    title:
+      'Training Program Achieves Milestone: 500+ Healthcare Workers Trained',
     date: 'March 10, 2024',
     author: 'SimHealth Africa Training Department',
     featuredImage: {
@@ -113,18 +114,18 @@ export const fullNewsArticles: Record<string, FullNewsArticle> = {
       <p>The complete 2024 Community Impact Report is available for download on our website, providing detailed analysis and insights into our programs and their outcomes.</p>
     `,
   },
-};
+}
 
 /**
  * Get a full article by its slug
  */
 export function getArticleBySlug(slug: string): FullNewsArticle | null {
-  return fullNewsArticles[slug] || null;
+  return fullNewsArticles[slug] || null
 }
 
 /**
  * Get all article slugs for static generation
  */
 export function getAllArticleSlugs(): string[] {
-  return Object.keys(fullNewsArticles);
+  return Object.keys(fullNewsArticles)
 }

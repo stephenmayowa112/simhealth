@@ -24,7 +24,9 @@
   box-shadow: var(--shadow-sm);
   padding: var(--spacing-xl);
   text-align: center;
-  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  transition:
+    box-shadow var(--transition-normal),
+    transform var(--transition-normal);
 }
 
 /* Mobile adjustments */

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Section } from '@/components/Section';
-import Image from 'next/image';
-import styles from './about-us.module.css';
+import React from 'react'
+import { Section } from '@/components/Section'
+import Image from 'next/image'
+import styles from './about-us.module.css'
 
 // Team members data
 const teamMembers = [
@@ -23,7 +23,7 @@ const teamMembers = [
     bio: 'Renowned researcher in evidence-based health interventions and policy development.',
     image: '/images/team/member-3.jpg',
   },
-];
+]
 
 export default function TeamSection() {
   return (
@@ -51,5 +51,5 @@ export default function TeamSection() {
         ))}
       </div>
     </Section>
-  );
+  )
 }

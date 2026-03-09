@@ -28,7 +28,7 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Define line heights and font weights
     - _Requirements: 7.1, 7.3, 7.5_
 
-  - [ ]* 1.4 Write property test for typography system
+  - [ ]\* 1.4 Write property test for typography system
     - **Property 14: Typography Properties Defined for All Text Types**
     - **Validates: Requirements 7.1**
 
@@ -47,7 +47,7 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Ensure responsive padding (24px desktop, 16px mobile)
     - _Requirements: 1.3, 12.2_
 
-  - [ ]* 2.3 Write property test for modern UI styling
+  - [ ]\* 2.3 Write property test for modern UI styling
     - **Property 1: UI Components Have Modern Styling**
     - **Validates: Requirements 1.3**
 
@@ -58,7 +58,7 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Include vertical spacing between sections
     - _Requirements: 12.1, 12.3_
 
-  - [ ]* 2.5 Write property test for section spacing
+  - [ ]\* 2.5 Write property test for section spacing
     - **Property 29: Content Sections Have Spacing**
     - **Validates: Requirements 12.1**
 
@@ -83,11 +83,11 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Ensure consistent positioning across all pages
     - _Requirements: 4.4, 4.5_
 
-  - [ ]* 3.4 Write property test for navigation links
+  - [ ]\* 3.4 Write property test for navigation links
     - **Property 6: Navigation Links to All Major Sections**
     - **Validates: Requirements 4.1**
 
-  - [ ]* 3.5 Write property test for mobile navigation visibility
+  - [ ]\* 3.5 Write property test for mobile navigation visibility
     - **Property 8: Mobile Navigation Present on Small Viewports**
     - **Validates: Requirements 4.4**
 
@@ -105,7 +105,7 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Implement auto-responsive behavior (3 columns desktop, 2 tablet, 1 mobile)
     - _Requirements: 12.4_
 
-  - [ ]* 4.3 Write property test for grid layouts
+  - [ ]\* 4.3 Write property test for grid layouts
     - **Property 31: Collections Use Grid or Flex Layouts**
     - **Validates: Requirements 12.4**
 
@@ -144,7 +144,7 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Add "Read More" links
     - _Requirements: 2.1, 12.4_
 
-  - [ ]* 6.6 Write property test for image containers
+  - [ ]\* 6.6 Write property test for image containers
     - **Property 11: Image Containers Have Defined Dimensions**
     - **Validates: Requirements 6.2**
 
@@ -166,7 +166,7 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Use visual markers to enhance comprehension
     - _Requirements: 12.5_
 
-  - [ ]* 7.4 Write property test for content preservation
+  - [ ]\* 7.4 Write property test for content preservation
     - **Property 2: Content Preservation Across All Sections**
     - **Validates: Requirements 2.1**
 
@@ -189,7 +189,7 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Link to individual project pages
     - _Requirements: 2.1, 12.4_
 
-  - [ ]* 8.4 Write property test for page sections existence
+  - [ ]\* 8.4 Write property test for page sections existence
     - **Property 3: All Page Sections Exist**
     - **Validates: Requirements 2.2**
 
@@ -241,7 +241,7 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Include prominent call-to-action buttons
     - _Requirements: 2.1, 11.4_
 
-  - [ ]* 11.3 Write property test for call-to-action visibility
+  - [ ]\* 11.3 Write property test for call-to-action visibility
     - **Property 11.2: CTA elements stand out through color, size, or positioning**
     - **Validates: Requirements 11.5**
 
@@ -268,11 +268,11 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Adjust spacing for touch-friendly interaction
     - _Requirements: 3.4_
 
-  - [ ]* 14.3 Write property test for responsive layouts
+  - [ ]\* 14.3 Write property test for responsive layouts
     - **Property 4: Responsive Layouts Apply Across Viewports**
     - **Validates: Requirements 3.1, 3.2, 3.3**
 
-  - [ ]* 14.4 Write property test for touch target sizes
+  - [ ]\* 14.4 Write property test for touch target sizes
     - **Property 5: Touch Targets Meet Minimum Size on Mobile**
     - **Validates: Requirements 3.4**
 
@@ -299,15 +299,15 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Test focus indicators on all buttons, links, and form fields
     - _Requirements: 9.5_
 
-  - [ ]* 15.5 Write property test for alt text
+  - [ ]\* 15.5 Write property test for alt text
     - **Property 22: All Images Have Alt Text**
     - **Validates: Requirements 9.1**
 
-  - [ ]* 15.6 Write property test for color contrast
+  - [ ]\* 15.6 Write property test for color contrast
     - **Property 15: Text Contrast Meets WCAG AA Standards**
     - **Validates: Requirements 7.2, 9.2**
 
-  - [ ]* 15.7 Write property test for keyboard accessibility
+  - [ ]\* 15.7 Write property test for keyboard accessibility
     - **Property 23: Interactive Elements Are Keyboard Accessible**
     - **Validates: Requirements 9.3**
 
@@ -331,11 +331,11 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Implement critical CSS inlining
     - _Requirements: 8.2, 8.4_
 
-  - [ ]* 16.4 Write property test for image optimization
+  - [ ]\* 16.4 Write property test for image optimization
     - **Property 13: Image Assets Are Optimized**
     - **Validates: Requirements 6.4**
 
-  - [ ]* 16.5 Write property test for lazy loading
+  - [ ]\* 16.5 Write property test for lazy loading
     - **Property 20: Below-Fold Images Use Lazy Loading**
     - **Validates: Requirements 8.3**
 
@@ -363,15 +363,15 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Disable or reduce animations when user prefers reduced motion
     - _Requirements: 10.5_
 
-  - [ ]* 17.5 Write property test for hover transitions
+  - [ ]\* 17.5 Write property test for hover transitions
     - **Property 26: Hover States with Transitions**
     - **Validates: Requirements 4.2, 10.1**
 
-  - [ ]* 17.6 Write property test for GPU-accelerated animations
+  - [ ]\* 17.6 Write property test for GPU-accelerated animations
     - **Property 27: Animations Use GPU-Accelerated Properties**
     - **Validates: Requirements 10.4**
 
-  - [ ]* 17.7 Write property test for reduced motion
+  - [ ]\* 17.7 Write property test for reduced motion
     - **Property 28: Reduced Motion Preferences Respected**
     - **Validates: Requirements 10.5**
 
@@ -388,7 +388,7 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Check dark green (#48811a) for hover states
     - _Requirements: 5.2, 5.3_
 
-  - [ ]* 18.3 Write property test for brand colors
+  - [ ]\* 18.3 Write property test for brand colors
     - **Property 10: Brand Colors Defined in Stylesheet**
     - **Validates: Requirements 5.2**
 
@@ -405,7 +405,7 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Optimize any performance bottlenecks
     - _Requirements: 8.1_
 
-  - [ ]* 19.3 Write property test for page load time
+  - [ ]\* 19.3 Write property test for page load time
     - **Property 18: Page Load Time Under Target**
     - **Validates: Requirements 8.1**
 
@@ -415,7 +415,7 @@ The implementation follows a progressive approach: establish the foundation (Nex
     - Fix any accessibility issues
     - _Requirements: 9.1-9.5_
 
-  - [ ]* 19.4 Write property test for semantic HTML
+  - [ ]\* 19.4 Write property test for semantic HTML
     - **Property 24: Semantic HTML Elements Used**
     - **Validates: Requirements 9.4**
 

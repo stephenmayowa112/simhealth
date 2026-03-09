@@ -1,19 +1,19 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { Card } from './Card';
-import { Grid } from './Grid';
-import styles from './ImpactMetrics.module.css';
+import React from 'react'
+import { Card } from './Card'
+import { Grid } from './Grid'
+import styles from './ImpactMetrics.module.css'
 
 export interface Metric {
-  value: string;
-  label: string;
-  description?: string;
+  value: string
+  label: string
+  description?: string
 }
 
 export interface ImpactMetricsProps {
-  metrics: Metric[];
-  title?: string;
+  metrics: Metric[]
+  title?: string
 }
 
 export const ImpactMetrics: React.FC<ImpactMetricsProps> = ({
@@ -37,5 +37,5 @@ export const ImpactMetrics: React.FC<ImpactMetricsProps> = ({
         ))}
       </Grid>
     </div>
-  );
-};
+  )
+}

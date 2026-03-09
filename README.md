@@ -48,6 +48,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Design System
 
 The project implements a comprehensive design system with:
+
 - Brand colors (Primary Green #75c037, Secondary Yellow #ffc42e, Dark Green #48811a)
 - Typography system (Montserrat for headings, Roboto for body text)
 - Responsive breakpoints (Mobile: 320-767px, Tablet: 768-1023px, Desktop: 1024px+)

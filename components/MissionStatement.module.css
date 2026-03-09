@@ -4,8 +4,9 @@
   margin: 0 auto;
   position: relative;
   padding: clamp(40px, 6vw, 80px) clamp(24px, 4vw, 48px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 :global(html.js) .missionStatement {
@@ -24,8 +25,9 @@
   justify-content: center;
   margin-bottom: 20px;
   color: var(--color-primary-green, #4a9e22);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s,
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
 }
 
 :global(html.js) .quoteIcon {
@@ -68,8 +70,9 @@
   font-weight: 700;
   color: var(--color-dark-green, #1a3d0c);
   margin-bottom: clamp(16px, 2vw, 24px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
 }
 
 :global(html.js) .title {
@@ -88,8 +91,9 @@
   line-height: 1.8;
   color: var(--color-gray-700, #555);
   font-weight: 400;
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s,
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
 }
 
 :global(html.js) .content {

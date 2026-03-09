@@ -1,21 +1,21 @@
-import React from 'react';
-import styles from './Grid.module.css';
+import React from 'react'
+import styles from './Grid.module.css'
 
 export interface GridProps {
-  children: React.ReactNode;
+  children: React.ReactNode
   columns?: {
-    mobile?: number;
-    tablet?: number;
-    desktop?: number;
-  };
-  gap?: 'sm' | 'md' | 'lg' | 'xl';
-  className?: string;
+    mobile?: number
+    tablet?: number
+    desktop?: number
+  }
+  gap?: 'sm' | 'md' | 'lg' | 'xl'
+  className?: string
 }
 
 /**
  * Responsive Grid component with configurable columns
  * Default behavior: 3 columns desktop, 2 tablet, 1 mobile
- * 
+ *
  * @example
  * <Grid columns={{ desktop: 3, tablet: 2, mobile: 1 }} gap="lg">
  *   <div>Item 1</div>
@@ -38,7 +38,7 @@ export const Grid: React.FC<GridProps> = ({
     className,
   ]
     .filter(Boolean)
-    .join(' ');
+    .join(' ')
 
-  return <div className={gridClass}>{children}</div>;
-};
+  return <div className={gridClass}>{children}</div>
+}

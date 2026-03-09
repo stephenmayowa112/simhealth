@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
-import React from 'react';
+import React from 'react'
 
 export interface ButtonProps {
-  children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'text';
-  size?: 'small' | 'medium' | 'large';
-  onClick?: () => void;
-  href?: string;
-  type?: 'button' | 'submit' | 'reset';
-  disabled?: boolean;
-  className?: string;
+  children: React.ReactNode
+  variant?: 'primary' | 'secondary' | 'text'
+  size?: 'small' | 'medium' | 'large'
+  onClick?: () => void
+  href?: string
+  type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
+  className?: string
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -37,7 +37,7 @@ export const Button: React.FC<ButtonProps> = ({
     opacity: disabled ? 0.6 : 1,
     position: 'relative',
     overflow: 'hidden',
-  };
+  }
 
   const sizeStyles: Record<string, React.CSSProperties> = {
     small: {
@@ -58,7 +58,7 @@ export const Button: React.FC<ButtonProps> = ({
       lineHeight: '1.5',
       minHeight: '56px',
     },
-  };
+  }
 
   const variantStyles: Record<string, React.CSSProperties> = {
     primary: {
@@ -76,68 +76,63 @@ export const Button: React.FC<ButtonProps> = ({
       color: '#4a9e22',
       padding: sizeStyles[size].padding,
     },
-  };
+  }
 
   const combinedStyles = {
     ...baseStyles,
     ...sizeStyles[size],
     ...variantStyles[variant],
-  };
+  }
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
-    if (disabled) return;
-    const target = e.currentTarget as HTMLElement;
+    if (disabled) return
+    const target = e.currentTarget as HTMLElement
     if (variant === 'primary') {
-      target.style.backgroundColor = '#3d8a1b';
-      target.style.boxShadow = '0 4px 20px rgba(74, 158, 34, 0.5)';
-      target.style.transform = 'translateY(-2px)';
+      target.style.backgroundColor = '#3d8a1b'
+      target.style.boxShadow = '0 4px 20px rgba(74, 158, 34, 0.5)'
+      target.style.transform = 'translateY(-2px)'
     } else if (variant === 'secondary') {
-      target.style.backgroundColor = '#1a3d0c';
-      target.style.color = '#ffffff';
-      target.style.transform = 'translateY(-2px)';
+      target.style.backgroundColor = '#1a3d0c'
+      target.style.color = '#ffffff'
+      target.style.transform = 'translateY(-2px)'
     } else if (variant === 'text') {
-      target.style.color = '#1a3d0c';
+      target.style.color = '#1a3d0c'
     }
-  };
+  }
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
-    if (disabled) return;
-    const target = e.currentTarget as HTMLElement;
-    target.style.transform = 'translateY(0)';
+    if (disabled) return
+    const target = e.currentTarget as HTMLElement
+    target.style.transform = 'translateY(0)'
     if (variant === 'primary') {
-      target.style.backgroundColor = '#4a9e22';
-      target.style.boxShadow = '0 2px 12px rgba(74, 158, 34, 0.35)';
+      target.style.backgroundColor = '#4a9e22'
+      target.style.boxShadow = '0 2px 12px rgba(74, 158, 34, 0.35)'
     } else if (variant === 'secondary') {
-      target.style.backgroundColor = 'transparent';
-      target.style.color = '#1a3d0c';
+      target.style.backgroundColor = 'transparent'
+      target.style.color = '#1a3d0c'
     } else if (variant === 'text') {
-      target.style.color = '#4a9e22';
+      target.style.color = '#4a9e22'
     }
-  };
+  }
 
   const commonProps = {
     style: combinedStyles,
     onMouseEnter: handleMouseEnter,
     onMouseLeave: handleMouseLeave,
     className,
-  };
+  }
 
   if (href && !disabled) {
     return (
       <a href={href} {...commonProps}>
         {children}
       </a>
-    );
+    )
   }
 
   return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      {...commonProps}
-    >
+    <button type={type} onClick={onClick} disabled={disabled} {...commonProps}>
       {children}
     </button>
-  );
-};
+  )
+}

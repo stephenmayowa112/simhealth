@@ -1,25 +1,25 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { Section } from './Section';
-import { Grid } from './Grid';
-import { Card } from './Card';
-import styles from './ProgramsGrid.module.css';
+import React from 'react'
+import { Section } from './Section'
+import { Grid } from './Grid'
+import { Card } from './Card'
+import styles from './ProgramsGrid.module.css'
 
 export interface Program {
-  id: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  imageAlt: string;
-  link: string;
+  id: string
+  title: string
+  description: string
+  imageUrl: string
+  imageAlt: string
+  link: string
 }
 
 export interface ProgramsGridProps {
-  title?: string;
-  subtitle?: string;
-  programs: Program[];
-  backgroundColor?: 'white' | 'gray' | 'green';
+  title?: string
+  subtitle?: string
+  programs: Program[]
+  backgroundColor?: 'white' | 'gray' | 'green'
 }
 
 export const ProgramsGrid: React.FC<ProgramsGridProps> = ({
@@ -28,28 +28,31 @@ export const ProgramsGrid: React.FC<ProgramsGridProps> = ({
   programs,
   backgroundColor = 'white',
 }) => {
-  const sectionRef = React.useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = React.useState(false);
+  const sectionRef = React.useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = React.useState(false)
 
   React.useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
+    const el = sectionRef.current
+    if (!el) return
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
+          setIsVisible(true)
+          observer.disconnect()
         }
       },
       { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <Section backgroundColor={backgroundColor}>
-      <div ref={sectionRef} className={`${styles.programsGrid} ${isVisible ? styles.visible : ''}`}>
+      <div
+        ref={sectionRef}
+        className={`${styles.programsGrid} ${isVisible ? styles.visible : ''}`}
+      >
         {title && <h2 className={styles.title}>{title}</h2>}
         {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         <Grid columns={{ desktop: 3, tablet: 2, mobile: 1 }} gap="lg">
@@ -72,5 +75,5 @@ export const ProgramsGrid: React.FC<ProgramsGridProps> = ({
         </Grid>
       </div>
     </Section>
-  );
-};
+  )
+}

@@ -1,21 +1,23 @@
-'use client';
+'use client'
 
-import React, { useState } from 'react';
-import { Section, Grid, Card } from '@/components';
-import { newsArticles } from '@/lib/news-data';
-import styles from './news.module.css';
+import React, { useState } from 'react'
+import { Section, Grid, Card } from '@/components'
+import { newsArticles } from '@/lib/news-data'
+import styles from './news.module.css'
 
-const ARTICLES_PER_PAGE = 9;
+const ARTICLES_PER_PAGE = 9
 
 export default function NewsPage() {
-  const [displayCount, setDisplayCount] = useState(ARTICLES_PER_PAGE);
+  const [displayCount, setDisplayCount] = useState(ARTICLES_PER_PAGE)
 
-  const visibleArticles = newsArticles.slice(0, displayCount);
-  const hasMore = displayCount < newsArticles.length;
+  const visibleArticles = newsArticles.slice(0, displayCount)
+  const hasMore = displayCount < newsArticles.length
 
   const handleLoadMore = () => {
-    setDisplayCount((prev) => Math.min(prev + ARTICLES_PER_PAGE, newsArticles.length));
-  };
+    setDisplayCount((prev) =>
+      Math.min(prev + ARTICLES_PER_PAGE, newsArticles.length)
+    )
+  }
 
   return (
     <>
@@ -23,7 +25,8 @@ export default function NewsPage() {
         <div className={styles.newsHeader}>
           <h1 className={styles.pageTitle}>News</h1>
           <p className={styles.pageSubtitle}>
-            Stay updated with the latest news, announcements, and stories from SimHealth Africa
+            Stay updated with the latest news, announcements, and stories from
+            SimHealth Africa
           </p>
         </div>
       </Section>
@@ -59,5 +62,5 @@ export default function NewsPage() {
         )}
       </Section>
     </>
-  );
+  )
 }

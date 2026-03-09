@@ -1,76 +1,78 @@
-'use client';
+'use client'
 
-import React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import styles from './MobileNav.module.css';
+import React from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import styles from './MobileNav.module.css'
 
 export interface NavItem {
-  label: string;
-  href: string;
-  children?: NavItem[];
+  label: string
+  href: string
+  children?: NavItem[]
 }
 
 export interface MobileNavProps {
   logo?: {
-    src: string;
-    alt: string;
-    href?: string;
-  };
-  items: NavItem[];
+    src: string
+    alt: string
+    href?: string
+  }
+  items: NavItem[]
 }
 
 export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
-  const pathname = usePathname();
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [expandedItems, setExpandedItems] = React.useState<Set<string>>(new Set());
-  const [scrolled, setScrolled] = React.useState(false);
+  const pathname = usePathname()
+  const [isOpen, setIsOpen] = React.useState(false)
+  const [expandedItems, setExpandedItems] = React.useState<Set<string>>(
+    new Set()
+  )
+  const [scrolled, setScrolled] = React.useState(false)
 
   const isActive = (href: string) => {
     if (href === '/') {
-      return pathname === '/';
+      return pathname === '/'
     }
-    return pathname.startsWith(href);
-  };
+    return pathname.startsWith(href)
+  }
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(!isOpen)
     if (!isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = ''
     }
-  };
+  }
 
   const closeMenu = () => {
-    setIsOpen(false);
-    document.body.style.overflow = '';
-  };
+    setIsOpen(false)
+    document.body.style.overflow = ''
+  }
 
   const toggleAccordion = (href: string) => {
-    const newExpanded = new Set(expandedItems);
+    const newExpanded = new Set(expandedItems)
     if (newExpanded.has(href)) {
-      newExpanded.delete(href);
+      newExpanded.delete(href)
     } else {
-      newExpanded.add(href);
+      newExpanded.add(href)
     }
-    setExpandedItems(newExpanded);
-  };
+    setExpandedItems(newExpanded)
+  }
 
   React.useEffect(() => {
-    closeMenu();
-  }, [pathname]);
+    closeMenu()
+  }, [pathname])
 
   React.useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    const onScroll = () => setScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   // Separate volunteer CTA from regular items
-  const regularItems = items.filter(item => item.href !== '/volunteer');
-  const volunteerItem = items.find(item => item.href === '/volunteer');
+  const regularItems = items.filter((item) => item.href !== '/volunteer')
+  const volunteerItem = items.find((item) => item.href === '/volunteer')
 
   return (
     <>
@@ -89,9 +91,15 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
           >
-            <span className={`${styles.hamburgerLine} ${isOpen ? styles.open : ''}`}></span>
-            <span className={`${styles.hamburgerLine} ${isOpen ? styles.open : ''}`}></span>
-            <span className={`${styles.hamburgerLine} ${isOpen ? styles.open : ''}`}></span>
+            <span
+              className={`${styles.hamburgerLine} ${isOpen ? styles.open : ''}`}
+            ></span>
+            <span
+              className={`${styles.hamburgerLine} ${isOpen ? styles.open : ''}`}
+            ></span>
+            <span
+              className={`${styles.hamburgerLine} ${isOpen ? styles.open : ''}`}
+            ></span>
           </button>
         </div>
       </nav>
@@ -110,16 +118,28 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
           onClick={closeMenu}
           aria-label="Close menu"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6L6 18M6 6L18 18"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </button>
 
         <ul className={styles.navList}>
           {regularItems.map((item) => {
-            const hasChildren = item.children && item.children.length > 0;
-            const active = isActive(item.href);
-            const isExpanded = expandedItems.has(item.href);
+            const hasChildren = item.children && item.children.length > 0
+            const active = isActive(item.href)
+            const isExpanded = expandedItems.has(item.href)
 
             return (
               <li key={item.href} className={styles.navItem}>
@@ -175,7 +195,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
                   </ul>
                 )}
               </li>
-            );
+            )
           })}
         </ul>
 
@@ -188,5 +208,5 @@ export const MobileNav: React.FC<MobileNavProps> = ({ logo, items }) => {
         )}
       </div>
     </>
-  );
-};
+  )
+}

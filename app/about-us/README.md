@@ -5,6 +5,7 @@ This page implements the About Us section for SimHealth Africa, preserving all e
 ## Sections Implemented
 
 ### 1. Organization Overview Section
+
 - **Layout**: Two-column layout (text + side image)
 - **Content**: Organization description and Board of Trustees information
 - **CTA**: Button linking to Organization Strategy page
@@ -12,19 +13,22 @@ This page implements the About Us section for SimHealth Africa, preserving all e
 - **Requirements**: 2.1
 
 ### 2. Vision and Mission Section
+
 - **Layout**: Two-column grid with icon cards
-- **Content**: 
+- **Content**:
   - Vision: "To achieve good health and build human resource capacity..."
   - Mission: "simHealth Africa is a knowledge-based organization..."
 - **Design**: Cards with icons, shadows, and hover effects
 - **Requirements**: 2.1
 
 ### 3. Governance Section
+
 - **Layout**: Centered text block with icon
 - **Content**: Legal status and governance structure (CAC/IT/NO 36867)
 - **Requirements**: 2.1
 
 ### 4. Team Section
+
 - **Layout**: Responsive grid (1 column mobile, 2 tablet, 3 desktop)
 - **Content**: Team member cards with profile images, names, titles, and bios
 - **Images**: 300x300px (1:1 aspect ratio) profile photos
@@ -32,6 +36,7 @@ This page implements the About Us section for SimHealth Africa, preserving all e
 - **Requirements**: 2.1, 6.2
 
 ### 5. Values Section
+
 - **Layout**: Responsive grid (1 column mobile, 2 tablet, 3 desktop)
 - **Content**: Six core values with icons and descriptions
   - Excellence
@@ -46,17 +51,20 @@ This page implements the About Us section for SimHealth Africa, preserving all e
 ## Responsive Behavior
 
 ### Mobile (< 768px)
+
 - Single column layout for all sections
 - Overview section: Content first, image second
 - Reduced padding and font sizes
 - Full-width cards
 
 ### Tablet (768px - 1023px)
+
 - Two-column layout for overview section
 - Two-column grids for vision/mission, team, and values
 - Increased spacing between elements
 
 ### Desktop (1024px+)
+
 - Three-column grids for team and values sections
 - Larger typography
 - Maximum content width: 1200px
@@ -64,6 +72,7 @@ This page implements the About Us section for SimHealth Africa, preserving all e
 ## Content Preservation
 
 All content from the original about-us page has been preserved:
+
 - Organization description
 - Vision statement
 - Mission statement
@@ -74,6 +83,7 @@ All content from the original about-us page has been preserved:
 ## Images Required
 
 Replace placeholder files with actual images:
+
 - `/public/images/about-overview.jpg` (600x400px)
 - `/public/images/team/member-1.jpg` (300x300px)
 - `/public/images/team/member-2.jpg` (300x300px)

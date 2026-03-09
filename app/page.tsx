@@ -1,27 +1,29 @@
-import dynamic from 'next/dynamic';
-import {
-  Hero,
-  MissionStatement,
-  ProgramsGrid,
-  Program,
-} from '@/components';
-import { newsArticles } from '@/lib/news-data';
+import dynamic from 'next/dynamic'
+import { Hero, MissionStatement, ProgramsGrid, Program } from '@/components'
+import { newsArticles } from '@/lib/news-data'
 
 // Lazy load below-the-fold components
-const CallToAction = dynamic(() => import('@/components').then(mod => ({ default: mod.CallToAction })), {
-  loading: () => <div style={{ minHeight: '300px' }} />,
-});
+const CallToAction = dynamic(
+  () => import('@/components').then((mod) => ({ default: mod.CallToAction })),
+  {
+    loading: () => <div style={{ minHeight: '300px' }} />,
+  }
+)
 
-const NewsPreview = dynamic(() => import('@/components').then(mod => ({ default: mod.NewsPreview })), {
-  loading: () => <div style={{ minHeight: '400px' }} />,
-});
+const NewsPreview = dynamic(
+  () => import('@/components').then((mod) => ({ default: mod.NewsPreview })),
+  {
+    loading: () => <div style={{ minHeight: '400px' }} />,
+  }
+)
 
 // Sample data for programs
 const programs: Program[] = [
   {
     id: '1',
     title: 'Health Program',
-    description: 'Improving healthcare delivery across Africa through innovative solutions and partnerships.',
+    description:
+      'Improving healthcare delivery across Africa through innovative solutions and partnerships.',
     imageUrl: 'https://placehold.co/400x300/75c037/ffffff?text=Health+Program',
     imageAlt: 'Health Program',
     link: '/health-program',
@@ -29,20 +31,24 @@ const programs: Program[] = [
   {
     id: '2',
     title: 'Innovation & Social Entrepreneurship',
-    description: 'Empowering entrepreneurs to create sustainable solutions for social challenges.',
-    imageUrl: 'https://placehold.co/400x300/ffc42e/1a1a1a?text=Innovation+Program',
+    description:
+      'Empowering entrepreneurs to create sustainable solutions for social challenges.',
+    imageUrl:
+      'https://placehold.co/400x300/ffc42e/1a1a1a?text=Innovation+Program',
     imageAlt: 'Innovation Program',
     link: '/innovation-and-social-entrepreneurship-program',
   },
   {
     id: '3',
     title: 'SimHealth Institute',
-    description: 'Building capacity through training and education in health systems management.',
-    imageUrl: 'https://placehold.co/400x300/48811a/ffffff?text=SimHealth+Institute',
+    description:
+      'Building capacity through training and education in health systems management.',
+    imageUrl:
+      'https://placehold.co/400x300/48811a/ffffff?text=SimHealth+Institute',
     imageAlt: 'SimHealth Institute',
     link: '/simhealth-institute',
   },
-];
+]
 
 export default function Home() {
   return (
@@ -84,5 +90,5 @@ export default function Home() {
         backgroundColor="gray"
       />
     </>
-  );
+  )
 }

@@ -1,11 +1,11 @@
-'use client';
+'use client'
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react'
 
 interface UseScrollAnimationOptions {
-  threshold?: number;
-  rootMargin?: string;
-  triggerOnce?: boolean;
+  threshold?: number
+  rootMargin?: string
+  triggerOnce?: boolean
 }
 
 /**
@@ -13,46 +13,42 @@ interface UseScrollAnimationOptions {
  * Uses Intersection Observer API for performance
  */
 export function useScrollAnimation(options: UseScrollAnimationOptions = {}) {
-  const {
-    threshold = 0.1,
-    rootMargin = '0px',
-    triggerOnce = true,
-  } = options;
+  const { threshold = 0.1, rootMargin = '0px', triggerOnce = true } = options
 
-  const elementRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    const element = elementRef.current;
-    if (!element) return;
+    const element = elementRef.current
+    if (!element) return
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsVisible(true);
+            setIsVisible(true)
             if (triggerOnce) {
-              observer.unobserve(entry.target);
+              observer.unobserve(entry.target)
             }
           } else if (!triggerOnce) {
-            setIsVisible(false);
+            setIsVisible(false)
           }
-        });
+        })
       },
       {
         threshold,
         rootMargin,
       }
-    );
+    )
 
-    observer.observe(element);
+    observer.observe(element)
 
     return () => {
       if (element) {
-        observer.unobserve(element);
+        observer.unobserve(element)
       }
-    };
-  }, [threshold, rootMargin, triggerOnce]);
+    }
+  }, [threshold, rootMargin, triggerOnce])
 
-  return { elementRef, isVisible };
+  return { elementRef, isVisible }
 }

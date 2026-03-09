@@ -6,7 +6,11 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--color-brand-pale-green) 0%, var(--color-neutral-white) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-pale-green) 0%,
+    var(--color-neutral-white) 100%
+  );
 }
 
 .imageContainer {

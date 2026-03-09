@@ -5,6 +5,7 @@ This directory should contain the images used throughout the SimHealth Africa we
 ## Required Images
 
 ### Homepage
+
 - `hero-background.jpg` - Hero section background (recommended: 1920x600px)
 - `health-program.jpg` - Health Program card image (recommended: 400x300px)
 - `innovation-program.jpg` - Innovation Program card image (recommended: 400x300px)
@@ -24,14 +25,15 @@ This directory should contain the images used throughout the SimHealth Africa we
 ## Placeholder Images
 
 Until actual images are provided, you can use placeholder services like:
+
 - https://placehold.co/
 - https://picsum.photos/
 - https://via.placeholder.com/
 
 Example: `https://placehold.co/1920x600/75c037/ffffff?text=Hero+Background`
 
-
 ### About Us Page
+
 - `about-overview.jpg` - Team working together image (recommended: 600x400px)
 - `team/member-1.jpg` - Executive Director profile (recommended: 300x300px, 1:1 aspect ratio)
 - `team/member-2.jpg` - Program Director profile (recommended: 300x300px, 1:1 aspect ratio)

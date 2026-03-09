@@ -80,11 +80,13 @@ The design implements a mobile-first responsive approach with breakpoints:
 #### 1. Typography System
 
 **Font Stack**:
+
 - **Primary**: Montserrat (existing, for headings and emphasis)
 - **Secondary**: Roboto (existing, for body text)
 - **Fallback**: system-ui, -apple-system, sans-serif
 
 **Type Scale**:
+
 ```
 Display: 48px / 56px (desktop), 36px / 44px (mobile)
 H1: 40px / 48px (desktop), 32px / 40px (mobile)
@@ -98,6 +100,7 @@ Caption: 12px / 16px
 ```
 
 **Font Weights**:
+
 - Regular: 400
 - Medium: 500
 - Semi-Bold: 600
@@ -106,17 +109,20 @@ Caption: 12px / 16px
 #### 2. Color System
 
 **Brand Colors** (preserved):
+
 - Primary Green: `#75c037`
 - Secondary Yellow: `#ffc42e`
 - Dark Green: `#48811a`
 
 **Extended Palette** (new, harmonized):
+
 - Light Green: `#a8d97f` (tint of primary)
 - Pale Green: `#e8f5dc` (background tint)
 - Amber: `#ffb800` (darker yellow variant)
 - Pale Yellow: `#fff8e6` (background tint)
 
 **Neutral Colors**:
+
 - Gray 900: `#1a1a1a` (primary text)
 - Gray 700: `#4a4a4a` (secondary text)
 - Gray 500: `#808080` (tertiary text)
@@ -125,6 +131,7 @@ Caption: 12px / 16px
 - White: `#ffffff`
 
 **Semantic Colors**:
+
 - Success: Primary Green `#75c037`
 - Warning: Secondary Yellow `#ffc42e`
 - Error: `#dc3545`
@@ -133,6 +140,7 @@ Caption: 12px / 16px
 #### 3. Spacing System
 
 Based on 8px grid:
+
 ```
 xs: 4px
 sm: 8px
@@ -147,6 +155,7 @@ xl: 32px
 #### 4. Component Library
 
 **Card Component**:
+
 - Background: White
 - Border Radius: 8px
 - Shadow: 0 2px 8px rgba(0,0,0,0.08)
@@ -157,6 +166,7 @@ xl: 32px
 **Button Component**:
 
 Primary Button:
+
 - Background: Primary Green `#75c037`
 - Text: White
 - Padding: 12px 32px
@@ -166,18 +176,21 @@ Primary Button:
 - Transition: background 0.2s ease
 
 Secondary Button:
+
 - Background: Transparent
 - Border: 2px solid Primary Green
 - Text: Primary Green
 - Hover: Background Primary Green, Text White
 
 **Navigation Component**:
+
 - Desktop: Horizontal menu bar
 - Mobile: Hamburger menu with slide-in drawer
 - Active State: Underline with Primary Green
 - Hover State: Color transition to Primary Green
 
 **Section Container**:
+
 - Max Width: 1200px
 - Padding: 80px 24px (desktop), 48px 16px (mobile)
 - Margin: 0 auto
@@ -185,17 +198,20 @@ Secondary Button:
 #### 5. Interactive Elements
 
 **Hover States**:
+
 - Links: Color transition to Primary Green (0.2s)
 - Cards: Elevation increase with shadow
 - Buttons: Background color transition
 - Images: Subtle scale (1.05) with overflow hidden
 
 **Focus States**:
+
 - Outline: 2px solid Primary Green
 - Offset: 2px
 - Border Radius: 4px
 
 **Animations**:
+
 - Fade In: opacity 0 to 1 (0.4s ease)
 - Slide Up: transform translateY(20px) to 0 (0.5s ease)
 - Respect prefers-reduced-motion media query
@@ -203,6 +219,7 @@ Secondary Button:
 ### Page Section Components
 
 #### Homepage
+
 - Hero Section: Full-width banner with overlay text
 - Mission Statement: Centered text block with background
 - Programs Grid: 3-column card layout (responsive)
@@ -210,17 +227,20 @@ Secondary Button:
 - News Preview: Latest 3 articles in card format
 
 #### About Us
+
 - Organization Overview: Text with side image
 - Team Section: Grid of team member cards
 - Values Section: Icon + text blocks
 
 #### Programs Pages
+
 - Program Header: Title with hero image
 - Description Section: Rich text content
 - Impact Metrics: Stat cards with numbers
 - Related Projects: Card grid
 
 #### Contact Page
+
 - Contact Form: Styled form fields
 - Contact Information: Cards with icons
 - Map Integration: Embedded map section
@@ -228,6 +248,7 @@ Secondary Button:
 ### Navigation Structure
 
 **Primary Navigation**:
+
 ```
 Home
 About Us
@@ -244,6 +265,7 @@ Volunteer
 ```
 
 **Mobile Navigation**:
+
 - Hamburger icon (top right)
 - Slide-in drawer from right
 - Accordion for sub-menus
@@ -257,86 +279,86 @@ Volunteer
 interface DesignTokens {
   colors: {
     brand: {
-      primaryGreen: string;
-      secondaryYellow: string;
-      darkGreen: string;
-      lightGreen: string;
-      paleGreen: string;
-    };
+      primaryGreen: string
+      secondaryYellow: string
+      darkGreen: string
+      lightGreen: string
+      paleGreen: string
+    }
     neutral: {
-      gray900: string;
-      gray700: string;
-      gray500: string;
-      gray300: string;
-      gray100: string;
-      white: string;
-    };
+      gray900: string
+      gray700: string
+      gray500: string
+      gray300: string
+      gray100: string
+      white: string
+    }
     semantic: {
-      success: string;
-      warning: string;
-      error: string;
-      info: string;
-    };
-  };
+      success: string
+      warning: string
+      error: string
+      info: string
+    }
+  }
   typography: {
     fontFamily: {
-      primary: string;
-      secondary: string;
-    };
+      primary: string
+      secondary: string
+    }
     fontSize: {
-      display: { desktop: string; mobile: string; };
-      h1: { desktop: string; mobile: string; };
-      h2: { desktop: string; mobile: string; };
-      h3: { desktop: string; mobile: string; };
-      h4: { desktop: string; mobile: string; };
-      bodyLarge: string;
-      body: string;
-      bodySmall: string;
-      caption: string;
-    };
+      display: { desktop: string; mobile: string }
+      h1: { desktop: string; mobile: string }
+      h2: { desktop: string; mobile: string }
+      h3: { desktop: string; mobile: string }
+      h4: { desktop: string; mobile: string }
+      bodyLarge: string
+      body: string
+      bodySmall: string
+      caption: string
+    }
     fontWeight: {
-      regular: number;
-      medium: number;
-      semiBold: number;
-      bold: number;
-    };
+      regular: number
+      medium: number
+      semiBold: number
+      bold: number
+    }
     lineHeight: {
-      tight: number;
-      normal: number;
-      relaxed: number;
-    };
-  };
+      tight: number
+      normal: number
+      relaxed: number
+    }
+  }
   spacing: {
-    xs: string;
-    sm: string;
-    md: string;
-    lg: string;
-    xl: string;
-    xxl: string;
-    xxxl: string;
-    xxxxl: string;
-  };
+    xs: string
+    sm: string
+    md: string
+    lg: string
+    xl: string
+    xxl: string
+    xxxl: string
+    xxxxl: string
+  }
   breakpoints: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-    largeDesktop: string;
-  };
+    mobile: string
+    tablet: string
+    desktop: string
+    largeDesktop: string
+  }
   shadows: {
-    sm: string;
-    md: string;
-    lg: string;
-  };
+    sm: string
+    md: string
+    lg: string
+  }
   borderRadius: {
-    sm: string;
-    md: string;
-    lg: string;
-  };
+    sm: string
+    md: string
+    lg: string
+  }
   transitions: {
-    fast: string;
-    normal: string;
-    slow: string;
-  };
+    fast: string
+    normal: string
+    slow: string
+  }
 }
 ```
 
@@ -344,26 +366,26 @@ interface DesignTokens {
 
 ```typescript
 interface CardProps {
-  title: string;
-  description: string;
-  imageUrl?: string;
-  link?: string;
-  variant: 'default' | 'featured' | 'compact';
+  title: string
+  description: string
+  imageUrl?: string
+  link?: string
+  variant: 'default' | 'featured' | 'compact'
 }
 
 interface ButtonProps {
-  text: string;
-  variant: 'primary' | 'secondary' | 'text';
-  size: 'small' | 'medium' | 'large';
-  onClick?: () => void;
-  href?: string;
+  text: string
+  variant: 'primary' | 'secondary' | 'text'
+  size: 'small' | 'medium' | 'large'
+  onClick?: () => void
+  href?: string
 }
 
 interface SectionProps {
-  title: string;
-  subtitle?: string;
-  backgroundColor: 'white' | 'gray' | 'green';
-  children: React.ReactNode;
+  title: string
+  subtitle?: string
+  backgroundColor: 'white' | 'gray' | 'green'
+  children: React.ReactNode
 }
 ```
 
@@ -371,28 +393,28 @@ interface SectionProps {
 
 ```typescript
 interface PageSection {
-  id: string;
-  slug: string;
-  title: string;
-  content: string; // HTML content
+  id: string
+  slug: string
+  title: string
+  content: string // HTML content
   featuredImage?: {
-    url: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
+    url: string
+    alt: string
+    width: number
+    height: number
+  }
   metadata: {
-    lastModified: Date;
-    author: string;
-  };
+    lastModified: Date
+    author: string
+  }
 }
 
 interface NavigationItem {
-  id: string;
-  label: string;
-  url: string;
-  children?: NavigationItem[];
-  order: number;
+  id: string
+  label: string
+  url: string
+  children?: NavigationItem[]
+  order: number
 }
 ```
 
@@ -401,18 +423,18 @@ interface NavigationItem {
 ```typescript
 interface ImageAsset {
   original: {
-    url: string;
-    width: number;
-    height: number;
-  };
+    url: string
+    width: number
+    height: number
+  }
   responsive: {
-    mobile: string;    // 640w
-    tablet: string;    // 1024w
-    desktop: string;   // 1920w
-  };
-  alt: string;
-  format: 'jpg' | 'png' | 'webp';
-  optimized: boolean;
+    mobile: string // 640w
+    tablet: string // 1024w
+    desktop: string // 1920w
+  }
+  alt: string
+  format: 'jpg' | 'png' | 'webp'
+  optimized: boolean
 }
 
 // Recommended dimensions by usage
@@ -422,9 +444,8 @@ const ImageDimensions = {
   thumbnailImage: { width: 300, height: 200, aspectRatio: '3:2' },
   fullWidthImage: { width: 1200, height: 675, aspectRatio: '16:9' },
   profileImage: { width: 300, height: 300, aspectRatio: '1:1' },
-};
+}
 ```
-
 
 ## Correctness Properties
 
@@ -621,11 +642,13 @@ For any collection of multiple items displayed together (programs grid, news lis
 ### Design System Errors
 
 **Missing Design Tokens**:
+
 - Fallback to default values if custom properties are not defined
 - Log warnings in development mode for missing tokens
 - Provide sensible defaults for all design tokens
 
 **Responsive Breakpoint Failures**:
+
 - Ensure mobile-first approach provides baseline functionality
 - Test breakpoint transitions to prevent layout breaks
 - Use container queries where appropriate for component-level responsiveness
@@ -633,16 +656,19 @@ For any collection of multiple items displayed together (programs grid, news lis
 ### Content Errors
 
 **Missing Images**:
+
 - Provide placeholder images with appropriate dimensions
 - Display alt text when images fail to load
 - Log 404 errors for missing assets
 
 **Broken Links**:
+
 - Implement 404 page with navigation back to main sections
 - Regular link checking during development
 - Provide clear error messages for broken internal links
 
 **Form Validation**:
+
 - Client-side validation with clear error messages
 - Prevent form submission with invalid data
 - Provide inline validation feedback
@@ -650,11 +676,13 @@ For any collection of multiple items displayed together (programs grid, news lis
 ### Performance Errors
 
 **Slow Loading**:
+
 - Implement loading states for slow connections
 - Progressive enhancement for core content
 - Graceful degradation if JavaScript fails
 
 **Asset Loading Failures**:
+
 - Fallback fonts if web fonts fail to load
 - Critical CSS inlined to ensure basic styling
 - Defer non-critical resources
@@ -662,11 +690,13 @@ For any collection of multiple items displayed together (programs grid, news lis
 ### Accessibility Errors
 
 **Insufficient Contrast**:
+
 - Audit all color combinations during development
 - Provide high-contrast mode option if needed
 - Test with accessibility tools (axe, Lighthouse)
 
 **Missing Accessibility Attributes**:
+
 - Validate ARIA labels and roles
 - Ensure all interactive elements have accessible names
 - Test with screen readers during development
@@ -678,12 +708,14 @@ For any collection of multiple items displayed together (programs grid, news lis
 The redesign will employ both unit testing and property-based testing to ensure comprehensive coverage:
 
 **Unit Tests**: Focus on specific examples, edge cases, and integration points
+
 - Specific component rendering tests
 - Edge cases (empty content, very long text)
 - Error conditions (missing images, broken links)
 - Integration between WordPress, Neve theme, and Elementor
 
 **Property-Based Tests**: Verify universal properties across all inputs
+
 - Comprehensive input coverage through randomization
 - Validate design system consistency
 - Test responsive behavior across viewport ranges
@@ -694,12 +726,14 @@ Together, these approaches provide comprehensive coverage where unit tests catch
 ### Property-Based Testing Configuration
 
 **Testing Library**: For CSS/HTML validation, we'll use a combination of:
+
 - **Puppeteer** or **Playwright** for browser automation and DOM testing
 - **axe-core** for accessibility property testing
 - **CSS parsing libraries** for stylesheet validation
 - Custom property generators for viewport sizes, content variations
 
 **Test Configuration**:
+
 - Minimum 100 iterations per property test (due to randomization)
 - Each property test references its design document property
 - Tag format: **Feature: modern-website-redesign, Property {number}: {property_text}**
@@ -707,24 +741,28 @@ Together, these approaches provide comprehensive coverage where unit tests catch
 ### Unit Testing Strategy
 
 **Component Tests**:
+
 - Card component renders with all variants (default, featured, compact)
 - Button component renders with all sizes and variants
 - Navigation component switches between mobile and desktop modes
 - Section containers maintain max-width constraints
 
 **Content Tests**:
+
 - All 12 page sections are accessible
 - Contact information is present on contact page
 - Logo appears in header
 - Smooth scrolling is enabled
 
 **Responsive Tests**:
+
 - Mobile menu appears at mobile breakpoints
 - Desktop menu appears at desktop breakpoints
 - Typography scales at defined breakpoints
 - Touch targets meet minimum size on mobile
 
 **Accessibility Tests**:
+
 - All images have alt attributes
 - Color contrast meets WCAG AA
 - Focus indicators are visible
@@ -732,6 +770,7 @@ Together, these approaches provide comprehensive coverage where unit tests catch
 - Keyboard navigation works
 
 **Performance Tests**:
+
 - Page load time under 3 seconds
 - Images are lazy loaded
 - CSS and JS are minified
@@ -776,32 +815,38 @@ Each correctness property will be implemented as a property-based test:
 ### Testing Tools
 
 **Browser Testing**:
+
 - Puppeteer/Playwright for automated browser testing
 - BrowserStack for cross-browser compatibility
 - Chrome DevTools for performance profiling
 
 **Accessibility Testing**:
+
 - axe DevTools for automated accessibility scanning
 - WAVE for visual accessibility feedback
 - Screen readers (NVDA, JAWS, VoiceOver) for manual testing
 
 **Performance Testing**:
+
 - Lighthouse for performance audits
 - WebPageTest for detailed performance metrics
 - Chrome DevTools Performance panel
 
 **Visual Regression Testing**:
+
 - Percy or Chromatic for visual diff testing
 - Manual QA for subjective design quality
 
 ### Test Execution
 
 **Development Phase**:
+
 - Run unit tests on every code change
 - Run property tests before commits
 - Automated accessibility scans on build
 
 **Pre-Deployment**:
+
 - Full property test suite (100 iterations each)
 - Cross-browser testing
 - Performance audit
@@ -809,8 +854,8 @@ Each correctness property will be implemented as a property-based test:
 - Visual regression testing
 
 **Post-Deployment**:
+
 - Smoke tests on production
 - Performance monitoring
 - User acceptance testing
 - Analytics review for user behavior
-

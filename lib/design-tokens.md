@@ -20,11 +20,11 @@ All design tokens are available as CSS custom properties (CSS variables) prefixe
   /* Brand colors */
   background-color: var(--color-primary-green);
   border-color: var(--color-secondary-yellow);
-  
+
   /* Neutral colors */
   color: var(--color-gray-900);
   background: var(--color-gray-100);
-  
+
   /* Semantic colors */
   border: 1px solid var(--color-success);
 }
@@ -93,20 +93,20 @@ const MyComponent = () => (
 ### Media Queries
 
 ```typescript
-import { mediaQueries, breakpoints } from '@/lib/design-tokens';
+import { mediaQueries, breakpoints } from '@/lib/design-tokens'
 
 // Use in styled-components or CSS-in-JS
 const StyledDiv = styled.div`
   padding: 16px;
-  
+
   ${mediaQueries.tabletUp} {
     padding: 24px;
   }
-  
+
   ${mediaQueries.desktopUp} {
     padding: 32px;
   }
-`;
+`
 ```
 
 ## Responsive Breakpoints
@@ -164,6 +164,7 @@ Pre-defined typography classes are available:
 ## Color Palette
 
 ### Brand Colors
+
 - Primary Green: `#75c037` - Main brand color, CTAs, links
 - Secondary Yellow: `#ffc42e` - Accents, highlights
 - Dark Green: `#48811a` - Hover states, emphasis
@@ -173,6 +174,7 @@ Pre-defined typography classes are available:
 - Pale Yellow: `#fff8e6` - Light backgrounds
 
 ### Neutral Colors
+
 - Gray 900: `#1a1a1a` - Primary text
 - Gray 700: `#4a4a4a` - Secondary text
 - Gray 500: `#808080` - Tertiary text, disabled
@@ -181,6 +183,7 @@ Pre-defined typography classes are available:
 - White: `#ffffff` - Backgrounds, text on dark
 
 ### Semantic Colors
+
 - Success: `#75c037` - Success messages, confirmations
 - Warning: `#ffc42e` - Warnings, alerts
 - Error: `#dc3545` - Errors, destructive actions
