@@ -18,8 +18,6 @@ const nextConfig = {
     // Remove console logs in production
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Enable SWC minification (default in Next.js 14)
-  swcMinify: true,
   // Optimize production builds
   productionBrowserSourceMaps: false,
   // Enable compression
