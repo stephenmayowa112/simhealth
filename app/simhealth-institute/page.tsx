@@ -1,143 +1,85 @@
 import React from 'react'
-import {
-  Section,
-  ProgramHero,
-  ImpactMetrics,
-  RelatedProjects,
-} from '@/components'
-import type { Metadata } from 'next'
+import { Section, Grid } from '@/components'
 
-export const metadata: Metadata = {
-  title: 'SimHealth Institute | SimHealth Africa',
-  description:
-    'SimHealth Institute - Research, documentation, and dissemination for improved health delivery in Africa.',
+export const metadata = {
+  title: 'SimHealth Institute - SimHealth Africa',
+  description: 'Training, coaching, and capacity building services.',
 }
 
 export default function SimHealthInstitutePage() {
-  const metrics = [
-    {
-      value: '100+',
-      label: 'Research Publications',
-      description: 'Peer-reviewed articles',
-    },
-    {
-      value: '50+',
-      label: 'Training Programs',
-      description: 'Conducted annually',
-    },
-    {
-      value: '20+',
-      label: 'Research Projects',
-      description: 'Currently active',
-    },
-  ]
-
-  const relatedProjects = [
-    {
-      title: 'Health Systems Research',
-      description:
-        'Conducting rigorous research on health systems strengthening.',
-      link: '/our-projects',
-    },
-    {
-      title: 'Capacity Building',
-      description:
-        'Training programs for health researchers and practitioners.',
-      link: '/our-projects',
-    },
-    {
-      title: 'Knowledge Management',
-      description: 'Building a repository of health data and best practices.',
-      link: '/our-projects',
-    },
-  ]
-
   return (
     <>
-      <ProgramHero
-        title="SimHealth Institute"
-        imageUrl="/images/simhealth-institute-hero.jpg"
-        imageAlt="SimHealth Institute"
-      />
+      <div style={{ backgroundColor: '#75c037', padding: '10rem 2rem 6rem', textAlign: 'center', color: 'white', position: 'relative', overflow: 'hidden' }}>
+        <h1 style={{ fontSize: '2.5rem', fontWeight: 900, marginBottom: '1.5rem', fontFamily: 'var(--font-primary)' }}>SIMHEALTH INSTITUTE</h1>
+        <p style={{ fontSize: '1.2rem', fontFamily: 'var(--font-secondary)' }}>.....Improving Health and Wellbeing</p>
 
-      <Section backgroundColor="white">
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2
-            style={{
-              fontSize: 'var(--font-size-desktop-h2)',
-              fontWeight: 'var(--font-weight-semibold)',
-              color: 'var(--color-neutral-gray900)',
-              marginBottom: 'var(--spacing-lg)',
-            }}
-          >
-            About SimHealth Institute
-          </h2>
-          <div
-            style={{
-              fontSize: 'var(--font-size-desktop-body)',
-              lineHeight: 'var(--line-height-desktop-body)',
-              color: 'var(--color-neutral-gray700)',
-            }}
-          >
-            <p>
-              SimHealth Institute is positioned to serve as a repository of data
-              and publications on health and health systems, applying rigorous
-              scientific methods for its clinical, epidemiological,
-              pharmaceutical, operational, and implementation research works.
+        {/* Decorative Wave */}
+        <svg style={{ position: 'absolute', bottom: -5, left: 0, width: '100%', height: 'auto', display: 'block' }} viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,50 C120,-10 240,-10 360,30 C480,70 600,70 720,30 C840,-10 960,-10 1080,30 C1200,70 1320,70 1440,30 L1440,100 L0,100 Z" fill="#ffffff" />
+        </svg>
+      </div>
+
+      <Section backgroundColor="white" style={{ padding: '4rem 1rem 6rem' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+
+          {/* Main Intro Text */}
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginBottom: '4rem' }}>
+            <span style={{ fontSize: '4rem', lineHeight: '0.8', fontWeight: 400, color: '#333', fontFamily: 'var(--font-primary)' }}>W</span>
+            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: '#444' }}>
+              e offer training, coaching, mentoring and other capacity building services to individual and corporate organizations. simHealth Africa is committed to capacity building and human resource development through curriculum development, training, coaching and mentorship. We are working on technology deployment to facilitate teaching and learning in a cost efficient way. simHealth Africa provides support to the Government of Nigeria (Ministries of Health) in curriculum development, training, mentorship and coaching on public health supply chain. The two main sub-divisions of the Institute are:
             </p>
-            <p>
-              The Institute conducts cutting-edge research, provides training
-              and capacity building, and facilitates knowledge sharing to
-              improve health delivery across Africa. We work with academic
-              institutions, research organizations, and health systems to
-              generate evidence that informs policy and practice.
-            </p>
-            <h3
-              style={{
-                fontSize: 'var(--font-size-desktop-h3)',
-                fontWeight: 'var(--font-weight-semibold)',
-                color: 'var(--color-neutral-gray900)',
-                marginTop: 'var(--spacing-xl)',
-                marginBottom: 'var(--spacing-md)',
-              }}
-            >
-              Research, Documentation and Dissemination
-            </h3>
-            <p>
-              SimHealth Institute is positioned to serve as repository of data
-              and publications on health and health systems, applying rigorous
-              scientific methods for its clinical, epidemiological,
-              pharmaceutical, operational and implementation research works.
-            </p>
-            <h3
-              style={{
-                fontSize: 'var(--font-size-desktop-h3)',
-                fontWeight: 'var(--font-weight-semibold)',
-                color: 'var(--color-neutral-gray900)',
-                marginTop: 'var(--spacing-xl)',
-                marginBottom: 'var(--spacing-md)',
-              }}
-            >
-              Core Activities
-            </h3>
-            <ul style={{ paddingLeft: 'var(--spacing-lg)' }}>
-              <li>Health Systems Research</li>
-              <li>Clinical and Epidemiological Studies</li>
-              <li>Implementation Science</li>
-              <li>Training and Capacity Building</li>
-              <li>Knowledge Management and Dissemination</li>
-              <li>Policy Analysis and Advocacy</li>
-            </ul>
           </div>
+
+          <Grid columns={{ desktop: 2, tablet: 1, mobile: 1 }} gap="xl">
+            {/* Left Column: Education */}
+            <div>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 900, marginBottom: '1.5rem', fontFamily: 'var(--font-primary)', letterSpacing: '0.05em', textAlign: 'center' }}>EDUCATION, TRAINING AND MENTORSHIP</h3>
+              <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: '#444', marginBottom: '2rem' }}>
+                simHealth has experienced and multidisciplinary faculty and staff who teach, coach and mentor course participants. Our courses are delivered as standard workshops (<span style={{ color: '#75c037' }}>International Training Workshops</span>) and/or seminars (<span style={{ color: '#75c037' }}>SimHealth Africa Seminar Series</span>). Some of our courses include:
+              </p>
+
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {[
+                  "Leadership and management",
+                  "Operational research, data management and dissemination",
+                  "Pharmaceutical systems and services (Drug utilization studies, rational medicine use, pharmacovigilance, pharmacoeconomics, Quality assurance/quality control of pharmaceuticals)",
+                  "Supply chain management",
+                  "Clinical services and patient care",
+                  "Epidemiology, Global/public health and Healthcare delivery",
+                  "Monitoring and evaluation"
+                ].map((item, i) => (
+                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="#75c037" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                    </svg>
+                    <span style={{ fontSize: '1.05rem', lineHeight: 1.6, color: '#444' }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right Column: Research */}
+            <div>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 900, marginBottom: '1.5rem', fontFamily: 'var(--font-primary)', letterSpacing: '0.05em', textAlign: 'center' }}>RESEARCH, DOCUMENTATION AND DISSEMINATION</h3>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '1.05rem', lineHeight: 1.8, color: '#444' }}>
+                <p>
+                  simHealth Institute is positioned to serve as repository of data and publications on health and health systems, applying rigorous scientific methods for its clinical, epidemiological, pharmaceutical, operational and implementation research works.
+                </p>
+                <p>
+                  The Institute mentors and coaches professionals, students, program persons and academics in key subject areas and build capacity for scientific inquiry, research methods and dissemination (presentation at conferences and publications in peer reviewed journals).
+                </p>
+                <p>
+                  simHealth anchors the Africa Conference on Healthcare Delivery (AHD Conference, <a href="http://www.ahdconference.org" style={{ color: '#75c037', textDecoration: 'none' }}>www.ahdconference.org</a>), one of the largest regional meetings on healthcare delivery and innovation in Africa. See conference website for additional information. We build synergy and collaboration among and between practitioners, program persons, academics, implementing partners, donor agencies, policy makers, and students.
+                </p>
+                <p>
+                  Also, through our peer review <span style={{ color: '#75c037' }}>journal</span>, we offer a platform for dissemination of research findings to the larger scientific and professional communities. In addition, the Institute works with simHealth Connect to rapidly disseminate general information on health and activities of the organization through publication of our regular newsletter ("<span style={{ color: '#75c037' }}>simHealth Focus</span>," the official newsletter of SimHealth Africa).
+                </p>
+              </div>
+            </div>
+          </Grid>
+
         </div>
-      </Section>
-
-      <Section backgroundColor="gray">
-        <ImpactMetrics metrics={metrics} title="Our Impact" />
-      </Section>
-
-      <Section backgroundColor="white">
-        <RelatedProjects projects={relatedProjects} title="Related Projects" />
       </Section>
     </>
   )
