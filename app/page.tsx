@@ -33,7 +33,7 @@ export default function Home() {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        paddingTop: '80px',
+        paddingTop: '160px',
         overflow: 'hidden',
         backgroundColor: 'var(--color-slate-black)'
       }}>
