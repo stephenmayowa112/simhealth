@@ -6,16 +6,22 @@
 
 :root {
   /* Brand Colors (evolved palette) */
-  --color-primary-green: #4a9e22;
-  --color-secondary-yellow: #f5c842;
+  --color-primary-green: #75c037;
+  --color-secondary-yellow: #f2c94c;
+
+  /* Modern Sophisticated Dark Colors */
+  --color-deep-emerald: #0a2e15;
+  --color-slate-black: #0f172a;
   --color-dark-green: #1a3d0c;
-  --color-light-green: #6db544;
-  --color-pale-green: #e2f0d5;
-  --color-amber: #f09d1a;
-  --color-pale-yellow: #fef7e0;
-  --color-warm-gold: #f5c842;
+  --color-ink: #050a0f;
+
+  /* Soft Tints & White for glass/cards */
+  --color-pale-green: #eef7e8;
+  --color-pale-yellow: #fdfae8;
   --color-cream: #faf7ef;
-  --color-ink: #0e1c06;
+  --color-white: #ffffff;
+  --color-glass: rgba(255, 255, 255, 0.7);
+  --color-glass-dark: rgba(15, 23, 42, 0.7);
 
   /* Neutral Colors */
   --color-gray-900: #1a1a1a;
@@ -23,38 +29,39 @@
   --color-gray-500: #808080;
   --color-gray-300: #d1d1d1;
   --color-gray-100: #f5f5f5;
-  --color-white: #faf7ef;
+  --color-surface-soft: #f8fafc;
+  /* Slate 50 */
 
   /* Semantic Colors */
-  --color-success: #4a9e22;
-  --color-warning: #f5c842;
-  --color-error: #dc3545;
-  --color-info: #17a2b8;
+  --color-success: #75c037;
+  --color-warning: #f2c94c;
+  --color-error: #ef4444;
+  /* Red 500 */
+  --color-info: #3b82f6;
+  /* Blue 500 */
 
   /* Typography - Font Families */
-  --font-primary: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
-  --font-secondary:
-    var(--font-dm-sans), 'DM Sans', -apple-system, BlinkMacSystemFont,
-    sans-serif;
+  --font-primary: var(--font-primary, 'Plus Jakarta Sans'), system-ui, sans-serif;
+  --font-secondary: var(--font-secondary, 'Inter'), system-ui, sans-serif;
   --font-accent: var(--font-space-mono), 'Space Mono', 'Courier New', monospace;
 
   /* Typography - Fluid Font Sizes */
-  --font-size-display: clamp(2.5rem, 5vw, 4rem);
-  --font-size-h1: clamp(2rem, 4vw, 3.25rem);
-  --font-size-h2: clamp(1.75rem, 3.5vw, 2.5rem);
-  --font-size-h3: clamp(1.375rem, 2.5vw, 1.75rem);
-  --font-size-h4: clamp(1.125rem, 2vw, 1.375rem);
-  --font-size-body-large: clamp(1.0625rem, 1.5vw, 1.25rem);
-  --font-size-body: clamp(0.9375rem, 1.2vw, 1.0625rem);
-  --font-size-body-small: clamp(0.8125rem, 1vw, 0.9375rem);
-  --font-size-caption: clamp(0.6875rem, 0.9vw, 0.8125rem);
+  --font-size-display: clamp(3rem, 6vw, 5rem);
+  --font-size-h1: clamp(2.5rem, 5vw, 4rem);
+  --font-size-h2: clamp(2rem, 4vw, 3rem);
+  --font-size-h3: clamp(1.5rem, 3vw, 2rem);
+  --font-size-h4: clamp(1.25rem, 2vw, 1.5rem);
+  --font-size-body-large: clamp(1.125rem, 1.5vw, 1.25rem);
+  --font-size-body: clamp(1rem, 1.2vw, 1.125rem);
+  --font-size-body-small: clamp(0.875rem, 1vw, 1rem);
+  --font-size-caption: clamp(0.75rem, 0.9vw, 0.875rem);
 
   /* Typography - Line Heights */
-  --line-height-display: 1.15;
-  --line-height-h1: 1.2;
-  --line-height-h2: 1.25;
-  --line-height-h3: 1.3;
-  --line-height-h4: 1.35;
+  --line-height-display: 1.1;
+  --line-height-h1: 1.15;
+  --line-height-h2: 1.2;
+  --line-height-h3: 1.25;
+  --line-height-h4: 1.3;
   --line-height-body-large: 1.6;
   --line-height-body: 1.65;
   --line-height-body-small: 1.5;
@@ -65,6 +72,7 @@
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
 
   /* Spacing (8px grid) */
   --spacing-xs: 4px;
@@ -77,16 +85,18 @@
   --spacing-4xl: 96px;
   --section-padding: clamp(4rem, 8vw, 8rem);
 
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(14, 28, 6, 0.06);
-  --shadow-md: 0 4px 24px rgba(14, 28, 6, 0.1);
-  --shadow-lg: 0 8px 32px rgba(14, 28, 6, 0.14);
-  --shadow-glow-green: 0 2px 12px rgba(74, 158, 34, 0.35);
+  /* Shadows (Soft & Smooth for Neuromorphism) */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+  --shadow-glow-green: 0 0 20px rgba(117, 192, 55, 0.4);
+  --shadow-glow-gold: 0 0 20px rgba(242, 201, 76, 0.4);
 
-  /* Border Radius */
-  --radius-sm: 4px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  /* Border Radius (Rounder for softer feel) */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
   --radius-pill: 999px;
 
   /* Transitions */
@@ -266,9 +276,11 @@ h4,
 .mobile-only {
   display: block;
 }
+
 .tablet-up {
   display: none;
 }
+
 .desktop-up {
   display: none;
 }
@@ -277,6 +289,7 @@ h4,
   .mobile-only {
     display: none;
   }
+
   .tablet-up {
     display: block;
   }

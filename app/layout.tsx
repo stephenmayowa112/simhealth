@@ -1,24 +1,24 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, DM_Sans, Space_Mono } from 'next/font/google'
+import { Plus_Jakarta_Sans, Inter, Space_Mono } from 'next/font/google'
 import './globals.css'
 import { Navigation } from '@/components/Navigation'
 import { CustomCursor } from '@/components/CustomCursor'
 import { navigationItems, logoConfig } from '@/lib/navigation-data'
 
-// Configure Cormorant Garamond (headings - editorial, elegant serif)
-const cormorantGaramond = Cormorant_Garamond({
+// Configure Plus Jakarta Sans (headings - sleek, modern, tech-forward)
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
   style: ['normal', 'italic'],
-  variable: '--font-cormorant',
+  variable: '--font-primary',
   display: 'swap',
 })
 
-// Configure DM Sans (body - clean, modern, readable)
-const dmSans = DM_Sans({
+// Configure Inter (body - highly legible, clean sans-serif)
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-dm-sans',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-secondary',
   display: 'swap',
 })
 
@@ -96,7 +96,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="no-js" suppressHydrationWarning>
       <body
-        className={`${cormorantGaramond.variable} ${dmSans.variable} ${spaceMono.variable}`}
+        className={`${plusJakartaSans.variable} ${inter.variable} ${spaceMono.variable}`}
       >
         {/* Progressive enhancement: switch to 'js' class before first paint */}
         <script
