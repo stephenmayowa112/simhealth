@@ -149,6 +149,7 @@ export default function Home() {
             {[
               { title: "Health Program", icon: <Heart size={28} /> },
               { title: "SimHealth Institute", icon: <CheckCircle2 size={28} /> },
+              { title: "Innovation & Social Entrepreneurship", icon: <Globe2 size={28} /> },
               { title: "SimHealth Connect", icon: <Globe2 size={28} /> },
               { title: "Consultancy Services", icon: <Activity size={28} /> }
             ].map((prog, i) => (
