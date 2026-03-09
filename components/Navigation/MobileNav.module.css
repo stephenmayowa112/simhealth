@@ -11,11 +11,9 @@
 }
 
 .mobileNav.scrolled {
-  background-color: var(--glass-bg-dark);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-shadow);
-  border-bottom: 1px solid var(--glass-border-green);
+  background-color: var(--clay-bg-dark);
+  box-shadow: var(--clay-shadow-hover);
+  border-bottom: var(--clay-border);
 }
 
 .header {
@@ -133,8 +131,8 @@
   max-width: 400px;
   height: 100vh;
   height: 100dvh;
-  background-color: var(--color-slate-black);
-  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5);
+  background-color: var(--clay-bg-dark);
+  box-shadow: var(--clay-shadow-outer);
   z-index: 1002;
   overflow-y: auto;
   transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);

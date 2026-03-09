@@ -11,14 +11,12 @@
   /* Let clicks pass through empty space */
 }
 
-/* Glassmorphic Pill */
+/* Claymorphic Pill */
 .desktopNav {
-  background-color: var(--glass-bg-dark);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border-green);
+  background-color: var(--clay-bg-nav);
+  border: var(--clay-border);
   border-radius: var(--radius-pill);
-  box-shadow: var(--glass-shadow);
+  box-shadow: var(--clay-shadow-outer), var(--clay-shadow-inner);
   width: 95%;
   max-width: 1200px;
   pointer-events: auto;
@@ -27,8 +25,8 @@
 }
 
 .desktopNav.scrolled {
-  background-color: rgba(15, 23, 42, 0.95);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background-color: var(--clay-bg-dark);
+  box-shadow: var(--clay-shadow-hover);
   width: 90%;
   padding: 0 1rem;
 }
@@ -140,18 +138,16 @@
   box-shadow: 0 0 25px rgba(117, 192, 55, 0.6);
 }
 
-/* Glassmorphic Dropdown */
+/* Claymorphic Dropdown */
 .dropdown {
   position: absolute;
   top: calc(100% + 15px);
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--glass-bg-dark);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-shadow);
+  background-color: var(--clay-bg-dark);
+  box-shadow: var(--clay-shadow-outer), var(--clay-shadow-inner);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--glass-border-green);
+  border: var(--clay-border);
   list-style: none;
   margin: 0;
   padding: 12px;
@@ -168,9 +164,9 @@
   transform: translateX(-50%) rotate(45deg);
   width: 12px;
   height: 12px;
-  background-color: rgba(15, 23, 42, 0.9);
-  border-top: 1px solid var(--glass-border-green);
-  border-left: 1px solid var(--glass-border-green);
+  background-color: var(--clay-bg-dark);
+  border-top: var(--clay-border);
+  border-left: var(--clay-border);
 }
 
 .dropdownItem {

@@ -106,19 +106,16 @@ export default function Home() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                whileHover={{ y: -10, scale: 1.02 }}
+                whileHover={{ y: -10, scale: 1.02, boxShadow: '15px 15px 30px rgba(0,0,0,0.5), -10px -10px 20px rgba(255,255,255,0.02), inset 8px 8px 20px rgba(255,255,255,0.08), inset -8px -8px 20px rgba(0,0,0,0.6)' }}
                 style={{
-                  backgroundColor: 'rgba(15, 23, 42, 0.7)', // Dark semi-transparent background
-                  backdropFilter: 'blur(16px)', // Glassmorphism effect
-                  WebkitBackdropFilter: 'blur(16px)',
+                  backgroundColor: '#0f172a', /* Solid dark slate for claymorphism */
                   padding: '3rem 2.5rem',
-                  borderRadius: 'var(--radius-xl)',
-                  boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.3)', // Deep shadow
+                  borderRadius: '35px', /* Characteristic large soft radius */
+                  boxShadow: '10px 10px 25px rgba(0,0,0,0.4), -8px -8px 20px rgba(255,255,255,0.02), inset 6px 6px 15px rgba(255,255,255,0.05), inset -6px -6px 15px rgba(0,0,0,0.5)', /* Dual inner/outer shadows */
                   transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'flex-start',
-                  border: '1px solid rgba(106, 210, 32, 0.2)', // Subtle green border
                   position: 'relative',
                   overflow: 'hidden'
                 }}
@@ -128,10 +125,10 @@ export default function Home() {
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
-                  style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at top right, rgba(106, 210, 32, 0.1), transparent 70%)', zIndex: 0, pointerEvents: 'none' }}
+                  style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at top left, rgba(106, 210, 32, 0.08), transparent 70%)', zIndex: 0, pointerEvents: 'none' }}
                 />
 
-                <div style={{ position: 'relative', zIndex: 1, width: '64px', height: '64px', borderRadius: '20px', backgroundColor: 'rgba(106,210,32,0.15)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem', boxShadow: '0 0 20px rgba(106,210,32,0.2), inset 0 0 10px rgba(106, 210, 32, 0.1)', border: '1px solid rgba(106, 210, 32, 0.3)' }}>
+                <div style={{ position: 'relative', zIndex: 1, width: '64px', height: '64px', borderRadius: '22px', backgroundColor: '#1e293b', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem', boxShadow: '5px 5px 10px rgba(0,0,0,0.3), inset 3px 3px 8px rgba(255,255,255,0.05), inset -3px -3px 8px rgba(0,0,0,0.4)' }}>
                   {item.icon}
                 </div>
                 <h3 style={{ position: 'relative', zIndex: 1, fontSize: '1.3rem', fontWeight: 800, marginBottom: '1rem', fontFamily: 'var(--font-primary)', color: 'var(--color-white)', letterSpacing: '0.5px' }}>{item.title}</h3>
@@ -178,18 +175,16 @@ export default function Home() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                whileHover={{ scale: 1.03, backgroundColor: 'rgba(106, 210, 32, 0.15)', color: 'var(--color-white)', borderColor: 'var(--glass-border-green)' }}
+                whileHover={{ scale: 1.03, boxShadow: 'var(--clay-shadow-hover)', transform: 'translateY(-6px)' }}
                 style={{
                   padding: '3rem 2rem',
-                  backgroundColor: 'var(--glass-bg-dark)',
-                  backdropFilter: 'var(--glass-blur)',
-                  WebkitBackdropFilter: 'var(--glass-blur)',
-                  borderRadius: 'var(--radius-lg)',
+                  backgroundColor: 'var(--clay-bg-dark)',
+                  borderRadius: 'var(--clay-radius)',
                   textAlign: 'center',
-                  transition: 'all 0.4s ease',
+                  transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                   cursor: 'pointer',
-                  border: '1px solid var(--glass-border-dark)',
-                  boxShadow: 'var(--glass-shadow)',
+                  border: 'var(--clay-border)',
+                  boxShadow: 'var(--clay-shadow-outer), var(--clay-shadow-inner)',
                   color: 'var(--color-white)'
                 }}
               >

@@ -109,32 +109,31 @@
   /* Layout */
   --max-content-width: 1280px;
 
-  /* Glassmorphism Utilities */
-  --glass-bg-dark: rgba(15, 23, 42, 0.7);
-  --glass-bg-light: rgba(255, 255, 255, 0.1);
-  --glass-border-dark: rgba(255, 255, 255, 0.1);
-  --glass-border-green: rgba(106, 210, 32, 0.2);
-  --glass-blur: blur(16px);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  /* Claymorphism Utilities */
+  --clay-bg-dark: #0f172a;
+  --clay-bg-nav: rgba(15, 23, 42, 0.95);
+  /* Slightly transparent for navbars */
+  --clay-radius: 35px;
+  --clay-shadow-outer: 10px 10px 25px rgba(0, 0, 0, 0.4), -8px -8px 20px rgba(255, 255, 255, 0.02);
+  --clay-shadow-inner: inset 6px 6px 15px rgba(255, 255, 255, 0.05), inset -6px -6px 15px rgba(0, 0, 0, 0.5);
+  --clay-shadow-hover: 15px 15px 30px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(255, 255, 255, 0.02), inset 8px 8px 20px rgba(255, 255, 255, 0.08), inset -8px -8px 20px rgba(0, 0, 0, 0.6);
+  --clay-border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* ============================================
-   Glassmorphism Utility Classes
+   Claymorphism Utility Classes
    ============================================ */
-.glass-panel-dark {
-  background-color: var(--glass-bg-dark);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border-green);
-  box-shadow: var(--glass-shadow);
+.clay-panel-dark {
+  background-color: var(--clay-bg-dark);
+  border-radius: var(--clay-radius);
+  box-shadow: var(--clay-shadow-outer), var(--clay-shadow-inner);
+  border: var(--clay-border);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.glass-panel-light {
-  background-color: var(--glass-bg-light);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border-dark);
-  box-shadow: var(--glass-shadow);
+.clay-panel-dark:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-6px);
 }
 
 /* ============================================
