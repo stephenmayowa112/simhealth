@@ -1,10 +1,18 @@
-import React from 'react'
-import { Section, Grid } from '@/components'
-import Image from 'next/image'
+'use client'
 
-export const metadata = {
-  title: 'Our Projects - SimHealth Africa',
-  description: 'Explore our past projects and initiatives in health systems strengthening, malaria prevention, and community health programs across Africa.',
+import React from 'react'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { SubpageHero } from '@/components'
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+}
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 }
 
 export default function OurProjectsPage() {
@@ -25,13 +33,13 @@ export default function OurProjectsPage() {
       title: 'MONITORING AND EVALUATION OF DRGS FUNDED MDGS PROJECTS AND PROGRAMS IN NIGERIA',
       imageUrl: 'https://placehold.co/800x600/eeeeee/999999?text=MDG+Project',
       imageAlt: 'MDG project monitoring',
-      greenFlair: true, /* Matching the design with a green left-side decorative element */
+      greenFlair: true, // Specific design requirement from screenshot
     },
     {
-      title: 'MALARIA IN PREGNANCY AWARENESS CAMPAIGN - EMPOWERING HEALTHCARE PROFESSIONALS AND THE ENTIRE COMMUNITY ON THE PREVENTIVE MEASURES FOR MALARIA IN PREGNANCY IN EDO STATE, NIGERIA',
+      title: 'MALARIA IN PREGNANCY AWARENESS CAMPAIGN - EMPOWERING HEALTHCARE PROFESSIONALS AND THE ENTIRE COMMUNITY',
       imageUrl: 'https://placehold.co/800x600/eeeeee/999999?text=Malaria+Campaign',
       imageAlt: 'Malaria in pregnancy awareness campaign',
-      greenFlair: true, /* Matching the design with a green left-side decorative element */
+      greenFlair: true, // Specific design requirement from screenshot
     },
     {
       title: 'FIELD STUDIES; OUR FIELD STAFF CONDUCTING INTERVIEWS',
@@ -48,32 +56,62 @@ export default function OurProjectsPage() {
   ]
 
   return (
-    <>
-      {/* Header Section */}
-      <div style={{ backgroundColor: '#f2c94c', padding: '10rem 2rem 6rem', textAlign: 'center', color: 'white', position: 'relative', overflow: 'hidden' }}>
-        <h1 style={{ fontSize: '3.5rem', fontWeight: 900, marginBottom: '1.5rem', fontFamily: 'var(--font-primary)' }}>OUR PROJECTS</h1>
-        <p style={{ fontSize: '1.2rem', fontFamily: 'var(--font-secondary)' }}>.....Improving Health and Wellbeing</p>
+    <div style={{ backgroundColor: 'var(--color-surface-soft)', minHeight: '100vh', overflowX: 'hidden' }}>
 
-        {/* Decorative Wave matches the image context slightly to blend with the white section below */}
-        <svg style={{ position: 'absolute', bottom: -5, left: 0, width: '100%', height: 'auto', display: 'block' }} viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,60 C320,-60 640,-60 960,30 C1120,75 1280,75 1440,30 L1440,120 L0,120 Z" fill="#ffffff" />
-        </svg>
-      </div>
+      {/* Custom Hero to preserve the Yellow banner from the design spec */}
+      <section style={{
+        position: 'relative',
+        padding: '10rem 2rem 6rem',
+        backgroundColor: 'var(--color-secondary-yellow)',
+        overflow: 'hidden',
+        textAlign: 'center'
+      }}>
+        <motion.div
+          animate={{ scale: [1, 1.05, 1], opacity: [0.3, 0.4, 0.3] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          style={{ position: 'absolute', top: '-50%', left: '20%', width: '60vw', height: '60vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(80px)', pointerEvents: 'none' }}
+        />
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ position: 'relative', zIndex: 10, maxWidth: '1000px', margin: '0 auto' }}>
+          <h1 style={{ fontSize: 'clamp(3rem, 5vw, 4.5rem)', fontWeight: 900, color: 'var(--color-slate-black)', fontFamily: 'var(--font-primary)', marginBottom: '1.5rem', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+            OUR PROJECTS
+          </h1>
+          <p style={{ fontSize: '1.2rem', color: 'rgba(15,23,42,0.8)', fontFamily: 'var(--font-secondary)', maxWidth: '600px', margin: '0 auto', fontWeight: 500 }}>
+            .....Improving Health and Wellbeing
+          </p>
+        </motion.div>
+      </section>
 
-      {/* Projects Section */}
-      <Section backgroundColor="white" style={{ padding: '6rem 1rem 8rem' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 900, marginBottom: '4rem', fontFamily: 'var(--font-primary)', textAlign: 'center', color: '#000' }}>
-            OUR PAST PROJECTS
-          </h2>
+      <section style={{ padding: '6rem 2rem 8rem', position: 'relative', zIndex: 10 }}>
+        <div style={{ maxWidth: '1200px', margin: '-4rem auto 0' }}>
 
-          <Grid columns={{ desktop: 2, tablet: 1, mobile: 1 }} gap="xl">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{ backgroundColor: 'white', padding: '3rem 2rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-lg)', marginBottom: '4rem', border: '1px solid rgba(0,0,0,0.03)', textAlign: 'center' }}
+          >
+            <h2 style={{ fontSize: '2rem', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', margin: 0 }}>
+              OUR PAST PROJECTS
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            variants={staggerContainer}
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '3rem' }}
+          >
             {projects.map((project, index) => (
-              <div key={index} style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                whileHover={{ y: -8, boxShadow: 'var(--shadow-xl)' }}
+                style={{ backgroundColor: 'white', borderRadius: 'var(--radius-lg)', overflow: 'hidden', display: 'flex', flexDirection: 'column', height: '100%', boxShadow: 'var(--shadow-md)', transition: 'all 0.3s ease', border: '1px solid rgba(0,0,0,0.04)' }}
+              >
                 {project.greenFlair ? (
-                  <div style={{ position: 'relative', display: 'flex', height: '350px', backgroundColor: '#75c037' }}>
-                    {/* The image container sits inside the green div, leaving a left border visible */}
-                    <div style={{ position: 'relative', width: '100%', marginLeft: '1rem', height: '100%' }}>
+                  <div style={{ position: 'relative', display: 'flex', height: '350px', backgroundColor: 'var(--color-primary-green)' }}>
+                    <div style={{ position: 'relative', width: '100%', marginLeft: '1.5rem', height: '100%' }}>
                       <Image src={project.imageUrl} alt={project.imageAlt} fill style={{ objectFit: 'cover' }} />
                     </div>
                   </div>
@@ -83,16 +121,17 @@ export default function OurProjectsPage() {
                   </div>
                 )}
 
-                <div style={{ padding: '1.5rem 0', textAlign: 'center' }}>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: 900, fontFamily: 'var(--font-primary)', color: '#000', margin: 0, lineHeight: 1.4 }}>
+                <div style={{ padding: '2rem 1.5rem', flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: 800, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', margin: 0, lineHeight: 1.5 }}>
                     {project.title}
                   </h3>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </Grid>
+          </motion.div>
+
         </div>
-      </Section>
-    </>
+      </section>
+    </div>
   )
 }

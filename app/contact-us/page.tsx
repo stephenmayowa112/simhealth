@@ -1,131 +1,132 @@
-import React from 'react'
+'use client'
 
-export const metadata = {
-  title: 'Contact Us - SimHealth Africa',
-  description: 'Get in touch with SimHealth Africa. Contact us for inquiries about our programs, services, and partnership opportunities.',
+import React from 'react'
+import { motion } from 'framer-motion'
+import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 }
 
 export default function ContactPage() {
   return (
-    <>
-      <div style={{
-        backgroundColor: '#75c037',
+    <div style={{ backgroundColor: 'var(--color-surface-soft)', minHeight: '100vh', overflowX: 'hidden' }}>
+
+      {/* Sleek Hero with Image Blend */}
+      <section style={{
+        backgroundColor: 'var(--color-slate-black)',
         padding: '10rem 2rem 6rem',
         textAlign: 'center',
-        color: 'white',
         position: 'relative',
-        overflow: 'hidden',
-        backgroundImage: 'url("https://placehold.co/1920x800/75c037/75c037?text=Conference+Room")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundBlendMode: 'multiply'
-      }}>
-        <h1 style={{ fontSize: '3.5rem', fontWeight: 900, marginBottom: '1.5rem', fontFamily: 'var(--font-primary)' }}>CONTACT US</h1>
-        <p style={{ fontSize: '1.2rem', fontFamily: 'var(--font-secondary)' }}>.....Improving Health and Wellbeing</p>
-
-        {/* Decorative Wave */}
-        <svg style={{ position: 'absolute', bottom: -5, left: 0, width: '100%', height: 'auto', display: 'block' }} viewBox="0 0 1440 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,0 Q30,100 60,60 T120,80 T180,40 T240,110 T300,50 T360,90 T420,30 T480,120 T540,60 T600,140 T660,70 T720,100 T780,50 T840,130 T900,60 T960,110 T1020,40 T1080,90 T1140,50 T1200,120 T1260,70 T1320,100 T1380,40 T1440,90 L1440,150 L0,150 Z" fill="#ffffff" />
-        </svg>
-      </div>
-
-      <div style={{
-        padding: '0 2rem 8rem',
-        backgroundColor: '#ffffff',
-        position: 'relative',
-        zIndex: 10,
-        marginTop: '-2rem',
-        backgroundImage: 'url("https://placehold.co/1920x800/f5f5f5/f5f5f5?text=Ocean+Background")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'bottom',
+        overflow: 'hidden'
       }}>
         <div style={{
-          maxWidth: '1000px',
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-          boxShadow: '0 20px 40px rgba(0,0,0,0.08)',
-          backgroundColor: 'white'
-        }}>
+          position: 'absolute', inset: 0,
+          backgroundImage: 'url("https://placehold.co/1920x800/0f172a/0f172a?text=Conference+Room")',
+          backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.4, mixBlendMode: 'overlay'
+        }} />
+        <motion.div
+          animate={{ scale: [1, 1.05, 1], opacity: [0.3, 0.4, 0.3] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          style={{ position: 'absolute', top: '20%', left: '20%', width: '60vw', height: '60vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(117,192,55,0.4) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(80px)', pointerEvents: 'none' }}
+        />
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ position: 'relative', zIndex: 10, maxWidth: '800px', margin: '0 auto' }}>
+          <h1 style={{ fontSize: 'clamp(3rem, 5vw, 4.5rem)', fontWeight: 900, color: 'var(--color-white)', fontFamily: 'var(--font-primary)', marginBottom: '1.5rem', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+            CONTACT US
+          </h1>
+          <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-secondary)' }}>
+            .....Improving Health and Wellbeing
+          </p>
+        </motion.div>
+      </section>
 
-          {/* Address Column */}
-          <div style={{ padding: '4rem 3rem', borderRight: '1px solid #eee' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 900, fontFamily: 'var(--font-primary)', color: '#000', marginBottom: '2rem' }}>
+      {/* Main Contact Section */}
+      <section style={{ padding: '0 2rem 8rem', position: 'relative', zIndex: 10, marginTop: '-4rem' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
+
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{ backgroundColor: 'white', padding: '4rem 3rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-lg)', border: '1px solid rgba(0,0,0,0.03)' }}
+          >
+            <h2 style={{ fontSize: '2rem', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', marginBottom: '2.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <div style={{ width: '40px', height: '4px', backgroundColor: 'var(--color-primary-green)', borderRadius: '2px' }}></div>
               ADDRESS
-              <div style={{ width: '40px', height: '2px', backgroundColor: '#000', marginTop: '0.5rem' }}></div>
             </h2>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="#75c037" style={{ flexShrink: 0, marginTop: '4px' }}>
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
-                </svg>
-                <p style={{ margin: 0, color: '#444', fontSize: '1.05rem', lineHeight: 1.6 }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.2rem' }}>
+                <div style={{ color: 'var(--color-primary-green)', marginTop: '4px', padding: '10px', backgroundColor: 'rgba(117,192,55,0.1)', borderRadius: '12px' }}>
+                  <MapPin size={24} />
+                </div>
+                <p style={{ margin: 0, color: 'var(--color-gray-700)', fontSize: '1.05rem', lineHeight: 1.6, fontWeight: 500 }}>
                   No 44 Boundary Road, GRA,<br />
                   Benin City, Edo State,<br />
                   Nigeria
                 </p>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="#75c037" style={{ flexShrink: 0 }}>
-                  <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.36 11.36 0 004.48.9 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.9 4.48 1 1 0 01-.27 1.11l-2.2 2.2z" />
-                </svg>
-                <p style={{ margin: 0, color: '#75c037', fontSize: '1.05rem' }}>+2348076355533</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
+                <div style={{ color: 'var(--color-primary-green)', padding: '10px', backgroundColor: 'rgba(117,192,55,0.1)', borderRadius: '12px' }}>
+                  <Phone size={24} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                  <p style={{ margin: 0, color: 'var(--color-slate-black)', fontSize: '1.05rem', fontWeight: 600 }}>+234 807 635 5533</p>
+                  <p style={{ margin: 0, color: 'var(--color-slate-black)', fontSize: '1.05rem', fontWeight: 600 }}>0802 359 7448</p>
+                </div>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="#75c037" style={{ flexShrink: 0 }}>
-                  <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.36 11.36 0 004.48.9 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.9 4.48 1 1 0 01-.27 1.11l-2.2 2.2z" />
-                </svg>
-                <p style={{ margin: 0, color: '#75c037', fontSize: '1.05rem' }}>08023597448</p>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="#75c037" style={{ flexShrink: 0 }}>
-                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                </svg>
-                <p style={{ margin: 0, color: '#75c037', fontSize: '1.05rem' }}>simhealthafrica@gmail.com</p>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="#75c037" style={{ flexShrink: 0 }}>
-                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                </svg>
-                <p style={{ margin: 0, color: '#75c037', fontSize: '1.05rem' }}>info@simhealthafrica.org</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
+                <div style={{ color: 'var(--color-primary-green)', padding: '10px', backgroundColor: 'rgba(117,192,55,0.1)', borderRadius: '12px' }}>
+                  <Mail size={24} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                  <p style={{ margin: 0, color: 'var(--color-slate-black)', fontSize: '1.05rem', fontWeight: 600 }}>simhealthafrica@gmail.com</p>
+                  <p style={{ margin: 0, color: 'var(--color-slate-black)', fontSize: '1.05rem', fontWeight: 600 }}>info@simhealthafrica.org</p>
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Opening Hours Column */}
-          <div style={{ padding: '4rem 3rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 900, fontFamily: 'var(--font-primary)', color: '#000', marginBottom: '2rem' }}>
-              OPENING HOURS
-              <div style={{ width: '40px', height: '2px', backgroundColor: '#000', marginTop: '0.5rem' }}></div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            style={{ backgroundColor: 'white', padding: '4rem 3rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-lg)', border: '1px solid rgba(0,0,0,0.03)' }}
+          >
+            <h2 style={{ fontSize: '2rem', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', marginBottom: '2.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <div style={{ width: '40px', height: '4px', backgroundColor: 'var(--color-primary-green)', borderRadius: '2px' }}></div>
+              HOURS
             </h2>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold', fontSize: '1.05rem' }}>
-                <span style={{ color: '#000' }}>Monday - Friday</span>
-                <span style={{ backgroundColor: '#7ebd42', color: 'white', padding: '0.4rem 1rem', borderRadius: '4px', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'normal' }}>
+                <span style={{ color: 'var(--color-gray-700)' }}>Monday - Friday</span>
+                <span style={{ backgroundColor: 'var(--color-primary-green)', color: 'white', padding: '0.6rem 1.2rem', borderRadius: 'var(--radius-pill)', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, boxShadow: 'var(--shadow-sm)' }}>
                   8AM - 5PM
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
-                  </svg>
+                  <Clock size={16} />
                 </span>
               </div>
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold', fontSize: '1.05rem' }}>
-                <span style={{ color: '#000' }}>Saturday - Sunday</span>
-                <span style={{ backgroundColor: '#7ebd42', color: 'white', padding: '0.4rem 1rem', borderRadius: '4px', fontSize: '0.9rem', fontWeight: 'normal' }}>
-                  Close
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold', fontSize: '1.05rem', paddingTop: '1.5rem', borderTop: '1px solid #eee' }}>
+                <span style={{ color: 'var(--color-gray-700)' }}>Saturday - Sunday</span>
+                <span style={{ backgroundColor: 'var(--color-surface-soft)', color: 'var(--color-gray-500)', padding: '0.6rem 1.2rem', borderRadius: 'var(--radius-pill)', fontSize: '0.9rem', fontWeight: 600, border: '1px solid #eee' }}>
+                  Closed
                 </span>
               </div>
             </div>
-          </div>
+
+            <div style={{ marginTop: '4rem', padding: '2rem', backgroundColor: 'rgba(242,201,76,0.1)', borderRadius: '16px', border: '1px dashed rgba(242,201,76,0.5)', textAlign: 'center' }}>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--color-warning)', marginBottom: '0.5rem' }}>Partnership Inquiries</h3>
+              <p style={{ color: 'var(--color-gray-700)', fontSize: '0.95rem' }}>For corporate programs, please contact our director directly.</p>
+            </div>
+          </motion.div>
 
         </div>
-      </div>
-    </>
+      </section>
+    </div>
   )
 }
