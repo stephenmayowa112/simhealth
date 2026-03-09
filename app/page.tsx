@@ -106,27 +106,36 @@ export default function Home() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                whileHover={{ y: -10, boxShadow: '0 30px 60px -15px rgba(0,0,0,0.1), 0 20px 30px -10px rgba(0,0,0,0.08)' }}
+                whileHover={{ y: -10, scale: 1.02 }}
                 style={{
-                  backgroundColor: 'var(--color-white)',
+                  backgroundColor: 'rgba(15, 23, 42, 0.7)', // Dark semi-transparent background
+                  backdropFilter: 'blur(16px)', // Glassmorphism effect
+                  WebkitBackdropFilter: 'blur(16px)',
                   padding: '3rem 2.5rem',
                   borderRadius: 'var(--radius-xl)',
-                  boxShadow: '0 20px 40px -10px rgba(0,0,0,0.08), 0 10px 15px -5px rgba(0,0,0,0.04), inset 0 2px 5px rgba(255,255,255,0.8)',
-                  transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
+                  boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.3)', // Deep shadow
+                  transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'flex-start',
-                  borderTop: '1px solid rgba(255,255,255,0.8)',
-                  borderLeft: '1px solid rgba(255,255,255,0.5)',
-                  borderRight: '1px solid rgba(0,0,0,0.05)',
-                  borderBottom: '1px solid rgba(0,0,0,0.1)'
+                  border: '1px solid rgba(106, 210, 32, 0.2)', // Subtle green border
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
-                <div style={{ width: '64px', height: '64px', borderRadius: '20px', backgroundColor: 'rgba(106,210,32,0.1)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
+                {/* Subtle gradient hover glow behind the card content */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at top right, rgba(106, 210, 32, 0.1), transparent 70%)', zIndex: 0, pointerEvents: 'none' }}
+                />
+
+                <div style={{ position: 'relative', zIndex: 1, width: '64px', height: '64px', borderRadius: '20px', backgroundColor: 'rgba(106,210,32,0.15)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem', boxShadow: '0 0 20px rgba(106,210,32,0.2), inset 0 0 10px rgba(106, 210, 32, 0.1)', border: '1px solid rgba(106, 210, 32, 0.3)' }}>
                   {item.icon}
                 </div>
-                <h3 style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: '1rem', fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)' }}>{item.title}</h3>
-                <p style={{ color: 'var(--color-gray-700)', lineHeight: 1.7, fontSize: '0.95rem' }}>{item.desc}</p>
+                <h3 style={{ position: 'relative', zIndex: 1, fontSize: '1.3rem', fontWeight: 800, marginBottom: '1rem', fontFamily: 'var(--font-primary)', color: 'var(--color-white)', letterSpacing: '0.5px' }}>{item.title}</h3>
+                <p style={{ position: 'relative', zIndex: 1, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, fontSize: '0.95rem' }}>{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
