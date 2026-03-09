@@ -12,9 +12,13 @@ export const navigationItems: NavItem[] = [
   {
     label: 'About Us',
     href: '/about-us',
+    children: [
+      { label: 'Who We Are', href: '/about-us#who-we-are' },
+      { label: 'Our Team', href: '/team' },
+    ]
   },
   {
-    label: 'Programs',
+    label: 'Our Programs',
     href: '/programs',
     children: [
       {
@@ -36,24 +40,28 @@ export const navigationItems: NavItem[] = [
     ],
   },
   {
-    label: 'Services',
-    href: '/consultancy-services',
-  },
-  {
-    label: 'Projects',
-    href: '/our-projects',
-  },
-  {
     label: 'News',
     href: '/news',
   },
   {
-    label: 'Contact',
-    href: '/contact-us',
+    label: 'Our Projects',
+    href: '/our-projects',
   },
   {
-    label: 'Volunteer',
-    href: '/volunteer',
+    label: 'Conference & Publications',
+    href: '/conference-publications',
+    children: [
+      { label: 'Conferences', href: '/conferences' },
+      { label: 'Publications', href: '/publications' },
+    ]
+  },
+  {
+    label: 'Contact Us',
+    href: '/contact-us',
+    children: [
+      { label: 'Get in Touch', href: '/contact-us#form' },
+      { label: 'Location', href: '/contact-us#location' },
+    ]
   },
 ]
 

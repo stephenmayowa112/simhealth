@@ -11,6 +11,7 @@ export interface SectionProps {
   className?: string
   id?: string
   animate?: boolean
+  style?: React.CSSProperties
 }
 
 export const Section: React.FC<SectionProps> = ({
@@ -20,6 +21,7 @@ export const Section: React.FC<SectionProps> = ({
   className = '',
   id,
   animate = true,
+  style,
 }) => {
   const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.1 })
 
@@ -31,6 +33,7 @@ export const Section: React.FC<SectionProps> = ({
 
   const sectionStyles: React.CSSProperties = {
     backgroundColor: backgroundColors[backgroundColor],
+    ...style,
   }
 
   const containerStyles: React.CSSProperties = {

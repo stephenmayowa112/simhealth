@@ -10,6 +10,7 @@ export interface GridProps {
   }
   gap?: 'sm' | 'md' | 'lg' | 'xl'
   className?: string
+  style?: React.CSSProperties
 }
 
 /**
@@ -28,6 +29,7 @@ export const Grid: React.FC<GridProps> = ({
   columns = { desktop: 3, tablet: 2, mobile: 1 },
   gap = 'lg',
   className = '',
+  style,
 }) => {
   const gridClass = [
     styles.grid,
@@ -40,5 +42,5 @@ export const Grid: React.FC<GridProps> = ({
     .filter(Boolean)
     .join(' ')
 
-  return <div className={gridClass}>{children}</div>
+  return <div className={gridClass} style={style}>{children}</div>
 }

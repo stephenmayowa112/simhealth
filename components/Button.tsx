@@ -11,6 +11,7 @@ export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
   disabled?: boolean
   className?: string
+  style?: React.CSSProperties
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -22,6 +23,7 @@ export const Button: React.FC<ButtonProps> = ({
   type = 'button',
   disabled = false,
   className = '',
+  style,
 }) => {
   const baseStyles: React.CSSProperties = {
     display: 'inline-flex',
@@ -82,6 +84,7 @@ export const Button: React.FC<ButtonProps> = ({
     ...baseStyles,
     ...sizeStyles[size],
     ...variantStyles[variant],
+    ...style,
   }
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {

@@ -8,6 +8,7 @@ import styles from './Hero.module.css'
 export interface HeroProps {
   title: string
   subtitle?: string
+  eyebrow?: string
   ctaText?: string
   ctaLink?: string
   backgroundImage: string
@@ -17,6 +18,7 @@ export interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({
   title,
   subtitle,
+  eyebrow = 'Transforming Health Across Africa',
   ctaText,
   ctaLink,
   backgroundImage,
