@@ -60,18 +60,25 @@ export const Hero: React.FC<HeroProps> = ({
 
       {/* Particle dots */}
       <div className={styles.particles} aria-hidden="true">
-        {Array.from({ length: 12 }).map((_, i) => (
-          <span
-            key={i}
-            className={styles.particle}
-            style={{
-              left: `${8 + Math.random() * 84}%`,
-              top: `${10 + Math.random() * 80}%`,
-              animationDelay: `${i * 0.4}s`,
-              animationDuration: `${6 + Math.random() * 6}s`,
-            }}
-          />
-        ))}
+        {Array.from({ length: 12 }).map((_, i) => {
+          // Use deterministic pseudo-random values based on index to avoid hydration mismatch
+          const pseudoRandomLeft = (Math.sin(i * 12.9898) * 43758.5453) % 1;
+          const pseudoRandomTop = (Math.sin(i * 78.233) * 43758.5453) % 1;
+          const pseudoRandomDuration = (Math.sin(i * 45.123) * 43758.5453) % 1;
+
+          return (
+            <span
+              key={i}
+              className={styles.particle}
+              style={{
+                left: `${8 + Math.abs(pseudoRandomLeft) * 84}%`,
+                top: `${10 + Math.abs(pseudoRandomTop) * 80}%`,
+                animationDelay: `${i * 0.4}s`,
+                animationDuration: `${6 + Math.abs(pseudoRandomDuration) * 6}s`,
+              }}
+            />
+          );
+        })}
       </div>
 
       {/* Content */}

@@ -70,12 +70,12 @@ export const NewsPreview: React.FC<NewsPreviewProps> = ({
                   <span className={styles.articleDate}>{article.date}</span>
                   <h3 className={styles.articleTitle}>{article.title}</h3>
                   <p className={styles.articleExcerpt}>{article.excerpt}</p>
-                  <a href={article.link} className={styles.readMore}>
+                  <span className={styles.readMore}>
                     Read More
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={styles.readMoreArrow}>
-                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                  </a>
+                  </span>
                 </div>
               </Card>
             </div>
