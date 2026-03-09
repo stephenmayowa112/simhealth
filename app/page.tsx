@@ -1,121 +1,225 @@
-import dynamic from 'next/dynamic'
-import { Hero, Section, Grid, Flex, Button } from '@/components'
-import { newsArticles } from '@/lib/news-data'
+'use client'
+
+import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { ArrowRight, Shield, Heart, Activity, CheckCircle2, Globe2 } from 'lucide-react'
+
+// Animation Variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
+}
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }
+  }
+}
 
 export default function Home() {
+  const { scrollYProgress } = useScroll()
+  const yBg = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
+
   return (
-    <>
-      <Hero
-        eyebrow="Welcome To simHealth Africa"
-        title="AFRICA SOCIETY FOR IMPROVED HEALTH DELIVERY"
-        ctaText="LEARN MORE"
-        ctaLink="/about-us"
-        backgroundImage="https://placehold.co/1920x600/48811a/ffffff?text=SimHealth+Africa"
-        backgroundAlt="Healthcare workers in Africa"
-      />
+    <div style={{ backgroundColor: 'var(--color-surface-soft)', minHeight: '100vh', overflowX: 'hidden' }}>
 
-      {/* Vision, Mission, Values Section */}
-      <Section backgroundColor="gray">
-        <Grid columns={{ desktop: 3, tablet: 1, mobile: 1 }} gap="lg">
-          {/* VISION */}
-          <div style={{ backgroundColor: 'white', padding: '3rem 2rem', textAlign: 'center', borderRadius: '4px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
-            <div style={{ color: '#75c037', marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-              </svg>
-            </div>
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 800, margin: '0 0 1rem', fontFamily: 'var(--font-primary)' }}>OUR VISION</h3>
-            <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: '#555' }}>
-              To achieve good health and build human resource capacity of many, and to become a center of excellence in the delivery of innovative, evidence-based, context-specific programs.
-            </p>
-          </div>
-          {/* MISSION */}
-          <div style={{ backgroundColor: 'white', padding: '3rem 2rem', textAlign: 'center', borderRadius: '4px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
-            <div style={{ color: '#75c037', marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.992 4.992 0 008 20c.53 0 1.04-.08 1.52-.22L14.1 24l1.1-1.1-3.64-3.64C16.15 17.5 19 13.9 19 9c0-1.87-.5-3.62-1.36-5.14z" />
-              </svg>
-            </div>
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 800, margin: '0 0 1rem', fontFamily: 'var(--font-primary)' }}>OUR MISSION</h3>
-            <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: '#555' }}>
-              simHealth Africa is a knowledge-based organization with the mission to improve health and wellbeing, build human resource capacity, and deliver innovative programs.
-            </p>
-          </div>
-          {/* VALUES */}
-          <div style={{ backgroundColor: 'white', padding: '3rem 2rem', textAlign: 'center', borderRadius: '4px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
-            <div style={{ color: '#75c037', marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-              </svg>
-            </div>
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 800, margin: '0 0 1rem', fontFamily: 'var(--font-primary)' }}>OUR VALUES</h3>
-            <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: '#555' }}>
-              Our values are predicated on collaborative efforts and contributions with uncompromising integrity in the discharge of our duty with a code of conduct based with honesty and transparency.
-            </p>
-          </div>
-        </Grid>
-      </Section>
+      {/* 1. DYNAMIC HERO SECTION */}
+      <section style={{
+        position: 'relative',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        paddingTop: '80px',
+        overflow: 'hidden',
+        backgroundColor: 'var(--color-slate-black)'
+      }}>
+        {/* Animated Background Orbs */}
+        <motion.div
+          animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.6, 0.5] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          style={{ position: 'absolute', top: '10%', right: '-10%', width: '50vw', height: '50vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(117,192,55,0.4) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(80px)' }}
+        />
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.4, 0.3] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          style={{ position: 'absolute', bottom: '-20%', left: '-10%', width: '60vw', height: '60vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(242,201,76,0.2) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(100px)' }}
+        />
 
-      {/* Programs Overview Section */}
-      <Section backgroundColor="green" style={{ position: 'relative' }}>
-        <Grid columns={{ desktop: 2, tablet: 1, mobile: 1 }} gap="xl" style={{ position: 'relative', zIndex: 1, alignItems: 'center' }}>
-          <div>
-            <h2 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'white', marginBottom: '1.5rem', letterSpacing: '0.05em' }}>HEALTH | CAPACITY | INNOVATION</h2>
-            <p style={{ color: 'white', fontSize: '1.05rem', lineHeight: 1.6, marginBottom: '2rem' }}>
-              simHealth is non-profit, non-governmental organization registered with the Corporate Affairs Commission of Nigeria, and managed by Board of Trustees (BOTs) who oversee all activities of the organization. In addition to the Board of Trustees, the organization is supported by the management team of several national and international leading experts, professionals and scientists.
+        {/* Subtle Grid Overlay */}
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '40px 40px', opacity: 0.5 }} />
+
+        <div style={{ maxWidth: 'var(--max-content-width)', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10, width: '100%' }}>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            style={{ maxWidth: '800px' }}
+          >
+            <motion.div variants={fadeInUp} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: 'var(--radius-pill)', border: '1px solid rgba(255,255,255,0.1)', marginBottom: '2rem', backdropFilter: 'blur(10px)' }}>
+              <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-primary-green)', boxShadow: '0 0 10px var(--color-primary-green)' }} />
+              <span style={{ color: 'var(--color-cream)', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Welcome To SimHealth Africa</span>
+            </motion.div>
+
+            <motion.h1 variants={fadeInUp} style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', fontWeight: 800, color: 'var(--color-white)', lineHeight: 1.1, marginBottom: '1.5rem', letterSpacing: '-0.02em', fontFamily: 'var(--font-primary)' }}>
+              Transforming <span style={{ color: 'var(--color-primary-green)' }}>Health Delivery</span> Across Africa.
+            </motion.h1>
+
+            <motion.p variants={fadeInUp} style={{ fontSize: 'clamp(1.1rem, 2vw, 1.3rem)', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '600px', fontFamily: 'var(--font-secondary)' }}>
+              We are an independent research, documentation, policy, and advocacy center dedicated to building capacity and supporting healthcare programs.
+            </motion.p>
+
+            <motion.div variants={fadeInUp} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <Link href="/about-us">
+                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} style={{ padding: '1rem 2.5rem', backgroundColor: 'var(--color-primary-green)', color: 'white', border: 'none', borderRadius: 'var(--radius-pill)', fontSize: '1rem', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', boxShadow: 'var(--shadow-glow-green)' }}>
+                  Explore Our Work <ArrowRight size={18} />
+                </motion.button>
+              </Link>
+              <Link href="/programs">
+                <motion.button whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }} whileTap={{ scale: 0.95 }} style={{ padding: '1rem 2.5rem', backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)', borderRadius: 'var(--radius-pill)', fontSize: '1rem', fontWeight: 600, cursor: 'pointer', transition: 'background-color 0.3s' }}>
+                  View Programs
+                </motion.button>
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 2. VISION / MISSION / VALUES (Neuromorphic Cards) */}
+      <section style={{ padding: '8rem 2rem', position: 'relative', zIndex: 20 }}>
+        <div style={{ maxWidth: 'var(--max-content-width)', margin: '-12rem auto 0' }}>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}
+          >
+            {[
+              { icon: <Globe2 size={32} />, title: "OUR VISION", desc: "To achieve good health and build human resource capacity of many, becoming a center of excellence in innovative, evidence-based programs." },
+              { icon: <Activity size={32} />, title: "OUR MISSION", desc: "A knowledge-based organization with the mission to improve health and wellbeing, build capacity, and deliver context-specific innovative programs." },
+              { icon: <Shield size={32} />, title: "OUR VALUES", desc: "Collaborative efforts with uncompromising integrity, honesty, and transparency in the discharge of our duties." }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                whileHover={{ y: -10, boxShadow: 'var(--shadow-lg)' }}
+                style={{ backgroundColor: 'var(--color-white)', padding: '3rem 2.5rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-md)', transition: 'box-shadow 0.3s ease', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', border: '1px solid rgba(0,0,0,0.03)' }}
+              >
+                <div style={{ width: '64px', height: '64px', borderRadius: '20px', backgroundColor: 'rgba(117,192,55,0.1)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
+                  {item.icon}
+                </div>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: '1rem', fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)' }}>{item.title}</h3>
+                <p style={{ color: 'var(--color-gray-700)', lineHeight: 1.7, fontSize: '0.95rem' }}>{item.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 3. PROGRAMS OVERVIEW (Glassmorphism & Staggered Reveal) */}
+      <section style={{ padding: '8rem 2rem', backgroundColor: 'var(--color-white)', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'radial-gradient(circle at top right, rgba(242,201,76,0.05), transparent 40%)' }} />
+
+        <div style={{ maxWidth: 'var(--max-content-width)', margin: '0 auto', position: 'relative' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{ textAlign: 'center', marginBottom: '5rem', maxWidth: '800px', margin: '0 auto 5rem' }}
+          >
+            <h2 style={{ fontSize: '1rem', fontWeight: 800, letterSpacing: '2px', color: 'var(--color-primary-green)', textTransform: 'uppercase', marginBottom: '1rem' }}>Health | Capacity | Innovation</h2>
+            <h3 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: 'var(--color-slate-black)', marginBottom: '1.5rem', lineHeight: 1.2, fontFamily: 'var(--font-primary)' }}>Propelling Sustainable Healthcare Growth</h3>
+            <p style={{ color: 'var(--color-gray-700)', fontSize: '1.1rem', lineHeight: 1.7 }}>
+              Managed by leading experts and professionals, SimHealth Africa drives capacity building, technical support, and rapid innovation deployment across the continent.
             </p>
-            <div style={{ display: 'inline-block', backgroundColor: '#f1c40f', borderRadius: '30px' }}>
-              <Button href="/programs" style={{ padding: '0.8rem 2rem', color: '#000', fontWeight: 'bold' }}>OUR PROGRAMS</Button>
-            </div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            variants={staggerContainer}
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}
+          >
+            {[
+              { title: "Health Program", icon: <Heart size={28} /> },
+              { title: "SimHealth Institute", icon: <CheckCircle2 size={28} /> },
+              { title: "SimHealth Connect", icon: <Globe2 size={28} /> },
+              { title: "Consultancy Services", icon: <Activity size={28} /> }
+            ].map((prog, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                whileHover={{ scale: 1.03, backgroundColor: 'var(--color-primary-green)', color: 'white' }}
+                style={{ padding: '3rem 2rem', backgroundColor: 'var(--color-surface-soft)', borderRadius: 'var(--radius-lg)', textAlign: 'center', transition: 'all 0.4s ease', cursor: 'pointer', border: '1px solid rgba(0,0,0,0.04)', color: 'var(--color-slate-black)' }}
+              >
+                <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'center', opacity: 0.8 }}>
+                  {prog.icon}
+                </div>
+                <h4 style={{ fontSize: '1.1rem', fontWeight: 800, fontFamily: 'var(--font-primary)' }}>{prog.title}</h4>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <div style={{ textAlign: 'center', marginTop: '4rem' }}>
+            <Link href="/programs">
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} style={{ padding: '1rem 2.5rem', backgroundColor: 'var(--color-slate-black)', color: 'white', border: 'none', borderRadius: 'var(--radius-pill)', fontSize: '1rem', fontWeight: 700, cursor: 'pointer', boxShadow: 'var(--shadow-md)' }}>
+                View All Programs
+              </motion.button>
+            </Link>
           </div>
-          <Grid columns={{ desktop: 2, tablet: 2, mobile: 1 }} gap="md">
-            {/* HEALTH PROGRAM */}
-            <div style={{ backgroundColor: 'white', padding: '2.5rem 1rem', borderRadius: '8px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '200px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
-              <div style={{ color: '#4a9e22', marginBottom: '1rem' }}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
-              </div>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#000', margin: 0, fontFamily: 'var(--font-primary)' }}>HEALTH PROGRAM</h3>
-            </div>
-            {/* SIMHEALTH INSTITUTE */}
-            <div style={{ backgroundColor: 'white', padding: '2.5rem 1rem', borderRadius: '8px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '200px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
-              <div style={{ color: '#4a9e22', marginBottom: '1rem' }}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z" /></svg>
-              </div>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#000', margin: 0, fontFamily: 'var(--font-primary)' }}>SIMHEALTH INSTITUTE</h3>
-            </div>
-            {/* SIMHEALTH CONNECT */}
-            <div style={{ backgroundColor: 'white', padding: '2.5rem 1rem', borderRadius: '8px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '200px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
-              <div style={{ color: '#4a9e22', marginBottom: '1rem' }}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" /></svg>
-              </div>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#000', margin: 0, fontFamily: 'var(--font-primary)' }}>SIMHEALTH CONNECT</h3>
-            </div>
-            {/* CONSULTANCY SERVICES */}
-            <div style={{ backgroundColor: 'white', padding: '2.5rem 1rem', borderRadius: '8px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '200px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
-              <div style={{ color: '#4a9e22', marginBottom: '1rem' }}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" /></svg>
-              </div>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#000', margin: 0, fontFamily: 'var(--font-primary)' }}>CONSULTANCY SERVICES</h3>
-            </div>
-          </Grid>
-        </Grid>
-      </Section>
+        </div>
+      </section>
 
-      {/* Organization News Banner */}
-      <div style={{ backgroundColor: '#ffc107', padding: '3rem 1rem', textAlign: 'center', clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 85%)', marginBottom: '3rem' }}>
-        <h2 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#000', margin: 0, fontFamily: 'var(--font-primary)' }}>ORGANIZATION NEWS</h2>
-      </div>
+      {/* 4. ORGANIZATION NEWS (Sleek Modern Banner) */}
+      <section style={{ padding: '6rem 2rem', position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-secondary-yellow)' }}>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          style={{ maxWidth: 'var(--max-content-width)', margin: '0 auto', textAlign: 'center' }}
+        >
+          <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900, color: 'var(--color-slate-black)', margin: 0, fontFamily: 'var(--font-primary)', letterSpacing: '-0.02em' }}>
+            ORGANIZATION NEWS
+          </h2>
+          <p style={{ fontSize: '1.2rem', color: 'rgba(15,23,42,0.8)', marginTop: '1rem', fontWeight: 500 }}>
+            Stay updated with our latest field operations, research, and impact stories.
+          </p>
+        </motion.div>
+      </section>
 
-      {/* Our Partners */}
-      <Section backgroundColor="white">
-        <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#000', margin: '0 0 3rem', textAlign: 'center', fontFamily: 'var(--font-primary)' }}>OUR PARTNERS</h2>
-        <Flex justify="center" align="center" gap="xl" wrap>
-          <img src="https://placehold.co/200x80/ffffff/000000?text=University+Of+Benin" alt="University of Benin" style={{ maxHeight: '80px', margin: '0 20px' }} />
-          <img src="https://placehold.co/120x120/ffffff/000000?text=Logo+2" alt="Government" style={{ maxHeight: '100px', margin: '0 20px' }} />
-          <img src="https://placehold.co/250x80/ffffff/000000?text=World+Bank" alt="World Bank" style={{ maxHeight: '80px', margin: '0 20px' }} />
-        </Flex>
-      </Section>
-    </>
+      {/* 5. OUR PARTNERS (Scrolling or Fade in) */}
+      <section style={{ padding: '8rem 2rem', backgroundColor: 'var(--color-surface-soft)' }}>
+        <div style={{ maxWidth: 'var(--max-content-width)', margin: '0 auto', textAlign: 'center' }}>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--color-gray-500)', margin: '0 0 4rem', fontFamily: 'var(--font-primary)', textTransform: 'uppercase', letterSpacing: '2px' }}
+          >
+            Trusted By Leading Organizations
+          </motion.h2>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '4rem', flexWrap: 'wrap', filter: 'grayscale(100%) opacity(0.6)' }}
+          >
+            <Image src="https://placehold.co/200x80/ffffff/000000?text=University+Of+Benin" alt="University of Benin" width={200} height={80} />
+            <Image src="https://placehold.co/120x120/ffffff/000000?text=Gov+Partner" alt="Government" width={120} height={120} />
+            <Image src="https://placehold.co/250x80/ffffff/000000?text=World+Bank" alt="World Bank" width={250} height={80} />
+          </motion.div>
+        </div>
+      </section>
+
+    </div>
   )
 }
