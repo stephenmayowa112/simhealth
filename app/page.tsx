@@ -72,14 +72,14 @@ export default function Home() {
               We are an independent research, documentation, policy, and advocacy center dedicated to building capacity and supporting healthcare programs.
             </motion.p>
 
-            <motion.div variants={fadeInUp} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <motion.div variants={fadeInUp} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '4rem' }}>
               <Link href="/about-us">
-                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} style={{ padding: '1rem 2.5rem', backgroundColor: 'var(--color-primary-green)', color: 'white', border: 'none', borderRadius: 'var(--radius-pill)', fontSize: '1rem', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', boxShadow: 'var(--shadow-glow-green)' }}>
+                <motion.button whileHover={{ scale: 1.05, boxShadow: '10px 10px 20px rgba(0,0,0,0.5), -4px -4px 10px rgba(255,255,255,0.1)' }} whileTap={{ scale: 0.95 }} style={{ padding: '1rem 2.5rem', backgroundColor: 'var(--color-primary-green)', color: 'white', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 'var(--radius-pill)', fontSize: '1rem', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', boxShadow: '5px 5px 15px rgba(0,0,0,0.4), inset 2px 2px 5px rgba(255,255,255,0.2), inset -2px -2px 5px rgba(0,0,0,0.2)', transition: 'all 0.3s ease' }}>
                   Explore Our Work <ArrowRight size={18} />
                 </motion.button>
               </Link>
               <Link href="/programs">
-                <motion.button whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }} whileTap={{ scale: 0.95 }} style={{ padding: '1rem 2.5rem', backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)', borderRadius: 'var(--radius-pill)', fontSize: '1rem', fontWeight: 600, cursor: 'pointer', transition: 'background-color 0.3s' }}>
+                <motion.button whileHover={{ scale: 1.05, backgroundColor: 'rgba(15,23,42,0.8)', boxShadow: '10px 10px 20px rgba(0,0,0,0.5), -4px -4px 10px rgba(255,255,255,0.05)' }} whileTap={{ scale: 0.95 }} style={{ padding: '1rem 2.5rem', backgroundColor: 'rgba(15,23,42,0.5)', color: 'white', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 'var(--radius-pill)', fontSize: '1rem', fontWeight: 600, cursor: 'pointer', boxShadow: '5px 5px 15px rgba(0,0,0,0.4), inset 2px 2px 5px rgba(255,255,255,0.05), inset -2px -2px 5px rgba(0,0,0,0.4)', transition: 'all 0.3s ease' }}>
                   View Programs
                 </motion.button>
               </Link>
