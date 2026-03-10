@@ -9,7 +9,7 @@ import { ArrowRight, Shield, Heart, Activity, CheckCircle2, Globe2 } from 'lucid
 // Animation Variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const } }
 }
 
 const staggerContainer = {
@@ -112,7 +112,6 @@ export default function Home() {
                   padding: '3rem 2.5rem',
                   borderRadius: '35px', /* Characteristic large soft radius */
                   boxShadow: '10px 10px 25px rgba(0,0,0,0.4), -8px -8px 20px rgba(255,255,255,0.02), inset 6px 6px 15px rgba(255,255,255,0.05), inset -6px -6px 15px rgba(0,0,0,0.5)', /* Dual inner/outer shadows */
-                  transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'flex-start',
@@ -175,13 +174,12 @@ export default function Home() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                whileHover={{ scale: 1.03, boxShadow: 'var(--clay-shadow-hover)', transform: 'translateY(-6px)' }}
+                whileHover={{ scale: 1.03, boxShadow: 'var(--clay-shadow-hover)', y: -6 }}
                 style={{
                   padding: '3rem 2rem',
                   backgroundColor: 'var(--clay-bg-dark)',
                   borderRadius: 'var(--clay-radius)',
                   textAlign: 'center',
-                  transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                   cursor: 'pointer',
                   border: 'var(--clay-border)',
                   boxShadow: 'var(--clay-shadow-outer), var(--clay-shadow-inner)',
