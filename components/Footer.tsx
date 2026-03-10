@@ -8,7 +8,7 @@ import { Mail, MapPin, Phone, ArrowUpRight } from 'lucide-react'
 
 export const Footer = () => {
     return (
-        <footer style={{ backgroundColor: 'var(--glass-bg-dark)', backdropFilter: 'var(--glass-blur)', WebkitBackdropFilter: 'var(--glass-blur)', borderTop: '1px solid var(--glass-border-dark)', color: 'var(--color-cream)', position: 'relative', overflow: 'hidden' }}>
+        <footer style={{ backgroundColor: 'var(--clay-bg-dark)', boxShadow: 'var(--clay-shadow-outer)', borderTop: 'var(--clay-border)', color: 'var(--color-cream)', position: 'relative', overflow: 'hidden' }}>
 
             {/* Glowing Orbs Background */}
             <div style={{ position: 'absolute', top: '-20%', left: '-10%', width: '40%', height: '60%', background: 'radial-gradient(circle, rgba(10,46,21,0.8) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(60px)', zIndex: 0 }} />
