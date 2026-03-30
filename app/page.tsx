@@ -61,7 +61,7 @@ export default function Home() {
           >
             <motion.div variants={fadeInUp} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: 'var(--radius-pill)', border: '1px solid rgba(255,255,255,0.1)', marginBottom: '2rem', backdropFilter: 'blur(10px)' }}>
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-primary-green)', boxShadow: '0 0 10px var(--color-primary-green)' }} />
-              <span style={{ color: 'var(--color-cream)', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Welcome To SimHealth Africa</span>
+              <span style={{ color: 'var(--color-cream)', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Welcome To simHealth Africa</span>
             </motion.div>
 
             <motion.h1 variants={fadeInUp} style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', fontWeight: 800, color: 'var(--color-white)', lineHeight: 1.1, marginBottom: '1.5rem', letterSpacing: '-0.02em', fontFamily: 'var(--font-primary)' }}>
@@ -69,7 +69,9 @@ export default function Home() {
             </motion.h1>
 
             <motion.p variants={fadeInUp} style={{ fontSize: 'clamp(1.1rem, 2vw, 1.3rem)', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '600px', fontFamily: 'var(--font-secondary)' }}>
-              We are an independent research, documentation, policy, and advocacy center dedicated to building capacity and supporting healthcare programs.
+              Welcome to simHealth Africa (Africa Society for Improved Health Delivery)
+              <br />
+              <span style={{ color: 'var(--color-primary-green)', fontWeight: 600, letterSpacing: '2px' }}>Health | Capacity | Innovation</span>
             </motion.p>
 
             <motion.div variants={fadeInUp} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '4rem' }}>
@@ -99,9 +101,9 @@ export default function Home() {
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}
           >
             {[
-              { icon: <Globe2 size={32} />, title: "OUR VISION", desc: "To achieve good health and build human resource capacity of many, becoming a center of excellence in innovative, evidence-based programs." },
-              { icon: <Activity size={32} />, title: "OUR MISSION", desc: "A knowledge-based organization with the mission to improve health and wellbeing, build capacity, and deliver context-specific innovative programs." },
-              { icon: <Shield size={32} />, title: "OUR VALUES", desc: "Collaborative efforts with uncompromising integrity, honesty, and transparency in the discharge of our duties." }
+              { icon: <Globe2 size={32} />, title: "OUR VISION", desc: "At simHealth Africa, we aspire to enhance health outcomes and strengthen human resource capacities across the continent. Our goal is to foster sustainable healthcare delivery systems and establish ourselves as a center of excellence for innovative, evidence-based programs tailored to local contexts." },
+              { icon: <Activity size={32} />, title: "OUR MISSION", desc: "As a knowledge-driven organization, simHealth Africa is dedicated to improving health and well-being. We aim to build human resource capacity, launch innovative initiatives, and fortify healthcare systems throughout Africa." },
+              { icon: <Shield size={32} />, title: "OUR VALUES", desc: "Our operations are grounded in collaboration and integrity. We adhere to a strict code of conduct that emphasizes honesty and transparency. Our core values include: Collaboration, Equitable Access, Honesty, and Transparency." }
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -153,7 +155,7 @@ export default function Home() {
             <h2 style={{ fontSize: '1rem', fontWeight: 800, letterSpacing: '2px', color: 'var(--color-primary-green)', textTransform: 'uppercase', marginBottom: '1rem' }}>Health | Capacity | Innovation</h2>
             <h3 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: 'var(--color-white)', marginBottom: '1.5rem', lineHeight: 1.2, fontFamily: 'var(--font-primary)' }}>Propelling Sustainable Healthcare Growth</h3>
             <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '1.1rem', lineHeight: 1.7 }}>
-              Managed by leading experts and professionals, SimHealth Africa drives capacity building, technical support, and rapid innovation deployment across the continent.
+              Managed by leading experts and professionals, simHealth Africa drives capacity building, technical support, and rapid innovation deployment across the continent.
             </p>
           </motion.div>
 
@@ -166,9 +168,9 @@ export default function Home() {
           >
             {[
               { title: "Health Program", icon: <Heart size={28} /> },
-              { title: "SimHealth Institute", icon: <CheckCircle2 size={28} /> },
-              { title: "Innovation & Social Entrepreneurship", icon: <Globe2 size={28} /> },
-              { title: "SimHealth Connect", icon: <Globe2 size={28} /> },
+              { title: "simHealth Institute", icon: <CheckCircle2 size={28} /> },
+              { title: "simNovate (Innovation & Social Entrepreneurship)", icon: <Globe2 size={28} /> },
+              { title: "simHealth Connect", icon: <Globe2 size={28} /> },
               { title: "Consultancy Services", icon: <Activity size={28} /> }
             ].map((prog, i) => (
               <motion.div

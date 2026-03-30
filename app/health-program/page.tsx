@@ -57,16 +57,22 @@ export default function HealthProgramPage() {
               style={{ backgroundColor: 'white', padding: '3.5rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-lg)', display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--color-gray-700)', border: '1px solid rgba(0,0,0,0.03)' }}
             >
               <p>
-                <strong style={{ color: 'var(--color-primary-green)' }}>simHealth Africa</strong> promotes access to quality and affordable healthcare products and services.
+                <strong style={{ color: 'var(--color-primary-green)' }}>simHealth Africa</strong> is committed to the enhancement of sustainable healthcare delivery systems and improved access to quality, affordable healthcare products and services.
               </p>
               <p>
-                In addition, the organization supports governments, donor agencies, implementing partners, health facilities and the local community in health strengthening, promotion of healthy living and disease prevention.
+                We collaborate with governments, donor agencies, implementing partners, practitioners, health facilities (public and private), and local communities to strengthen health systems, promote wellness, and prevent disease.
               </p>
               <p>
-                Through <span style={{ color: 'var(--color-info)', fontWeight: 600 }}>Med-Vical International</span> (the social enterprise) we provide access to quality and affordable healthcare products and services, especially in resource-limited settings. We provide smart and convenient primary and specialized secondary healthcare services.
+                Our partnerships with various healthcare organizations, including hospitals, clinics, pharmacies, diagnostic centers, and health maintenance organizations focus on optimizing operational efficiency to improve patient care and health outcomes.
               </p>
               <p>
-                Furthermore, through <span style={{ color: 'var(--color-info)', fontWeight: 600 }}>simHealth Mission</span>, we provide mobile and medical outreach services by collaborating with other hospitals and healthcare organizations.
+                Through our outreach initiatives and partnerships, such as with <span style={{ color: 'var(--color-info)', fontWeight: 600 }}>Med-Vical International</span>, we facilitate prompt primary and specialized secondary healthcare services, including pediatrics, obstetrics, gynecology, internal medicine, surgery, eye care, and more.
+              </p>
+              <p>
+                simHealth Africa also reaches underserved populations through mobile clinics and health outreach efforts in collaboration with <span style={{ color: 'var(--color-info)', fontWeight: 600 }}>Med-Vical Medical Centre (MMC)</span> and other healthcare organizations.
+              </p>
+              <p>
+                The <span style={{ color: 'var(--color-info)', fontWeight: 600 }}>Med-Vical School Health Program</span> exemplifies our commitment to promoting health and educational outcomes in schools and communities. simHealth Africa and Med-Vical International drive our core mission (simHealth Mission), which are in the areas of Health, Education and Livelihood Support.
               </p>
             </motion.div>
 

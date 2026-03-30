@@ -30,11 +30,11 @@ export const navigationItems: NavItem[] = [
         href: '/innovation-and-social-entrepreneurship-program',
       },
       {
-        label: 'SimHealth Institute',
+        label: 'simHealth Institute',
         href: '/simhealth-institute',
       },
       {
-        label: 'SimHealth Connect',
+        label: 'simHealth Connect',
         href: '/simhealth-connect',
       },
     ],
@@ -70,6 +70,6 @@ export const navigationItems: NavItem[] = [
  */
 export const logoConfig = {
   src: '/images/logo1.png',
-  alt: 'SimHealth Africa Logo',
+  alt: 'simHealth Africa Logo',
   href: '/',
 }

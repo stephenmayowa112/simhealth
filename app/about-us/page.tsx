@@ -41,7 +41,7 @@ export default function AboutUsPage() {
   return (
     <div style={{ backgroundColor: 'var(--color-surface-soft)', minHeight: '100vh', overflowX: 'hidden' }}>
 
-      <SubpageHero title="ORGANIZATION STRATEGY" subtitle="...Improving Health and Wellbeing" />
+      <SubpageHero title="ABOUT US" subtitle="Africa Society for Improved Health Delivery" />
 
       {/* Vision, Mission, Values */}
       <section style={{ padding: '0 2rem 8rem', position: 'relative', zIndex: 20 }}>
@@ -54,9 +54,9 @@ export default function AboutUsPage() {
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}
           >
             {[
-              { icon: <Target size={32} />, title: "OUR VISION", desc: "To achieve good health and build human resource capacity of many, and to become a center of excellence in the delivery of innovative, evidence-based, context-specific programs." },
-              { icon: <Shield size={32} />, title: "OUR MISSION", desc: "simHealth Africa is a knowledge-based organization with the mission to improve health and wellbeing, build human resource capacity, and deliver innovative programs." },
-              { icon: <Award size={32} />, title: "OUR VALUES", desc: "Our values are predicated on collaborative efforts and contributions with uncompromising integrity in the discharge of our duty with a code of conduct laced with honesty and transparency." }
+              { icon: <Target size={32} />, title: "OUR VISION", desc: "At simHealth Africa, we aspire to enhance health outcomes and strengthen human resource capacities across the continent. Our goal is to foster sustainable healthcare delivery systems and establish ourselves as a center of excellence for innovative, evidence-based programs tailored to local contexts." },
+              { icon: <Shield size={32} />, title: "OUR MISSION", desc: "As a knowledge-driven organization, simHealth Africa is dedicated to improving health and well-being. We aim to build human resource capacity, launch innovative initiatives, and fortify healthcare systems throughout Africa." },
+              { icon: <Award size={32} />, title: "OUR VALUES", desc: "Our operations are grounded in collaboration and integrity. We adhere to a strict code of conduct that emphasizes honesty and transparency. Our core values include: Collaboration, Equitable Access, Honesty, and Transparency." }
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -84,7 +84,7 @@ export default function AboutUsPage() {
             viewport={{ once: true }}
             style={{ textAlign: 'center', marginBottom: '4rem' }}
           >
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)' }}>AIMS AND OBJECTIVES</h2>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)' }}>ORGANIZATIONAL STRATEGY</h2>
           </motion.div>
 
           <div style={{ backgroundColor: 'var(--color-secondary-yellow)', padding: '4rem 3rem', borderRadius: 'var(--radius-xl)', position: 'relative', overflow: 'hidden' }}>
@@ -98,12 +98,15 @@ export default function AboutUsPage() {
               <motion.div variants={fadeInUp} style={{ backgroundColor: 'white', padding: '3rem 2.5rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-lg)' }}>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
                   {[
-                    "Health system strengthening and improved healthcare delivery",
-                    "Research, documentation and dissemination",
-                    "Innovation and social entrepreneurship",
-                    "Capacity building, training and mentorship",
-                    "Policy, advocacy and collaboration",
-                    "Monitoring and evaluation of projects and programs"
+                    "Research and Advocacy: Acting as an independent center for research, documentation, and policy advocacy to support healthcare initiatives.",
+                    "Global Partnerships: By partnering with researchers worldwide, we conduct impactful studies and enable local data management that drives informed decisions.",
+                    "Operational Research: Through systematic reviews and meticulous data management, we are committed to enhancing health outcomes and overall well-being.",
+                    "Embracing Technology: Promoting innovative technologies and methods for better health outcomes.",
+                    "Strengthening Collaborations: Building partnerships and sharing information on health-related social issues among stakeholders.",
+                    "Capacity Building: We empower health systems and communities through targeted resource development and research initiatives that bolster local capacities.",
+                    "Health Promotion Programs: Sponsoring initiatives aimed at disease management and health awareness for key populations, fostering healthier communities.",
+                    "Advocacy for Access: Campaigning for improved access to essential medicines and health services in resource-limited settings.",
+                    "Youth Engagement: Encouraging student and young professional involvement in organizational activities, thereby nurturing the next generation of health advocates."
                   ].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
                       <CheckCircle2 size={24} color="var(--color-primary-green)" style={{ flexShrink: 0, marginTop: '2px' }} />
@@ -130,8 +133,8 @@ export default function AboutUsPage() {
             viewport={{ once: true }}
             style={{ textAlign: 'center', marginBottom: '4rem' }}
           >
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', marginBottom: '1rem' }}>ORGANIZATION STRATEGY</h2>
-            <p style={{ fontSize: '1.1rem', color: 'var(--color-gray-700)', fontWeight: 500 }}>The Organization will pursue her aims and objectives by:</p>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', marginBottom: '1rem' }}>KEY STRATEGIES</h2>
+            <p style={{ fontSize: '1.1rem', color: 'var(--color-gray-700)', fontWeight: 500 }}>To effectively realize its mission and vision, simHealth Africa works collaboratively with other organizations with shared vision to achieve its objectives through the following key strategies:</p>
           </motion.div>
 
           <motion.div
@@ -142,18 +145,62 @@ export default function AboutUsPage() {
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}
           >
             {[
-              "Serving as an independent research, documentation, dissemination, policy and advocacy center.",
-              "Partnering with researchers and research institutions globally, to conduct large scale studies.",
-              "Conducting systematic reviews, assessments, operational research, and innovations.",
-              "Encouraging the adoption of emerging technologies and innovative methods.",
-              "Strengthening partnerships/collaborations and information sharing on social problems.",
-              "Supporting health systems/community system strengthening through institutional capacity building."
+              "Research and Advocacy: Acting as an independent center for research, documentation, and policy advocacy to support healthcare initiatives.",
+              "Global Partnerships: By partnering with researchers worldwide, we conduct impactful studies and enable local data management that drives informed decisions.",
+              "Operational Research: Through systematic reviews and meticulous data management, we are committed to enhancing health outcomes and overall well-being.",
+              "Embracing Technology: Promoting innovative technologies and methods for better health outcomes.",
+              "Strengthening Collaborations: Building partnerships and sharing information on health-related social issues among stakeholders.",
+              "Capacity Building: We empower health systems and communities through targeted resource development and research initiatives that bolster local capacities."
             ].map((item, i) => (
               <motion.div key={i} variants={fadeInUp} style={{ display: 'flex', alignItems: 'flex-start', gap: '1.2rem', backgroundColor: 'white', padding: '2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)', border: '1px solid rgba(0,0,0,0.03)' }}>
                 <div style={{ backgroundColor: 'rgba(106,210,32,0.1)', padding: '10px', borderRadius: '12px', color: 'var(--color-primary-green)' }}>
                   <CheckCircle2 size={24} />
                 </div>
                 <span style={{ fontSize: '1rem', lineHeight: 1.6, color: '#444' }}>{item}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Core Team Section */}
+      <section style={{ padding: '6rem 2rem 8rem', backgroundColor: 'var(--color-white)', position: 'relative' }}>
+        <div style={{ maxWidth: 'var(--max-content-width)', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ textAlign: 'center', marginBottom: '4rem' }}
+          >
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)' }}>OUR CORE TEAM</h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}
+          >
+            {[
+              { name: 'Prof. Ehijie F.O. Enato', location: 'Nigeria' },
+              { name: 'Dr. Chioma Amajoh', location: 'Nigeria' },
+              { name: 'Prof. Yehuda Bassok', location: 'USA' },
+              { name: 'Dr. Izehiuwa Enato', location: 'Nigeria' },
+              { name: 'Dr. Christopher Oriakhi', location: 'USA' },
+              { name: 'Dr. Sean Ervin', location: 'USA' }
+            ].map((member, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                whileHover={{ y: -8, boxShadow: 'var(--shadow-lg)' }}
+                style={{ backgroundColor: 'var(--color-surface-soft)', padding: '2.5rem 2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)', transition: 'all 0.3s ease', textAlign: 'center', border: '1px solid rgba(0,0,0,0.03)' }}
+              >
+                <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'var(--color-primary-green)', margin: '0 auto 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '2rem', fontWeight: 800, fontFamily: 'var(--font-primary)' }}>
+                  {member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                </div>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '0.5rem', fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)' }}>{member.name}</h3>
+                <p style={{ color: 'var(--color-gray-600)', fontSize: '0.95rem' }}>{member.location}</p>
               </motion.div>
             ))}
           </motion.div>

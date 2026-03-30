@@ -88,10 +88,49 @@ export default function OurProjectsPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            style={{ backgroundColor: 'white', padding: '3rem 2rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-lg)', marginBottom: '4rem', border: '1px solid rgba(0,0,0,0.03)' }}
+          >
+            <h2 style={{ fontSize: '2rem', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', marginBottom: '1.5rem', textAlign: 'center' }}>
+              CURRENT INITIATIVES
+            </h2>
+            <p style={{ fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--color-gray-700)', textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
+              simHealth Africa and Med-Vical International are working to integrate healthcare services, enhance access to healthcare products, and create a significant social impact. Through our combined expertise, we are improving healthcare delivery and making quality products more accessible. Our initiatives emphasize innovative solutions, strategic partnerships, and community engagement to bridge health and developmental gaps, ultimately aiming for sustainable health outcomes in Africa.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem', marginBottom: '5rem' }}
+          >
+            {[
+              { title: 'School Health Program', desc: 'Promoting health and educational outcomes in schools and communities through Med-Vical partnership.' },
+              { title: 'Outreach Programs', desc: 'Mobile clinics and health outreach efforts reaching underserved populations.' },
+              { title: 'Partnerships and Community Engagement', desc: 'Collaborative initiatives with healthcare organizations to strengthen community health systems.' }
+            ].map((project, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                whileHover={{ y: -8, boxShadow: 'var(--shadow-xl)' }}
+                style={{ backgroundColor: 'var(--color-primary-green)', padding: '3rem 2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-md)', transition: 'all 0.3s ease', color: 'white', textAlign: 'center' }}
+              >
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 800, fontFamily: 'var(--font-primary)', marginBottom: '1rem' }}>{project.title}</h3>
+                <p style={{ fontSize: '1rem', lineHeight: 1.6, opacity: 0.95 }}>{project.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             style={{ backgroundColor: 'white', padding: '3rem 2rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-lg)', marginBottom: '4rem', border: '1px solid rgba(0,0,0,0.03)', textAlign: 'center' }}
           >
             <h2 style={{ fontSize: '2rem', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', margin: 0 }}>
-              OUR PAST PROJECTS
+              PAST PROJECTS
             </h2>
           </motion.div>
 

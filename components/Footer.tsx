@@ -23,9 +23,9 @@ export const Footer = () => {
 
                     {/* Brand Info */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                        <Image src="/images/logo1.png" alt="SimHealth Africa Logo" width={200} height={60} style={{ filter: 'brightness(0) invert(1)' }} />
+                        <Image src="/images/logo1.png" alt="simHealth Africa Logo" width={200} height={60} style={{ filter: 'brightness(0) invert(1)' }} />
                         <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', lineHeight: 1.6, fontFamily: 'var(--font-secondary)' }}>
-                            Independent research, documentation, dissemination, policy and advocacy center supporting a wide range of programs in healthcare delivery across Africa.
+                            Africa Society for Improved Health Delivery - An independent research, documentation, policy and advocacy center dedicated to building capacity and supporting healthcare programs across Africa.
                         </p>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--color-primary-green)', marginTop: '0.5rem' }}>
                             <Mail size={18} />
@@ -68,7 +68,7 @@ export const Footer = () => {
                                 allowFullScreen
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                title="SimHealth Africa Location"
+                                title="simHealth Africa Location"
                             ></iframe>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ export const Footer = () => {
                 {/* Bottom Bar */}
                 <div style={{ paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
                     <p style={{ margin: 0, color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', fontFamily: 'var(--font-secondary)' }}>
-                        © {new Date().getFullYear()} SimHealth Africa® (Formally "Center for Health Research and Disease Prevention"). All Rights Reserved.
+                        © {new Date().getFullYear()} simHealth Africa® (formerly "Center for Health Research and Disease Prevention"). All Rights Reserved.
                     </p>
                     <p style={{ margin: 0, color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', fontFamily: 'var(--font-secondary)' }}>
                         Designed with <span style={{ color: 'var(--color-error)' }}>♥</span> locally

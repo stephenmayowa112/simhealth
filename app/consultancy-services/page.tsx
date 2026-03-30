@@ -37,13 +37,13 @@ export default function ConsultancyServicesPage() {
               <span style={{ fontSize: '5rem', lineHeight: '0.8', fontWeight: 800, color: 'var(--color-primary-green)', fontFamily: 'var(--font-primary)' }}>S</span>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--color-gray-700)' }}>
                 <p>
-                  imHealth Africa offers consultancy services in health and non-health sectors to ministries/government agencies, donors, implementing partners, and the private sector.
+                  imHealth Africa provides specialized consultancy services across both health and non-health sectors. Our clients include ministries, government agencies, donors, implementing partners, and private sector organizations.
                 </p>
                 <p>
-                  We have both the necessary in-house capacity and a pool of national and international consultants that we can deploy within a short time frame for project implementation, capacity building, qualitative and quantitative surveys. We are able to put together and deploy a strong, versatile, multi-disciplinary team of consultants, interview experts, and data analysts who successfully carry out project tasks.
+                  With a robust in-house team and a diverse network of national and international consultants, we are well-equipped to deploy expert support rapidly for project implementation, capacity building, and conducting qualitative and quantitative surveys. Our strength lies in forming dynamic, multidisciplinary teams that include consultants, interview specialists, and data analysts capable of executing various project tasks effectively.
                 </p>
                 <p style={{ fontWeight: 600, color: 'var(--color-slate-black)' }}>
-                  Some of the areas where we offer consultancy services are:
+                  Our consultancy services cover a wide range of areas, including:
                 </p>
               </div>
             </div>
@@ -57,17 +57,18 @@ export default function ConsultancyServicesPage() {
             >
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
                 {[
-                  "System reviews and assessment",
-                  "System design and strategy",
-                  "Strategic stakeholders engagement & advocacy",
-                  "Capacity building, training, networking and mentorship",
-                  "Operational research, data management & dissemination",
-                  "Health systems development/strengthening",
+                  "System reviews and assessments",
+                  "System design and strategic planning",
+                  "Strategic stakeholder engagement, team building, collaboration, and advocacy",
+                  "Capacity building, curriculum development, training, peer support, coaching, and mentorship",
+                  "Operational and implementation research—design, execution, data management, reporting, and dissemination",
+                  "Development and strengthening of health systems",
                   "Health supply chain management",
-                  "Pharmaceutical systems, medicine safety & use",
-                  "HIV/AIDs, Tuberculosis and Malaria programs",
+                  "Pharmaceutical systems, medicine management, and the safe clinical use of drugs",
+                  "Programs addressing HIV/AIDS, Tuberculosis, and Malaria, including robust interventions for malaria in pregnancy and childhood",
+                  "Malaria studies specifically focusing on pregnancy and children",
                   "Monitoring and evaluation",
-                  "Livelihood and related studies"
+                  "Livelihood studies and related research"
                 ].map((item, i) => (
                   <motion.li key={i} variants={fadeInUp} style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', backgroundColor: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: 'var(--shadow-sm)' }}>
                     <div style={{ color: 'var(--color-primary-green)', marginTop: '2px' }}>

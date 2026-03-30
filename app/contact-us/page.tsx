@@ -62,7 +62,7 @@ export default function ContactPage() {
                   <MapPin size={24} />
                 </div>
                 <p style={{ margin: 0, color: 'var(--color-gray-700)', fontSize: '1.05rem', lineHeight: 1.6, fontWeight: 500 }}>
-                  No 44 Boundary Road, GRA,<br />
+                  #44 Boundary Road, GRA,<br />
                   Benin City, Edo State,<br />
                   Nigeria
                 </p>
@@ -83,8 +83,8 @@ export default function ContactPage() {
                   <Mail size={24} />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                  <p style={{ margin: 0, color: 'var(--color-slate-black)', fontSize: '1.05rem', fontWeight: 600 }}>simhealthafrica@gmail.com</p>
                   <p style={{ margin: 0, color: 'var(--color-slate-black)', fontSize: '1.05rem', fontWeight: 600 }}>info@simhealthafrica.org</p>
+                  <p style={{ margin: 0, color: 'var(--color-slate-black)', fontSize: '1.05rem', fontWeight: 600 }}>simhealthafrica@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -120,8 +120,8 @@ export default function ContactPage() {
             </div>
 
             <div style={{ marginTop: '4rem', padding: '2rem', backgroundColor: 'rgba(255,202,0,0.1)', borderRadius: '16px', border: '1px dashed rgba(255,202,0,0.5)', textAlign: 'center' }}>
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--color-warning)', marginBottom: '0.5rem' }}>Partnership Inquiries</h3>
-              <p style={{ color: 'var(--color-gray-700)', fontSize: '0.95rem' }}>For corporate programs, please contact our director directly.</p>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--color-warning)', marginBottom: '0.5rem' }}>Partnership & Collaboration</h3>
+              <p style={{ color: 'var(--color-gray-700)', fontSize: '0.95rem' }}>We welcome partnerships and collaborations to enhance our impact. Reach out to explore opportunities.</p>
             </div>
           </motion.div>
 

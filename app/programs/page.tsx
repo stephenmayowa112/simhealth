@@ -19,9 +19,9 @@ const fadeInUp = {
 export default function OurProgramsPage() {
     const programs = [
         { title: 'HEALTH PROGRAM', href: '/health-program', icon: <Heart size={40} /> },
-        { title: 'INNOVATION AND SOCIAL ENTREPRENEURSHIP', href: '/innovation-and-social-entrepreneurship-program', icon: <Globe2 size={40} /> },
-        { title: 'SIMHEALTH INSTITUTE', href: '/simhealth-institute', icon: <GraduationCap size={40} /> },
-        { title: 'SIMHEALTH CONNECT', href: '/simhealth-connect', icon: <Activity size={40} /> },
+        { title: 'simNovate (INNOVATION AND SOCIAL ENTREPRENEURSHIP)', href: '/innovation-and-social-entrepreneurship-program', icon: <Globe2 size={40} /> },
+        { title: 'simHealth Institute', href: '/simhealth-institute', icon: <GraduationCap size={40} /> },
+        { title: 'simHealth Connect', href: '/simhealth-connect', icon: <Activity size={40} /> },
         { title: 'CONSULTANCY SERVICES', href: '/consultancy-services', icon: <Briefcase size={40} /> },
     ]
 

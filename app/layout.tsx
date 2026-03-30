@@ -34,22 +34,25 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://simhealthafrica.org'),
   title: {
-    default: 'SimHealth Africa - Africa Society for Improved Health Delivery',
-    template: '%s | SimHealth Africa',
+    default: 'simHealth Africa - Africa Society for Improved Health Delivery',
+    template: '%s | simHealth Africa',
   },
   description:
-    'SimHealth Africa is dedicated to improving health delivery across Africa through innovative programs, training, and partnerships.',
+    'simHealth Africa is dedicated to improving health delivery across Africa through innovative programs, capacity building, research, and strategic partnerships.',
   keywords: [
-    'SimHealth Africa',
+    'simHealth Africa',
     'health delivery',
     'Africa health',
     'medical training',
     'health programs',
     'healthcare innovation',
+    'capacity building',
+    'health research',
+    'Med-Vical International',
   ],
-  authors: [{ name: 'SimHealth Africa' }],
-  creator: 'SimHealth Africa',
-  publisher: 'SimHealth Africa',
+  authors: [{ name: 'simHealth Africa' }],
+  creator: 'simHealth Africa',
+  publisher: 'simHealth Africa',
   manifest: '/manifest.json',
   icons: {
     icon: [
@@ -62,22 +65,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://simhealthafrica.org',
-    siteName: 'SimHealth Africa',
-    title: 'SimHealth Africa - Africa Society for Improved Health Delivery',
+    siteName: 'simHealth Africa',
+    title: 'simHealth Africa - Africa Society for Improved Health Delivery',
     description:
-      'Improving health delivery across Africa through innovative programs, training, and partnerships.',
+      'Improving health delivery across Africa through innovative programs, capacity building, research, and strategic partnerships.',
     images: [
       {
         url: '/images/logo1.png',
         width: 1200,
         height: 630,
-        alt: 'SimHealth Africa Logo',
+        alt: 'simHealth Africa Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SimHealth Africa',
+    title: 'simHealth Africa',
     description: 'Africa Society for Improved Health Delivery',
     images: ['/images/logo1.png'],
   },
