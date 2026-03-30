@@ -43,6 +43,23 @@ export default function AboutUsPage() {
 
       <SubpageHero title="ABOUT US" subtitle="Africa Society for Improved Health Delivery" />
 
+      {/* Governance & Legal Status */}
+      <section style={{ padding: '0 2rem 4rem', position: 'relative', zIndex: 20 }}>
+        <div style={{ maxWidth: 'var(--max-content-width)', margin: '-4rem auto 0' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{ backgroundColor: 'white', padding: '3.5rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-lg)', border: '1px solid rgba(0,0,0,0.03)' }}
+          >
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', marginBottom: '1.5rem' }}>Governance & Legal Status</h2>
+            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--color-gray-700)' }}>
+              simHealth Africa is a non-profit, non-governmental organization registered with the Corporate Affairs Commission of Nigeria (CAC/IT/NO 36867). Our organization is guided by a Board of Trustees (BOTs), supported by a network of national, regional, and international experts.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Vision, Mission, Values */}
       <section style={{ padding: '0 2rem 8rem', position: 'relative', zIndex: 20 }}>
         <div style={{ maxWidth: 'var(--max-content-width)', margin: '-4rem auto 0' }}>
