@@ -118,6 +118,13 @@
   --clay-shadow-inner: inset 6px 6px 15px rgba(255, 255, 255, 0.05), inset -6px -6px 15px rgba(0, 0, 0, 0.5);
   --clay-shadow-hover: 15px 15px 30px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(255, 255, 255, 0.02), inset 8px 8px 20px rgba(255, 255, 255, 0.08), inset -8px -8px 20px rgba(0, 0, 0, 0.6);
   --clay-border: 1px solid rgba(255, 255, 255, 0.05);
+
+  /* Glassmorphism Utilities */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-bg-dark: rgba(15, 23, 42, 0.75);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --glass-blur: blur(10px);
 }
 
 /* ============================================
@@ -134,6 +141,41 @@
 .clay-panel-dark:hover {
   box-shadow: var(--clay-shadow-hover);
   transform: translateY(-6px);
+}
+
+/* ============================================
+   Glassmorphism Utility Classes
+   ============================================ */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: var(--radius-xl);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s ease;
+}
+
+.glass-panel:hover {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  transform: translateY(-4px);
+}
+
+.glass-panel-dark {
+  background: var(--glass-bg-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.glass-panel-dark:hover {
+  background: rgba(15, 23, 42, 0.85);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
 }
 
 /* ============================================
