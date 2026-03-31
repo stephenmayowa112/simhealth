@@ -159,6 +159,50 @@ export default function OrganizationStrategyPage() {
         </div>
       </section>
 
+      {/* Core Team Section */}
+      <section style={{ padding: '6rem 2rem 8rem', backgroundColor: 'var(--color-white)', position: 'relative' }}>
+        <div style={{ maxWidth: 'var(--max-content-width)', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ textAlign: 'center', marginBottom: '4rem' }}
+          >
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)' }}>OUR CORE TEAM</h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}
+          >
+            {[
+              { name: 'Prof. Ehijie F.O. Enato', location: 'Nigeria' },
+              { name: 'Dr. Chioma Amajoh', location: 'Nigeria' },
+              { name: 'Prof. Yehuda Bassok', location: 'USA' },
+              { name: 'Dr. Izehiuwa Enato', location: 'Nigeria' },
+              { name: 'Dr. Christopher Oriakhi', location: 'USA' },
+              { name: 'Dr. Sean Ervin', location: 'USA' }
+            ].map((member, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                whileHover={{ y: -8, boxShadow: 'var(--shadow-lg)' }}
+                style={{ backgroundColor: 'var(--color-surface-soft)', padding: '2.5rem 2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)', transition: 'all 0.3s ease', textAlign: 'center', border: '1px solid rgba(0,0,0,0.03)' }}
+              >
+                <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'var(--color-primary-green)', margin: '0 auto 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '2rem', fontWeight: 800, fontFamily: 'var(--font-primary)' }}>
+                  {member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                </div>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '0.5rem', fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)' }}>{member.name}</h3>
+                <p style={{ color: 'var(--color-gray-600)', fontSize: '0.95rem' }}>{member.location}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
     </div>
   )
 }
