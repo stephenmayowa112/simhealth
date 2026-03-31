@@ -42,7 +42,7 @@ export default function SimHealthConnectPage() {
             <p style={{ fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
               One of our flagship programs designed to optimize equitable access to healthcare products and services through health-tech and other innovative healthcare delivery solutions.
             </p>
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.8' }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
               It is also a platform dedicated to empowering individuals, healthcare practitioners, and the public with accurate health information, encompassing medicines and poison guidance for better health outcomes. These resources will be accessible through our website and an upcoming YouTube channel.
             </p>
           </motion.div>
