@@ -348,7 +348,7 @@
 }
 
 /* Hide on desktop */
-@media (min-width: 768px) {
+@media (min-width: 1101px) {
   .mobileNav {
     display: none;
   }
