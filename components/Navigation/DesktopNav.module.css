@@ -29,8 +29,6 @@
 .desktopNav.scrolled {
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-  width: 95%;
-  padding: 0 1rem;
 }
 
 .container {
