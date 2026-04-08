@@ -58,7 +58,7 @@ export default function OurProjectsPage() {
   return (
     <div style={{ backgroundColor: 'var(--color-surface-soft)', minHeight: '100vh', overflowX: 'hidden' }}>
 
-      {/* Custom Hero to preserve the Yellow banner from the design spec */}
+      {/* Custom Hero with Yellow banner and tagline */}
       <section style={{
         position: 'relative',
         padding: '10rem 2rem 6rem',
@@ -72,11 +72,14 @@ export default function OurProjectsPage() {
           style={{ position: 'absolute', top: '-50%', left: '20%', width: '60vw', height: '60vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(80px)', pointerEvents: 'none' }}
         />
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ position: 'relative', zIndex: 10, maxWidth: '1000px', margin: '0 auto' }}>
-          <h1 style={{ fontSize: 'clamp(3rem, 5vw, 4.5rem)', fontWeight: 900, color: 'var(--color-slate-black)', fontFamily: 'var(--font-primary)', marginBottom: '1.5rem', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+          <h1 style={{ fontSize: 'clamp(3rem, 5vw, 4.5rem)', fontWeight: 900, color: 'var(--color-slate-black)', fontFamily: 'var(--font-primary)', marginBottom: '1rem', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
             OUR PROJECTS
           </h1>
-          <p style={{ fontSize: '1.2rem', color: 'rgba(15,23,42,0.8)', fontFamily: 'var(--font-secondary)', maxWidth: '600px', margin: '0 auto', fontWeight: 500 }}>
-            .....Improving Health and Wellbeing
+          <p style={{ fontSize: '1.2rem', color: 'rgba(15,23,42,0.8)', fontFamily: 'var(--font-secondary)', fontWeight: 500, marginBottom: '0.5rem' }}>
+            Transforming Communities Through Innovation
+          </p>
+          <p style={{ fontSize: '1rem', color: 'var(--color-primary-green)', fontFamily: 'var(--font-primary)', fontWeight: 700, letterSpacing: '2px' }}>
+            Health | Capacity | Innovation
           </p>
         </motion.div>
       </section>
