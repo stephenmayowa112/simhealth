@@ -23,6 +23,16 @@ const staggerContainer = {
 export default function Home() {
   const { scrollYProgress } = useScroll()
   const yBg = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
+  const [currentImage, setCurrentImage] = React.useState(0)
+  const images = ['/images/image1.jpg', '/images/image2.jpg']
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length)
+    }, 5000) // Change image every 5 seconds
+
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div style={{ backgroundColor: 'var(--color-surface-soft)', minHeight: '100vh', overflowX: 'hidden' }}>
@@ -52,23 +62,23 @@ export default function Home() {
         {/* Subtle Grid Overlay */}
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '40px 40px', opacity: 0.5 }} />
 
-        <div style={{ maxWidth: 'var(--max-content-width)', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10, width: '100%' }}>
+        <div style={{ maxWidth: 'var(--max-content-width)', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10, width: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+          {/* Left side - Text content */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            style={{ maxWidth: '800px' }}
           >
             <motion.div variants={fadeInUp} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: 'var(--radius-pill)', border: '1px solid rgba(255,255,255,0.1)', marginBottom: '2rem', backdropFilter: 'blur(10px)' }}>
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-primary-green)', boxShadow: '0 0 10px var(--color-primary-green)' }} />
               <span style={{ color: 'var(--color-cream)', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Welcome To simHealth Africa</span>
             </motion.div>
 
-            <motion.h1 variants={fadeInUp} style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', fontWeight: 800, color: 'var(--color-white)', lineHeight: 1.1, marginBottom: '1.5rem', letterSpacing: '-0.02em', fontFamily: 'var(--font-primary)' }}>
+            <motion.h1 variants={fadeInUp} style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: 'var(--color-white)', lineHeight: 1.1, marginBottom: '1.5rem', letterSpacing: '-0.02em', fontFamily: 'var(--font-primary)' }}>
               Transforming <span style={{ color: 'var(--color-primary-green)' }}>Health Delivery</span> Across Africa.
             </motion.h1>
 
-            <motion.p variants={fadeInUp} style={{ fontSize: 'clamp(1.1rem, 2vw, 1.3rem)', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '600px', fontFamily: 'var(--font-secondary)' }}>
+            <motion.p variants={fadeInUp} style={{ fontSize: 'clamp(1rem, 1.8vw, 1.2rem)', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '600px', fontFamily: 'var(--font-secondary)' }}>
               Welcome to simHealth Africa (Africa Society for Improved Health Delivery)
               <br />
               <span style={{ color: 'var(--color-primary-green)', fontWeight: 600, letterSpacing: '2px' }}>Health | Capacity | Innovation</span>
@@ -87,7 +97,45 @@ export default function Home() {
               </Link>
             </motion.div>
           </motion.div>
+
+          {/* Right side - Image carousel */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            style={{ position: 'relative', height: '500px', borderRadius: 'var(--radius-xl)', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0,0,0,0.5)' }}
+          >
+            {images.map((img, index) => (
+              <motion.div
+                key={img}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: currentImage === index ? 1 : 0 }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                style={{ position: 'absolute', inset: 0 }}
+              >
+                <Image
+                  src={img}
+                  alt={`simHealth Africa - Image ${index + 1}`}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  priority={index === 0}
+                />
+              </motion.div>
+            ))}
+            {/* Overlay gradient for better text visibility */}
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.3) 0%, transparent 50%)' }} />
+          </motion.div>
         </div>
+
+        {/* Mobile responsive: Stack vertically on small screens */}
+        <style jsx>{`
+          @media (max-width: 1024px) {
+            div[style*="gridTemplateColumns"] {
+              grid-template-columns: 1fr !important;
+              gap: 2rem !important;
+            }
+          }
+        `}</style>
       </section>
 
       {/* 2. VISION / MISSION / VALUES (Neuromorphic Cards) */}
