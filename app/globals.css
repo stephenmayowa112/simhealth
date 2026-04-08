@@ -111,13 +111,13 @@
 
   /* Claymorphism Utilities */
   --clay-bg-dark: #0f172a;
-  --clay-bg-nav: rgba(15, 23, 42, 0.95);
-  /* Slightly transparent for navbars */
+  --clay-bg-nav: rgba(255, 255, 255, 0.85);
+  /* Light semi-transparent for navbars */
   --clay-radius: 35px;
   --clay-shadow-outer: 10px 10px 25px rgba(0, 0, 0, 0.4), -8px -8px 20px rgba(255, 255, 255, 0.02);
   --clay-shadow-inner: inset 6px 6px 15px rgba(255, 255, 255, 0.05), inset -6px -6px 15px rgba(0, 0, 0, 0.5);
   --clay-shadow-hover: 15px 15px 30px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(255, 255, 255, 0.02), inset 8px 8px 20px rgba(255, 255, 255, 0.08), inset -8px -8px 20px rgba(0, 0, 0, 0.6);
-  --clay-border: 1px solid rgba(255, 255, 255, 0.05);
+  --clay-border: 1px solid rgba(255, 255, 255, 0.18);
 
   /* Glassmorphism Utilities */
   --glass-bg: rgba(255, 255, 255, 0.75);
