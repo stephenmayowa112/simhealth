@@ -47,10 +47,37 @@ export default function OurProgramsPage() {
                             <Link key={i} href={prog.href} style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <motion.div
                                     variants={fadeInUp}
-                                    whileHover={{ y: -10, boxShadow: 'var(--shadow-lg)' }}
-                                    style={{ backgroundColor: 'white', padding: '4rem 2rem', textAlign: 'center', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-md)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', border: '1px solid rgba(0,0,0,0.03)', transition: 'box-shadow 0.3s ease' }}
+                                    whileHover={{ y: -10, boxShadow: '0 15px 40px rgba(106,210,32,0.2)' }}
+                                    style={{ 
+                                      background: 'rgba(255, 255, 255, 0.7)', 
+                                      backdropFilter: 'blur(16px)',
+                                      WebkitBackdropFilter: 'blur(16px)',
+                                      padding: '4rem 2rem', 
+                                      textAlign: 'center', 
+                                      borderRadius: 'var(--radius-xl)', 
+                                      boxShadow: '0 8px 32px rgba(106,210,32,0.15)', 
+                                      height: '100%', 
+                                      display: 'flex', 
+                                      flexDirection: 'column', 
+                                      justifyContent: 'center', 
+                                      alignItems: 'center', 
+                                      border: '1px solid rgba(255, 255, 255, 0.3)', 
+                                      transition: 'all 0.3s ease' 
+                                    }}
                                 >
-                                    <div style={{ width: '80px', height: '80px', borderRadius: '24px', backgroundColor: 'rgba(106,210,32,0.1)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem', transition: 'transform 0.3s ease' }}>
+                                    <div style={{ 
+                                      width: '80px', 
+                                      height: '80px', 
+                                      borderRadius: '24px', 
+                                      background: 'linear-gradient(145deg, rgba(106,210,32,0.15), rgba(106,210,32,0.08))',
+                                      color: 'var(--color-primary-green)', 
+                                      display: 'flex', 
+                                      alignItems: 'center', 
+                                      justifyContent: 'center', 
+                                      marginBottom: '2rem', 
+                                      boxShadow: '6px 6px 15px rgba(106,210,32,0.2), -4px -4px 10px rgba(255,255,255,0.8), inset 4px 4px 10px rgba(255,255,255,0.5), inset -4px -4px 10px rgba(106,210,32,0.1)',
+                                      transition: 'transform 0.3s ease' 
+                                    }}>
                                         {prog.icon}
                                     </div>
                                     <h3 style={{ fontSize: '1.2rem', fontWeight: 800, margin: 0, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', lineHeight: 1.4 }}>

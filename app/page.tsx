@@ -156,18 +156,18 @@ export default function Home() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                whileHover={{ y: -10, scale: 1.02, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
+                whileHover={{ y: -10, scale: 1.02, boxShadow: '0 20px 50px rgba(0,0,0,0.15)' }}
                 style={{
-                  backgroundColor: '#f8fafc', /* Light slate background */
+                  background: 'linear-gradient(145deg, #ffffff, #f8fafc)',
                   padding: '3rem 2.5rem',
-                  borderRadius: '35px', /* Characteristic large soft radius */
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)', /* Softer shadow */
+                  borderRadius: '35px',
+                  boxShadow: '12px 12px 30px rgba(0, 0, 0, 0.12), -10px -10px 25px rgba(255, 255, 255, 0.7), inset 8px 8px 20px rgba(255, 255, 255, 0.5), inset -8px -8px 20px rgba(0, 0, 0, 0.08)',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'flex-start',
                   position: 'relative',
                   overflow: 'hidden',
-                  border: '1px solid rgba(106,210,32,0.1)'
+                  border: '1px solid rgba(255, 255, 255, 0.4)'
                 }}
               >
                 {/* Subtle gradient hover glow behind the card content */}
@@ -178,7 +178,7 @@ export default function Home() {
                   style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at top left, rgba(106, 210, 32, 0.05), transparent 70%)', zIndex: 0, pointerEvents: 'none' }}
                 />
 
-                <div style={{ position: 'relative', zIndex: 1, width: '64px', height: '64px', borderRadius: '22px', backgroundColor: 'rgba(106,210,32,0.1)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem', boxShadow: '0 4px 15px rgba(106,210,32,0.15)' }}>
+                <div style={{ position: 'relative', zIndex: 1, width: '64px', height: '64px', borderRadius: '22px', background: 'linear-gradient(145deg, rgba(106,210,32,0.15), rgba(106,210,32,0.08))', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem', boxShadow: '6px 6px 15px rgba(106,210,32,0.2), -4px -4px 10px rgba(255,255,255,0.8), inset 4px 4px 10px rgba(255,255,255,0.5), inset -4px -4px 10px rgba(106,210,32,0.1)' }}>
                   {item.icon}
                 </div>
                 <h3 style={{ position: 'relative', zIndex: 1, fontSize: '1.3rem', fontWeight: 800, marginBottom: '1rem', fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', letterSpacing: '0.5px' }}>{item.title}</h3>
@@ -225,15 +225,17 @@ export default function Home() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                whileHover={{ scale: 1.03, boxShadow: '0 15px 35px rgba(0,0,0,0.12)', y: -6 }}
+                whileHover={{ scale: 1.03, boxShadow: '0 15px 40px rgba(106,210,32,0.2), inset 0 0 20px rgba(255,255,255,0.5)', y: -6 }}
                 style={{
                   padding: '3rem 2rem',
-                  backgroundColor: 'rgba(255,255,255,0.9)',
+                  background: 'rgba(255, 255, 255, 0.7)',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)',
                   borderRadius: 'var(--clay-radius)',
                   textAlign: 'center',
                   cursor: 'pointer',
-                  border: '1px solid rgba(106,210,32,0.15)',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
+                  boxShadow: '0 8px 32px rgba(106,210,32,0.15)',
                   color: 'var(--color-slate-black)'
                 }}
               >

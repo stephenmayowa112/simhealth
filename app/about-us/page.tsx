@@ -50,7 +50,15 @@ export default function AboutUsPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            style={{ backgroundColor: 'white', padding: '3.5rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-lg)', border: '1px solid rgba(0,0,0,0.03)' }}
+            style={{ 
+              background: 'rgba(255, 255, 255, 0.7)', 
+              backdropFilter: 'blur(16px)',
+              WebkitBackdropFilter: 'blur(16px)',
+              padding: '3.5rem', 
+              borderRadius: 'var(--radius-xl)', 
+              boxShadow: '0 8px 32px rgba(31, 38, 135, 0.2)', 
+              border: '1px solid rgba(255, 255, 255, 0.3)' 
+            }}
           >
             <h2 style={{ fontSize: '1.8rem', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', marginBottom: '1.5rem' }}>Governance & Legal Status</h2>
             <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--color-gray-700)' }}>
@@ -78,10 +86,32 @@ export default function AboutUsPage() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                whileHover={{ y: -8, boxShadow: 'var(--shadow-lg)' }}
-                style={{ backgroundColor: 'var(--color-white)', padding: '3.5rem 2.5rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-md)', transition: 'all 0.4s ease', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', border: '1px solid rgba(0,0,0,0.03)' }}
+                whileHover={{ y: -8, boxShadow: '0 15px 40px rgba(0,0,0,0.15)' }}
+                style={{ 
+                  background: 'linear-gradient(145deg, #ffffff, #f8fafc)',
+                  padding: '3.5rem 2.5rem', 
+                  borderRadius: 'var(--radius-xl)', 
+                  boxShadow: '12px 12px 30px rgba(0, 0, 0, 0.12), -10px -10px 25px rgba(255, 255, 255, 0.7), inset 8px 8px 20px rgba(255, 255, 255, 0.5), inset -8px -8px 20px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.4s ease', 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  alignItems: 'center', 
+                  textAlign: 'center', 
+                  border: '1px solid rgba(255, 255, 255, 0.4)' 
+                }}
               >
-                <div style={{ width: '70px', height: '70px', borderRadius: '50%', backgroundColor: 'rgba(106,210,32,0.1)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', boxShadow: 'inset 0 0 20px rgba(106,210,32,0.05)' }}>
+                <div style={{ 
+                  width: '70px', 
+                  height: '70px', 
+                  borderRadius: '50%', 
+                  background: 'linear-gradient(145deg, rgba(106,210,32,0.15), rgba(106,210,32,0.08))',
+                  color: 'var(--color-primary-green)', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  marginBottom: '1.5rem', 
+                  boxShadow: '6px 6px 15px rgba(106,210,32,0.2), -4px -4px 10px rgba(255,255,255,0.8), inset 4px 4px 10px rgba(255,255,255,0.5), inset -4px -4px 10px rgba(106,210,32,0.1)' 
+                }}>
                   {item.icon}
                 </div>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 800, marginBottom: '1rem', fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)' }}>{item.title}</h3>

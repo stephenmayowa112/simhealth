@@ -91,7 +91,16 @@ export default function OurProjectsPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            style={{ backgroundColor: 'white', padding: '3rem 2rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-lg)', marginBottom: '4rem', border: '1px solid rgba(0,0,0,0.03)' }}
+            style={{ 
+              background: 'rgba(255, 255, 255, 0.9)', 
+              backdropFilter: 'blur(16px)',
+              WebkitBackdropFilter: 'blur(16px)',
+              padding: '3rem 2rem', 
+              borderRadius: 'var(--radius-xl)', 
+              boxShadow: '0 8px 32px rgba(31, 38, 135, 0.2)', 
+              marginBottom: '4rem', 
+              border: '1px solid rgba(255, 255, 255, 0.3)' 
+            }}
           >
             <h2 style={{ fontSize: '2rem', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', marginBottom: '1.5rem', textAlign: 'center' }}>
               CURRENT INITIATIVES
