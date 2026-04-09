@@ -164,7 +164,7 @@ export default function AboutUsPage() {
               </motion.div>
 
               <motion.div variants={fadeInUp} style={{ position: 'relative', height: '450px', borderRadius: 'var(--radius-xl)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
-                <Image src="https://placehold.co/800x600/eeeeee/999999?text=Training+Session" alt="Training Session" fill style={{ objectFit: 'cover' }} />
+                <Image src="/images/communityTraining.jpg" alt="Community Training Session" fill style={{ objectFit: 'cover' }} />
               </motion.div>
             </motion.div>
           </div>
