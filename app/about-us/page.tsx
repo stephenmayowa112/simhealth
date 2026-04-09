@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Shield, Target, Award, CheckCircle2 } from 'lucide-react'
+import { Shield, Target, Award, CheckCircle2, FileSearch, Globe, Microscope, Cpu, Handshake, GraduationCap } from 'lucide-react'
 
 // Animation Variants
 const fadeInUp = {
@@ -192,18 +192,40 @@ export default function AboutUsPage() {
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}
           >
             {[
-              "Research and Advocacy: Acting as an independent center for research, documentation, and policy advocacy to support healthcare initiatives.",
-              "Global Partnerships: By partnering with researchers worldwide, we conduct impactful studies and enable local data management that drives informed decisions.",
-              "Operational Research: Through systematic reviews and meticulous data management, we are committed to enhancing health outcomes and overall well-being.",
-              "Embracing Technology: Promoting innovative technologies and methods for better health outcomes.",
-              "Strengthening Collaborations: Building partnerships and sharing information on health-related social issues among stakeholders.",
-              "Capacity Building: We empower health systems and communities through targeted resource development and research initiatives that bolster local capacities."
+              { text: "Research and Advocacy: Acting as an independent center for research, documentation, and policy advocacy to support healthcare initiatives.", icon: <FileSearch size={24} /> },
+              { text: "Global Partnerships: By partnering with researchers worldwide, we conduct impactful studies and enable local data management that drives informed decisions.", icon: <Globe size={24} /> },
+              { text: "Operational Research: Through systematic reviews and meticulous data management, we are committed to enhancing health outcomes and overall well-being.", icon: <Microscope size={24} /> },
+              { text: "Embracing Technology: Promoting innovative technologies and methods for better health outcomes.", icon: <Cpu size={24} /> },
+              { text: "Strengthening Collaborations: Building partnerships and sharing information on health-related social issues among stakeholders.", icon: <Handshake size={24} /> },
+              { text: "Capacity Building: We empower health systems and communities through targeted resource development and research initiatives that bolster local capacities.", icon: <GraduationCap size={24} /> }
             ].map((item, i) => (
-              <motion.div key={i} variants={fadeInUp} style={{ display: 'flex', alignItems: 'flex-start', gap: '1.2rem', backgroundColor: 'white', padding: '2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)', border: '1px solid rgba(0,0,0,0.03)' }}>
-                <div style={{ backgroundColor: 'rgba(106,210,32,0.1)', padding: '10px', borderRadius: '12px', color: 'var(--color-primary-green)' }}>
-                  <CheckCircle2 size={24} />
+              <motion.div 
+                key={i} 
+                variants={fadeInUp} 
+                whileHover={{ y: -8, boxShadow: '0 15px 40px rgba(0,0,0,0.15)' }}
+                style={{ 
+                  display: 'flex', 
+                  alignItems: 'flex-start', 
+                  gap: '1.2rem', 
+                  background: 'linear-gradient(145deg, #ffffff, #f8fafc)',
+                  padding: '2rem', 
+                  borderRadius: 'var(--radius-lg)', 
+                  boxShadow: '12px 12px 30px rgba(0, 0, 0, 0.12), -10px -10px 25px rgba(255, 255, 255, 0.7), inset 8px 8px 20px rgba(255, 255, 255, 0.5), inset -8px -8px 20px rgba(0, 0, 0, 0.08)',
+                  border: '1px solid rgba(255, 255, 255, 0.4)',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div style={{ 
+                  background: 'linear-gradient(145deg, rgba(106,210,32,0.15), rgba(106,210,32,0.08))',
+                  padding: '12px', 
+                  borderRadius: '12px', 
+                  color: 'var(--color-primary-green)',
+                  boxShadow: '6px 6px 15px rgba(106,210,32,0.2), -4px -4px 10px rgba(255,255,255,0.8), inset 4px 4px 10px rgba(255,255,255,0.5), inset -4px -4px 10px rgba(106,210,32,0.1)',
+                  flexShrink: 0
+                }}>
+                  {item.icon}
                 </div>
-                <span style={{ fontSize: '1rem', lineHeight: 1.6, color: '#444' }}>{item}</span>
+                <span style={{ fontSize: '1rem', lineHeight: 1.6, color: '#444' }}>{item.text}</span>
               </motion.div>
             ))}
           </motion.div>
