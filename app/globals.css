@@ -9,19 +9,19 @@
   --color-primary-green: #6ad220;
   --color-secondary-yellow: #ffca00;
 
-  /* Modern Sophisticated Dark Colors (higher contrast) */
-  --color-deep-emerald: #031f0a;
-  --color-slate-black: #050a12;
-  --color-dark-green: #0a260f;
-  --color-ink: #000000;
+  /* Modern Sophisticated Dark Colors (lighter, brighter) */
+  --color-deep-emerald: #0a3d1a;
+  --color-slate-black: #1e293b;
+  --color-dark-green: #2d5a3d;
+  --color-ink: #1a1a1a;
 
   /* Soft Tints & White for glass/cards */
-  --color-pale-green: #eef7e8;
-  --color-pale-yellow: #fdfae8;
-  --color-cream: #faf7ef;
+  --color-pale-green: #f0f9eb;
+  --color-pale-yellow: #fffbeb;
+  --color-cream: #fefdfb;
   --color-white: #ffffff;
-  --color-glass: rgba(255, 255, 255, 0.7);
-  --color-glass-dark: rgba(15, 23, 42, 0.7);
+  --color-glass: rgba(255, 255, 255, 0.85);
+  --color-glass-dark: rgba(30, 41, 59, 0.6);
 
   /* Neutral Colors */
   --color-gray-900: #1a1a1a;
@@ -110,14 +110,14 @@
   --max-content-width: 1280px;
 
   /* Claymorphism Utilities */
-  --clay-bg-dark: #0f172a;
-  --clay-bg-nav: rgba(255, 255, 255, 0.85);
+  --clay-bg-dark: #2d3e50;
+  --clay-bg-nav: rgba(255, 255, 255, 0.9);
   /* Light semi-transparent for navbars */
   --clay-radius: 35px;
-  --clay-shadow-outer: 10px 10px 25px rgba(0, 0, 0, 0.4), -8px -8px 20px rgba(255, 255, 255, 0.02);
-  --clay-shadow-inner: inset 6px 6px 15px rgba(255, 255, 255, 0.05), inset -6px -6px 15px rgba(0, 0, 0, 0.5);
-  --clay-shadow-hover: 15px 15px 30px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(255, 255, 255, 0.02), inset 8px 8px 20px rgba(255, 255, 255, 0.08), inset -8px -8px 20px rgba(0, 0, 0, 0.6);
-  --clay-border: 1px solid rgba(255, 255, 255, 0.18);
+  --clay-shadow-outer: 10px 10px 25px rgba(0, 0, 0, 0.15), -8px -8px 20px rgba(255, 255, 255, 0.05);
+  --clay-shadow-inner: inset 6px 6px 15px rgba(255, 255, 255, 0.1), inset -6px -6px 15px rgba(0, 0, 0, 0.2);
+  --clay-shadow-hover: 15px 15px 30px rgba(0, 0, 0, 0.2), -10px -10px 20px rgba(255, 255, 255, 0.05), inset 8px 8px 20px rgba(255, 255, 255, 0.15), inset -8px -8px 20px rgba(0, 0, 0, 0.25);
+  --clay-border: 1px solid rgba(255, 255, 255, 0.25);
 
   /* Glassmorphism Utilities */
   --glass-bg: rgba(255, 255, 255, 0.75);
@@ -203,7 +203,7 @@ body {
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
   color: var(--color-gray-900);
-  background-color: var(--color-cream);
+  background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -380,7 +380,7 @@ h4,
    ============================================ */
 
 .site-footer {
-  background-color: var(--color-ink);
+  background-color: var(--color-slate-black);
   color: var(--color-cream);
   padding: 0;
   margin-top: 0;

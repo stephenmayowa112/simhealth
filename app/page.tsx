@@ -35,7 +35,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div style={{ backgroundColor: 'var(--color-surface-soft)', minHeight: '100vh', overflowX: 'hidden' }}>
+    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh', overflowX: 'hidden' }}>
 
       {/* 1. DYNAMIC HERO SECTION */}
       <section style={{
@@ -45,22 +45,22 @@ export default function Home() {
         alignItems: 'center',
         paddingTop: '160px',
         overflow: 'hidden',
-        backgroundColor: 'var(--color-slate-black)'
+        background: 'linear-gradient(135deg, #f0f9eb 0%, #ffffff 50%, #fffbeb 100%)'
       }}>
         {/* Animated Background Orbs */}
         <motion.div
-          animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.6, 0.5] }}
+          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.4, 0.3] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          style={{ position: 'absolute', top: '10%', right: '-10%', width: '50vw', height: '50vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(106,210,32,0.4) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(80px)' }}
+          style={{ position: 'absolute', top: '10%', right: '-10%', width: '50vw', height: '50vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(106,210,32,0.2) 0%, rgba(255,255,255,0) 70%)', filter: 'blur(80px)' }}
         />
         <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.4, 0.3] }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          style={{ position: 'absolute', bottom: '-20%', left: '-10%', width: '60vw', height: '60vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,202,0,0.2) 0%, rgba(15,23,42,0) 70%)', filter: 'blur(100px)' }}
+          style={{ position: 'absolute', bottom: '-20%', left: '-10%', width: '60vw', height: '60vw', borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,202,0,0.15) 0%, rgba(255,255,255,0) 70%)', filter: 'blur(100px)' }}
         />
 
         {/* Subtle Grid Overlay */}
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '40px 40px', opacity: 0.5 }} />
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(106,210,32,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(106,210,32,0.03) 1px, transparent 1px)', backgroundSize: '40px 40px', opacity: 0.5 }} />
 
         <div style={{ maxWidth: 'var(--max-content-width)', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10, width: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
           {/* Left side - Text content */}
@@ -69,16 +69,16 @@ export default function Home() {
             animate="visible"
             variants={staggerContainer}
           >
-            <motion.div variants={fadeInUp} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: 'var(--radius-pill)', border: '1px solid rgba(255,255,255,0.1)', marginBottom: '2rem', backdropFilter: 'blur(10px)' }}>
+            <motion.div variants={fadeInUp} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', backgroundColor: 'rgba(106,210,32,0.1)', borderRadius: 'var(--radius-pill)', border: '1px solid rgba(106,210,32,0.2)', marginBottom: '2rem', backdropFilter: 'blur(10px)' }}>
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-primary-green)', boxShadow: '0 0 10px var(--color-primary-green)' }} />
-              <span style={{ color: 'var(--color-cream)', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Welcome To simHealth Africa</span>
+              <span style={{ color: 'var(--color-dark-green)', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Welcome To simHealth Africa</span>
             </motion.div>
 
-            <motion.h1 variants={fadeInUp} style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: 'var(--color-white)', lineHeight: 1.1, marginBottom: '1.5rem', letterSpacing: '-0.02em', fontFamily: 'var(--font-primary)' }}>
+            <motion.h1 variants={fadeInUp} style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: 'var(--color-slate-black)', lineHeight: 1.1, marginBottom: '1.5rem', letterSpacing: '-0.02em', fontFamily: 'var(--font-primary)' }}>
               Transforming <span style={{ color: 'var(--color-primary-green)' }}>Health Delivery</span> Across Africa.
             </motion.h1>
 
-            <motion.p variants={fadeInUp} style={{ fontSize: 'clamp(1rem, 1.8vw, 1.2rem)', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '600px', fontFamily: 'var(--font-secondary)' }}>
+            <motion.p variants={fadeInUp} style={{ fontSize: 'clamp(1rem, 1.8vw, 1.2rem)', color: 'var(--color-gray-700)', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '600px', fontFamily: 'var(--font-secondary)' }}>
               Welcome to simHealth Africa (Africa Society for Improved Health Delivery)
               <br />
               <span style={{ color: 'var(--color-primary-green)', fontWeight: 600, letterSpacing: '2px' }}>Health | Capacity | Innovation</span>
@@ -86,12 +86,12 @@ export default function Home() {
 
             <motion.div variants={fadeInUp} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '4rem' }}>
               <Link href="/about-us">
-                <motion.button whileHover={{ scale: 1.05, boxShadow: '10px 10px 20px rgba(0,0,0,0.5), -4px -4px 10px rgba(255,255,255,0.1)' }} whileTap={{ scale: 0.95 }} style={{ padding: '1rem 2.5rem', backgroundColor: 'var(--color-primary-green)', color: 'white', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 'var(--radius-pill)', fontSize: '1rem', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', boxShadow: '5px 5px 15px rgba(0,0,0,0.4), inset 2px 2px 5px rgba(255,255,255,0.2), inset -2px -2px 5px rgba(0,0,0,0.2)', transition: 'all 0.3s ease' }}>
+                <motion.button whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(106,210,32,0.3)' }} whileTap={{ scale: 0.95 }} style={{ padding: '1rem 2.5rem', backgroundColor: 'var(--color-primary-green)', color: 'white', border: 'none', borderRadius: 'var(--radius-pill)', fontSize: '1rem', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', boxShadow: '0 4px 15px rgba(106,210,32,0.25)', transition: 'all 0.3s ease' }}>
                   Explore Our Work <ArrowRight size={18} />
                 </motion.button>
               </Link>
               <Link href="/programs">
-                <motion.button whileHover={{ scale: 1.05, backgroundColor: 'rgba(15,23,42,0.8)', boxShadow: '10px 10px 20px rgba(0,0,0,0.5), -4px -4px 10px rgba(255,255,255,0.05)' }} whileTap={{ scale: 0.95 }} style={{ padding: '1rem 2.5rem', backgroundColor: 'rgba(15,23,42,0.5)', color: 'white', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 'var(--radius-pill)', fontSize: '1rem', fontWeight: 600, cursor: 'pointer', boxShadow: '5px 5px 15px rgba(0,0,0,0.4), inset 2px 2px 5px rgba(255,255,255,0.05), inset -2px -2px 5px rgba(0,0,0,0.4)', transition: 'all 0.3s ease' }}>
+                <motion.button whileHover={{ scale: 1.05, backgroundColor: 'var(--color-slate-black)', boxShadow: '0 10px 30px rgba(0,0,0,0.15)' }} whileTap={{ scale: 0.95 }} style={{ padding: '1rem 2.5rem', backgroundColor: 'transparent', color: 'var(--color-slate-black)', border: '2px solid var(--color-slate-black)', borderRadius: 'var(--radius-pill)', fontSize: '1rem', fontWeight: 600, cursor: 'pointer', transition: 'all 0.3s ease' }}>
                   View Programs
                 </motion.button>
               </Link>
@@ -123,7 +123,7 @@ export default function Home() {
               </motion.div>
             ))}
             {/* Overlay gradient for better text visibility */}
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.3) 0%, transparent 50%)' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(255,255,255,0.2) 0%, transparent 50%)' }} />
           </motion.div>
         </div>
 
@@ -139,7 +139,7 @@ export default function Home() {
       </section>
 
       {/* 2. VISION / MISSION / VALUES (Neuromorphic Cards) */}
-      <section style={{ padding: '8rem 2rem', position: 'relative', zIndex: 20 }}>
+      <section style={{ padding: '8rem 2rem', position: 'relative', zIndex: 20, backgroundColor: '#ffffff' }}>
         <div style={{ maxWidth: 'var(--max-content-width)', margin: '-4rem auto 0' }}>
           <motion.div
             initial="hidden"
@@ -156,17 +156,18 @@ export default function Home() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                whileHover={{ y: -10, scale: 1.02, boxShadow: '15px 15px 30px rgba(0,0,0,0.5), -10px -10px 20px rgba(255,255,255,0.02), inset 8px 8px 20px rgba(255,255,255,0.08), inset -8px -8px 20px rgba(0,0,0,0.6)' }}
+                whileHover={{ y: -10, scale: 1.02, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
                 style={{
-                  backgroundColor: '#0f172a', /* Solid dark slate for claymorphism */
+                  backgroundColor: '#f8fafc', /* Light slate background */
                   padding: '3rem 2.5rem',
                   borderRadius: '35px', /* Characteristic large soft radius */
-                  boxShadow: '10px 10px 25px rgba(0,0,0,0.4), -8px -8px 20px rgba(255,255,255,0.02), inset 6px 6px 15px rgba(255,255,255,0.05), inset -6px -6px 15px rgba(0,0,0,0.5)', /* Dual inner/outer shadows */
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)', /* Softer shadow */
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'flex-start',
                   position: 'relative',
-                  overflow: 'hidden'
+                  overflow: 'hidden',
+                  border: '1px solid rgba(106,210,32,0.1)'
                 }}
               >
                 {/* Subtle gradient hover glow behind the card content */}
@@ -174,14 +175,14 @@ export default function Home() {
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
-                  style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at top left, rgba(106, 210, 32, 0.08), transparent 70%)', zIndex: 0, pointerEvents: 'none' }}
+                  style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at top left, rgba(106, 210, 32, 0.05), transparent 70%)', zIndex: 0, pointerEvents: 'none' }}
                 />
 
-                <div style={{ position: 'relative', zIndex: 1, width: '64px', height: '64px', borderRadius: '22px', backgroundColor: '#1e293b', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem', boxShadow: '5px 5px 10px rgba(0,0,0,0.3), inset 3px 3px 8px rgba(255,255,255,0.05), inset -3px -3px 8px rgba(0,0,0,0.4)' }}>
+                <div style={{ position: 'relative', zIndex: 1, width: '64px', height: '64px', borderRadius: '22px', backgroundColor: 'rgba(106,210,32,0.1)', color: 'var(--color-primary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem', boxShadow: '0 4px 15px rgba(106,210,32,0.15)' }}>
                   {item.icon}
                 </div>
-                <h3 style={{ position: 'relative', zIndex: 1, fontSize: '1.3rem', fontWeight: 800, marginBottom: '1rem', fontFamily: 'var(--font-primary)', color: 'var(--color-white)', letterSpacing: '0.5px' }}>{item.title}</h3>
-                <p style={{ position: 'relative', zIndex: 1, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, fontSize: '0.95rem' }}>{item.desc}</p>
+                <h3 style={{ position: 'relative', zIndex: 1, fontSize: '1.3rem', fontWeight: 800, marginBottom: '1rem', fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', letterSpacing: '0.5px' }}>{item.title}</h3>
+                <p style={{ position: 'relative', zIndex: 1, color: 'var(--color-gray-700)', lineHeight: 1.7, fontSize: '0.95rem' }}>{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -189,8 +190,8 @@ export default function Home() {
       </section>
 
       {/* 3. PROGRAMS OVERVIEW (Glassmorphism & Staggered Reveal) */}
-      <section style={{ padding: '8rem 2rem', backgroundColor: 'var(--color-slate-black)', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'radial-gradient(circle at top right, rgba(255,202,0,0.05), transparent 40%)' }} />
+      <section style={{ padding: '8rem 2rem', backgroundColor: '#f0f9eb', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'radial-gradient(circle at top right, rgba(106,210,32,0.08), transparent 40%)' }} />
 
         <div style={{ maxWidth: 'var(--max-content-width)', margin: '0 auto', position: 'relative' }}>
           <motion.div
@@ -201,8 +202,8 @@ export default function Home() {
             style={{ textAlign: 'center', marginBottom: '5rem', maxWidth: '800px', margin: '0 auto 5rem' }}
           >
             <h2 style={{ fontSize: '1rem', fontWeight: 800, letterSpacing: '2px', color: 'var(--color-primary-green)', textTransform: 'uppercase', marginBottom: '1rem' }}>Health | Capacity | Innovation</h2>
-            <h3 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: 'var(--color-white)', marginBottom: '1.5rem', lineHeight: 1.2, fontFamily: 'var(--font-primary)' }}>Propelling Sustainable Healthcare Growth</h3>
-            <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '1.1rem', lineHeight: 1.7 }}>
+            <h3 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: 'var(--color-slate-black)', marginBottom: '1.5rem', lineHeight: 1.2, fontFamily: 'var(--font-primary)' }}>Propelling Sustainable Healthcare Growth</h3>
+            <p style={{ color: 'var(--color-gray-700)', fontSize: '1.1rem', lineHeight: 1.7 }}>
               Managed by leading experts and professionals, simHealth Africa drives capacity building, technical support, and rapid innovation deployment across the continent.
             </p>
           </motion.div>
@@ -224,16 +225,16 @@ export default function Home() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                whileHover={{ scale: 1.03, boxShadow: 'var(--clay-shadow-hover)', y: -6 }}
+                whileHover={{ scale: 1.03, boxShadow: '0 15px 35px rgba(0,0,0,0.12)', y: -6 }}
                 style={{
                   padding: '3rem 2rem',
-                  backgroundColor: 'var(--clay-bg-dark)',
+                  backgroundColor: 'rgba(255,255,255,0.9)',
                   borderRadius: 'var(--clay-radius)',
                   textAlign: 'center',
                   cursor: 'pointer',
-                  border: 'var(--clay-border)',
-                  boxShadow: 'var(--clay-shadow-outer), var(--clay-shadow-inner)',
-                  color: 'var(--color-white)'
+                  border: '1px solid rgba(106,210,32,0.15)',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                  color: 'var(--color-slate-black)'
                 }}
               >
                 <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'center', opacity: 0.9, color: 'var(--color-primary-green)' }}>
@@ -273,7 +274,7 @@ export default function Home() {
       </section>
 
       {/* 5. OUR PARTNERS (Scrolling or Fade in) */}
-      <section style={{ padding: '8rem 2rem', backgroundColor: 'var(--color-surface-soft)' }}>
+      <section style={{ padding: '8rem 2rem', backgroundColor: '#ffffff' }}>
         <div style={{ maxWidth: 'var(--max-content-width)', margin: '0 auto', textAlign: 'center' }}>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
