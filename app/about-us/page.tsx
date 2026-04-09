@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Shield, Target, Award, CheckCircle2, FileSearch, Globe, Microscope, Cpu, Handshake, GraduationCap } from 'lucide-react'
+import { Shield, Target, Award } from 'lucide-react'
 
 // Animation Variants
 const fadeInUp = {
@@ -116,116 +116,6 @@ export default function AboutUsPage() {
                 </div>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 800, marginBottom: '1rem', fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)' }}>{item.title}</h3>
                 <p style={{ color: 'var(--color-gray-700)', lineHeight: 1.7, fontSize: '0.95rem' }}>{item.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Aims and Objectives */}
-      <section style={{ padding: '6rem 2rem', backgroundColor: 'var(--color-white)', position: 'relative' }}>
-        <div style={{ maxWidth: 'var(--max-content-width)', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{ textAlign: 'center', marginBottom: '4rem' }}
-          >
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)' }}>ORGANIZATIONAL STRATEGY</h2>
-          </motion.div>
-
-          <div style={{ backgroundColor: 'var(--color-secondary-yellow)', padding: '4rem 3rem', borderRadius: 'var(--radius-xl)', position: 'relative', overflow: 'hidden' }}>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 10 }}
-            >
-              <motion.div variants={fadeInUp} style={{ backgroundColor: 'white', padding: '3rem 2.5rem', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-lg)' }}>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-                  {[
-                    "Research and Advocacy: Acting as an independent center for research, documentation, and policy advocacy to support healthcare initiatives.",
-                    "Global Partnerships: By partnering with researchers worldwide, we conduct impactful studies and enable local data management that drives informed decisions.",
-                    "Operational Research: Through systematic reviews and meticulous data management, we are committed to enhancing health outcomes and overall well-being.",
-                    "Embracing Technology: Promoting innovative technologies and methods for better health outcomes.",
-                    "Strengthening Collaborations: Building partnerships and sharing information on health-related social issues among stakeholders.",
-                    "Capacity Building: We empower health systems and communities through targeted resource development and research initiatives that bolster local capacities.",
-                    "Health Promotion Programs: Sponsoring initiatives aimed at disease management and health awareness for key populations, fostering healthier communities.",
-                    "Advocacy for Access: Campaigning for improved access to essential medicines and health services in resource-limited settings.",
-                    "Youth Engagement: Encouraging student and young professional involvement in organizational activities, thereby nurturing the next generation of health advocates."
-                  ].map((item, i) => (
-                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                      <CheckCircle2 size={24} color="var(--color-primary-green)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      <span style={{ fontSize: '1.05rem', lineHeight: 1.5, color: '#444', fontWeight: 500 }}>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} style={{ position: 'relative', height: '450px', borderRadius: 'var(--radius-xl)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
-                <Image src="/images/communityTraining.jpg" alt="Community Training Session" fill style={{ objectFit: 'cover' }} />
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Organization Strategy Detailed */}
-      <section style={{ padding: '8rem 2rem', position: 'relative' }}>
-        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{ textAlign: 'center', marginBottom: '4rem' }}
-          >
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, fontFamily: 'var(--font-primary)', color: 'var(--color-slate-black)', marginBottom: '1rem' }}>KEY STRATEGIES</h2>
-            <p style={{ fontSize: '1.1rem', color: 'var(--color-gray-700)', fontWeight: 500 }}>To effectively realize its mission and vision, simHealth Africa works collaboratively with other organizations with shared vision to achieve its objectives through the following key strategies:</p>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            variants={staggerContainer}
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}
-          >
-            {[
-              { text: "Research and Advocacy: Acting as an independent center for research, documentation, and policy advocacy to support healthcare initiatives.", icon: <FileSearch size={24} /> },
-              { text: "Global Partnerships: By partnering with researchers worldwide, we conduct impactful studies and enable local data management that drives informed decisions.", icon: <Globe size={24} /> },
-              { text: "Operational Research: Through systematic reviews and meticulous data management, we are committed to enhancing health outcomes and overall well-being.", icon: <Microscope size={24} /> },
-              { text: "Embracing Technology: Promoting innovative technologies and methods for better health outcomes.", icon: <Cpu size={24} /> },
-              { text: "Strengthening Collaborations: Building partnerships and sharing information on health-related social issues among stakeholders.", icon: <Handshake size={24} /> },
-              { text: "Capacity Building: We empower health systems and communities through targeted resource development and research initiatives that bolster local capacities.", icon: <GraduationCap size={24} /> }
-            ].map((item, i) => (
-              <motion.div 
-                key={i} 
-                variants={fadeInUp} 
-                whileHover={{ y: -8, boxShadow: '0 15px 40px rgba(0,0,0,0.15)' }}
-                style={{ 
-                  display: 'flex', 
-                  alignItems: 'flex-start', 
-                  gap: '1.2rem', 
-                  background: 'linear-gradient(145deg, #ffffff, #f8fafc)',
-                  padding: '2rem', 
-                  borderRadius: 'var(--radius-lg)', 
-                  boxShadow: '12px 12px 30px rgba(0, 0, 0, 0.12), -10px -10px 25px rgba(255, 255, 255, 0.7), inset 8px 8px 20px rgba(255, 255, 255, 0.5), inset -8px -8px 20px rgba(0, 0, 0, 0.08)',
-                  border: '1px solid rgba(255, 255, 255, 0.4)',
-                  transition: 'all 0.3s ease'
-                }}
-              >
-                <div style={{ 
-                  background: 'linear-gradient(145deg, rgba(106,210,32,0.15), rgba(106,210,32,0.08))',
-                  padding: '12px', 
-                  borderRadius: '12px', 
-                  color: 'var(--color-primary-green)',
-                  boxShadow: '6px 6px 15px rgba(106,210,32,0.2), -4px -4px 10px rgba(255,255,255,0.8), inset 4px 4px 10px rgba(255,255,255,0.5), inset -4px -4px 10px rgba(106,210,32,0.1)',
-                  flexShrink: 0
-                }}>
-                  {item.icon}
-                </div>
-                <span style={{ fontSize: '1rem', lineHeight: 1.6, color: '#444' }}>{item.text}</span>
               </motion.div>
             ))}
           </motion.div>
