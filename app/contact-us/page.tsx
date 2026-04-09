@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+import { MapPin, Mail, Clock } from 'lucide-react'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -66,16 +66,6 @@ export default function ContactPage() {
                   Benin City, Edo State,<br />
                   Nigeria
                 </p>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
-                <div style={{ color: 'var(--color-primary-green)', padding: '10px', backgroundColor: 'rgba(106,210,32,0.1)', borderRadius: '12px' }}>
-                  <Phone size={24} />
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                  <p style={{ margin: 0, color: 'var(--color-slate-black)', fontSize: '1.05rem', fontWeight: 600 }}>+234 807 635 5533</p>
-                  <p style={{ margin: 0, color: 'var(--color-slate-black)', fontSize: '1.05rem', fontWeight: 600 }}>0802 359 7448</p>
-                </div>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
