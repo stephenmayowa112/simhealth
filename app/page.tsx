@@ -292,11 +292,11 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '4rem', flexWrap: 'wrap', filter: 'grayscale(100%) opacity(0.6)' }}
+            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '4rem', flexWrap: 'wrap' }}
           >
-            <Image src="https://placehold.co/200x80/ffffff/000000?text=University+Of+Benin" alt="University of Benin" width={200} height={80} />
-            <Image src="https://placehold.co/120x120/ffffff/000000?text=Gov+Partner" alt="Government" width={120} height={120} />
-            <Image src="https://placehold.co/250x80/ffffff/000000?text=World+Bank" alt="World Bank" width={250} height={80} />
+            <Image src="/images/uniben-logo.png.png" alt="University of Benin" width={200} height={80} style={{ objectFit: 'contain', filter: 'grayscale(100%) opacity(0.7)', transition: 'all 0.3s ease' }} onMouseEnter={(e) => e.currentTarget.style.filter = 'grayscale(0%) opacity(1)'} onMouseLeave={(e) => e.currentTarget.style.filter = 'grayscale(100%) opacity(0.7)'} />
+            <Image src="/images/fg.jfif" alt="Federal Government of Nigeria" width={120} height={120} style={{ objectFit: 'contain', filter: 'grayscale(100%) opacity(0.7)', transition: 'all 0.3s ease' }} onMouseEnter={(e) => e.currentTarget.style.filter = 'grayscale(0%) opacity(1)'} onMouseLeave={(e) => e.currentTarget.style.filter = 'grayscale(100%) opacity(0.7)'} />
+            <Image src="/images/worldBank.jfif" alt="World Bank" width={200} height={80} style={{ objectFit: 'contain', filter: 'grayscale(100%) opacity(0.7)', transition: 'all 0.3s ease' }} onMouseEnter={(e) => e.currentTarget.style.filter = 'grayscale(0%) opacity(1)'} onMouseLeave={(e) => e.currentTarget.style.filter = 'grayscale(100%) opacity(0.7)'} />
           </motion.div>
         </div>
       </section>
